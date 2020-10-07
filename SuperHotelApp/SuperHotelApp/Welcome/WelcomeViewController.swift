@@ -22,11 +22,13 @@ class WelcomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func backWelcomeAction(_ sender: Any) {
-        
-    }
+
     
     @IBAction func goSignUpAction(_ sender: Any) {
+        
+        performSegue(withIdentifier: SegueType.signSegue.rawValue, sender: self)
+        
+        
     }
     
     @IBAction func goLoginButton(_ sender: Any) {

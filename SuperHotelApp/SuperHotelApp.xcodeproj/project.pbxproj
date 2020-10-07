@@ -30,6 +30,7 @@
 		01C559A6252D5D8B009BA5CB /* SHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C559A3252D5D8B009BA5CB /* SHTextField.swift */; };
 		01C559A7252D5D8B009BA5CB /* FontsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C559A4252D5D8B009BA5CB /* FontsName.swift */; };
 		E7A893B5252E2BAA002C31F2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A893B4252E2BAA002C31F2 /* Login.storyboard */; };
+		E7A893B8252E3312002C31F2 /* SegueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A893B7252E3312002C31F2 /* SegueType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		01C559A3252D5D8B009BA5CB /* SHTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHTextField.swift; sourceTree = "<group>"; };
 		01C559A4252D5D8B009BA5CB /* FontsName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsName.swift; sourceTree = "<group>"; };
 		E7A893B4252E2BAA002C31F2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E7A893B7252E3312002C31F2 /* SegueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				01C5597D252D5AD0009BA5CB /* WelcomeViewController.swift */,
+				E7A893B7252E3312002C31F2 /* SegueType.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				01C559A6252D5D8B009BA5CB /* SHTextField.swift in Sources */,
 				01C55985252D5AE3009BA5CB /* EditRegisterViewController.swift in Sources */,
 				01C55991252D5AF7009BA5CB /* BookingViewController.swift in Sources */,
+				E7A893B8252E3312002C31F2 /* SegueType.swift in Sources */,
 				01C55994252D5B0E009BA5CB /* LoginViewController.swift in Sources */,
 				01C55990252D5AF7009BA5CB /* BookingDetailViewController.swift in Sources */,
 			);

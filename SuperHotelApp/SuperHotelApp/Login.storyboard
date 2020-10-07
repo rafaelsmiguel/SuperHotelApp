@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tZb-Of-cFA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -11,7 +11,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="2bV-px-YBB">
             <objects>
-                <viewController id="tZb-Of-cFA" customClass="WelcomeViewController" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="tZb-Of-cFA" customClass="WelcomeViewController" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IhQ-b4-eI2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,6 +61,8 @@
                         <outlet property="goLoginButton" destination="ivN-rc-Dxh" id="w91-Vz-Q9Y"/>
                         <outlet property="logoImage" destination="l0V-bU-Y60" id="00N-nG-qe6"/>
                         <outlet property="signUpButton" destination="AMo-fU-otG" id="puh-9S-yEH"/>
+                        <segue destination="4pp-dX-oZX" kind="presentation" identifier="signSegue" id="XQ9-8g-sjL"/>
+                        <segue destination="5e6-S1-f2S" kind="presentation" identifier="loginSegue" id="ynw-a1-5ep"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlZ-OK-3bW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -70,7 +72,7 @@
         <!--Register View Controller-->
         <scene sceneID="ZJ3-Gw-Vbc">
             <objects>
-                <viewController id="4pp-dX-oZX" customClass="RegisterViewController" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="4pp-dX-oZX" customClass="RegisterViewController" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="53B-c6-WLG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +84,6 @@
                                     <color key="titleColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backWelcomeAction:" destination="tZb-Of-cFA" eventType="touchUpInside" id="dJz-Lw-bkx"/>
                                     <action selector="backWelcomeTapAction:" destination="4pp-dX-oZX" eventType="touchUpInside" id="Va7-cd-Jme"/>
                                 </connections>
                             </button>
@@ -187,16 +188,18 @@
                         <outlet property="passTextField" destination="h1O-ly-toO" id="RHt-86-JwP"/>
                         <outlet property="registerNameTextField" destination="H5L-1J-VXj" id="rh9-Bz-O4P"/>
                         <outlet property="signButton" destination="Ybx-Cq-0SP" id="GXq-YN-WVK"/>
+                        <segue destination="tZb-Of-cFA" kind="presentation" identifier="backWelcoSegue" id="Egi-gT-2LW"/>
+                        <segue destination="5e6-S1-f2S" kind="presentation" identifier="toLoginfromRegister" id="fUO-mB-XhM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NtP-Up-SXO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="266.66666666666669" y="12.723214285714285"/>
+            <point key="canvasLocation" x="890" y="759"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="8xb-7d-Q1R">
             <objects>
-                <viewController id="5e6-S1-f2S" customClass="LoginViewController" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="5e6-S1-f2S" customClass="LoginViewController" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BzC-w4-smP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,7 +211,6 @@
                                     <color key="titleColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backWelcomeAction:" destination="tZb-Of-cFA" eventType="touchUpInside" id="3eo-xh-WiB"/>
                                     <action selector="backWelcomeTapAction:" destination="4pp-dX-oZX" eventType="touchUpInside" id="km7-ni-b8W"/>
                                     <action selector="welcoBackAction:" destination="5e6-S1-f2S" eventType="touchUpInside" id="EPo-xp-eIW"/>
                                 </connections>
@@ -272,6 +274,8 @@
                         <outlet property="miniSignButton" destination="jIX-yv-Av3" id="juj-4B-bBA"/>
                         <outlet property="passLoginTextField" destination="JpJ-Re-dSt" id="nd2-Vn-tAd"/>
                         <outlet property="welcoBackButton" destination="8jP-lB-AFo" id="3M2-bw-OPa"/>
+                        <segue destination="tZb-Of-cFA" kind="presentation" identifier="backWelcomeSegue" id="aYY-qA-84N"/>
+                        <segue destination="4pp-dX-oZX" kind="presentation" identifier="toRegisterFromLogin" id="dIE-hT-FGo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pmj-7E-mKh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -279,6 +283,11 @@
             <point key="canvasLocation" x="934.78260869565224" y="12.723214285714285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ynw-a1-5ep"/>
+        <segue reference="XQ9-8g-sjL"/>
+        <segue reference="Egi-gT-2LW"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
