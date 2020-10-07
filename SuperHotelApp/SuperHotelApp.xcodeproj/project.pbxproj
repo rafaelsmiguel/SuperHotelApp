@@ -13,6 +13,16 @@
 		01C55961252D4EFE009BA5CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C5595F252D4EFE009BA5CB /* Main.storyboard */; };
 		01C55963252D4EFF009BA5CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C55962252D4EFF009BA5CB /* Assets.xcassets */; };
 		01C55966252D4EFF009BA5CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C55964252D4EFF009BA5CB /* LaunchScreen.storyboard */; };
+		01C5597E252D5AD0009BA5CB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5597D252D5AD0009BA5CB /* WelcomeViewController.swift */; };
+		01C55983252D5AE3009BA5CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55980252D5AE3009BA5CB /* ProfileViewController.swift */; };
+		01C55984252D5AE3009BA5CB /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55981252D5AE3009BA5CB /* RegisterViewController.swift */; };
+		01C55985252D5AE3009BA5CB /* EditRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55982252D5AE3009BA5CB /* EditRegisterViewController.swift */; };
+		01C55989252D5AEE009BA5CB /* SearchHotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55987252D5AEE009BA5CB /* SearchHotelViewController.swift */; };
+		01C5598A252D5AEE009BA5CB /* HotelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55988252D5AEE009BA5CB /* HotelDetailViewController.swift */; };
+		01C5598F252D5AF7009BA5CB /* BookingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5598C252D5AF7009BA5CB /* BookingListViewController.swift */; };
+		01C55990252D5AF7009BA5CB /* BookingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5598D252D5AF7009BA5CB /* BookingDetailViewController.swift */; };
+		01C55991252D5AF7009BA5CB /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5598E252D5AF7009BA5CB /* BookingViewController.swift */; };
+		01C55994252D5B0E009BA5CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55993252D5B0E009BA5CB /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		01C55962252D4EFF009BA5CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01C55965252D4EFF009BA5CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01C55967252D4EFF009BA5CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01C5597D252D5AD0009BA5CB /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		01C55980252D5AE3009BA5CB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		01C55981252D5AE3009BA5CB /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		01C55982252D5AE3009BA5CB /* EditRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRegisterViewController.swift; sourceTree = "<group>"; };
+		01C55987252D5AEE009BA5CB /* SearchHotelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHotelViewController.swift; sourceTree = "<group>"; };
+		01C55988252D5AEE009BA5CB /* HotelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelDetailViewController.swift; sourceTree = "<group>"; };
+		01C5598C252D5AF7009BA5CB /* BookingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingListViewController.swift; sourceTree = "<group>"; };
+		01C5598D252D5AF7009BA5CB /* BookingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailViewController.swift; sourceTree = "<group>"; };
+		01C5598E252D5AF7009BA5CB /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		01C55993252D5B0E009BA5CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,11 @@
 		01C55958252D4EFE009BA5CB /* SuperHotelApp */ = {
 			isa = PBXGroup;
 			children = (
+				01C5597B252D5A61009BA5CB /* Login */,
+				01C55971252D59C5009BA5CB /* Welcome */,
+				01C55970252D59A4009BA5CB /* Register */,
+				01C5596F252D599D009BA5CB /* Hotel */,
+				01C5596E252D5995009BA5CB /* Booking */,
 				01C55959252D4EFE009BA5CB /* AppDelegate.swift */,
 				01C5595B252D4EFE009BA5CB /* SceneDelegate.swift */,
 				01C5595D252D4EFE009BA5CB /* ViewController.swift */,
@@ -65,6 +90,51 @@
 				01C55967252D4EFF009BA5CB /* Info.plist */,
 			);
 			path = SuperHotelApp;
+			sourceTree = "<group>";
+		};
+		01C5596E252D5995009BA5CB /* Booking */ = {
+			isa = PBXGroup;
+			children = (
+				01C5598D252D5AF7009BA5CB /* BookingDetailViewController.swift */,
+				01C5598C252D5AF7009BA5CB /* BookingListViewController.swift */,
+				01C5598E252D5AF7009BA5CB /* BookingViewController.swift */,
+			);
+			path = Booking;
+			sourceTree = "<group>";
+		};
+		01C5596F252D599D009BA5CB /* Hotel */ = {
+			isa = PBXGroup;
+			children = (
+				01C55988252D5AEE009BA5CB /* HotelDetailViewController.swift */,
+				01C55987252D5AEE009BA5CB /* SearchHotelViewController.swift */,
+			);
+			path = Hotel;
+			sourceTree = "<group>";
+		};
+		01C55970252D59A4009BA5CB /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				01C55982252D5AE3009BA5CB /* EditRegisterViewController.swift */,
+				01C55980252D5AE3009BA5CB /* ProfileViewController.swift */,
+				01C55981252D5AE3009BA5CB /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		01C55971252D59C5009BA5CB /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				01C5597D252D5AD0009BA5CB /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		01C5597B252D5A61009BA5CB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				01C55993252D5B0E009BA5CB /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +207,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C5598F252D5AF7009BA5CB /* BookingListViewController.swift in Sources */,
+				01C5598A252D5AEE009BA5CB /* HotelDetailViewController.swift in Sources */,
 				01C5595E252D4EFE009BA5CB /* ViewController.swift in Sources */,
+				01C5597E252D5AD0009BA5CB /* WelcomeViewController.swift in Sources */,
+				01C55983252D5AE3009BA5CB /* ProfileViewController.swift in Sources */,
+				01C55989252D5AEE009BA5CB /* SearchHotelViewController.swift in Sources */,
+				01C55984252D5AE3009BA5CB /* RegisterViewController.swift in Sources */,
 				01C5595A252D4EFE009BA5CB /* AppDelegate.swift in Sources */,
 				01C5595C252D4EFE009BA5CB /* SceneDelegate.swift in Sources */,
+				01C55985252D5AE3009BA5CB /* EditRegisterViewController.swift in Sources */,
+				01C55991252D5AF7009BA5CB /* BookingViewController.swift in Sources */,
+				01C55994252D5B0E009BA5CB /* LoginViewController.swift in Sources */,
+				01C55990252D5AF7009BA5CB /* BookingDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
