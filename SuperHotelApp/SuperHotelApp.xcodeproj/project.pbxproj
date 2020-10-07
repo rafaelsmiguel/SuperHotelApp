@@ -29,6 +29,7 @@
 		01C559A5252D5D8B009BA5CB /* SHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C559A2252D5D8B009BA5CB /* SHButton.swift */; };
 		01C559A6252D5D8B009BA5CB /* SHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C559A3252D5D8B009BA5CB /* SHTextField.swift */; };
 		01C559A7252D5D8B009BA5CB /* FontsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C559A4252D5D8B009BA5CB /* FontsName.swift */; };
+		E7A893B5252E2BAA002C31F2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A893B4252E2BAA002C31F2 /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		01C559A2252D5D8B009BA5CB /* SHButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHButton.swift; sourceTree = "<group>"; };
 		01C559A3252D5D8B009BA5CB /* SHTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHTextField.swift; sourceTree = "<group>"; };
 		01C559A4252D5D8B009BA5CB /* FontsName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsName.swift; sourceTree = "<group>"; };
+		E7A893B4252E2BAA002C31F2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				01C55962252D4EFF009BA5CB /* Assets.xcassets */,
 				01C55964252D4EFF009BA5CB /* LaunchScreen.storyboard */,
 				01C55967252D4EFF009BA5CB /* Info.plist */,
+				E7A893B4252E2BAA002C31F2 /* Login.storyboard */,
 			);
 			path = SuperHotelApp;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			files = (
 				01C55966252D4EFF009BA5CB /* LaunchScreen.storyboard in Resources */,
 				01C5599F252D5CDD009BA5CB /* Lato-Bold.ttf in Resources */,
+				E7A893B5252E2BAA002C31F2 /* Login.storyboard in Resources */,
 				01C55963252D4EFF009BA5CB /* Assets.xcassets in Resources */,
 				01C559A0252D5CDD009BA5CB /* Lato-Light.ttf in Resources */,
 				01C55961252D4EFE009BA5CB /* Main.storyboard in Resources */,
