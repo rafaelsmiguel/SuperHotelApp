@@ -23,6 +23,12 @@
 		01C55990252D5AF7009BA5CB /* BookingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5598D252D5AF7009BA5CB /* BookingDetailViewController.swift */; };
 		01C55991252D5AF7009BA5CB /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5598E252D5AF7009BA5CB /* BookingViewController.swift */; };
 		01C55994252D5B0E009BA5CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55993252D5B0E009BA5CB /* LoginViewController.swift */; };
+		01C5599E252D5CDD009BA5CB /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01C5599B252D5CDD009BA5CB /* Lato-Regular.ttf */; };
+		01C5599F252D5CDD009BA5CB /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01C5599C252D5CDD009BA5CB /* Lato-Bold.ttf */; };
+		01C559A0252D5CDD009BA5CB /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01C5599D252D5CDD009BA5CB /* Lato-Light.ttf */; };
+		01C559A5252D5D8B009BA5CB /* SHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C559A2252D5D8B009BA5CB /* SHButton.swift */; };
+		01C559A6252D5D8B009BA5CB /* SHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C559A3252D5D8B009BA5CB /* SHTextField.swift */; };
+		01C559A7252D5D8B009BA5CB /* FontsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C559A4252D5D8B009BA5CB /* FontsName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +50,12 @@
 		01C5598D252D5AF7009BA5CB /* BookingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailViewController.swift; sourceTree = "<group>"; };
 		01C5598E252D5AF7009BA5CB /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		01C55993252D5B0E009BA5CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		01C5599B252D5CDD009BA5CB /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "../../../../../../../Downloads/Lato/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		01C5599C252D5CDD009BA5CB /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "../../../../../../../Downloads/Lato/Lato-Bold.ttf"; sourceTree = "<group>"; };
+		01C5599D252D5CDD009BA5CB /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "../../../../../../../Downloads/Lato/Lato-Light.ttf"; sourceTree = "<group>"; };
+		01C559A2252D5D8B009BA5CB /* SHButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHButton.swift; sourceTree = "<group>"; };
+		01C559A3252D5D8B009BA5CB /* SHTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHTextField.swift; sourceTree = "<group>"; };
+		01C559A4252D5D8B009BA5CB /* FontsName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +88,7 @@
 		01C55958252D4EFE009BA5CB /* SuperHotelApp */ = {
 			isa = PBXGroup;
 			children = (
+				01C55999252D5C67009BA5CB /* CustomLayout */,
 				01C5597B252D5A61009BA5CB /* Login */,
 				01C55971252D59C5009BA5CB /* Welcome */,
 				01C55970252D59A4009BA5CB /* Register */,
@@ -137,6 +150,27 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		01C55999252D5C67009BA5CB /* CustomLayout */ = {
+			isa = PBXGroup;
+			children = (
+				01C559A4252D5D8B009BA5CB /* FontsName.swift */,
+				01C559A2252D5D8B009BA5CB /* SHButton.swift */,
+				01C559A3252D5D8B009BA5CB /* SHTextField.swift */,
+				01C5599A252D5C76009BA5CB /* Font */,
+			);
+			path = CustomLayout;
+			sourceTree = "<group>";
+		};
+		01C5599A252D5C76009BA5CB /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				01C5599C252D5CDD009BA5CB /* Lato-Bold.ttf */,
+				01C5599D252D5CDD009BA5CB /* Lato-Light.ttf */,
+				01C5599B252D5CDD009BA5CB /* Lato-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,8 +229,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C55966252D4EFF009BA5CB /* LaunchScreen.storyboard in Resources */,
+				01C5599F252D5CDD009BA5CB /* Lato-Bold.ttf in Resources */,
 				01C55963252D4EFF009BA5CB /* Assets.xcassets in Resources */,
+				01C559A0252D5CDD009BA5CB /* Lato-Light.ttf in Resources */,
 				01C55961252D4EFE009BA5CB /* Main.storyboard in Resources */,
+				01C5599E252D5CDD009BA5CB /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,11 +248,14 @@
 				01C5598A252D5AEE009BA5CB /* HotelDetailViewController.swift in Sources */,
 				01C5595E252D4EFE009BA5CB /* ViewController.swift in Sources */,
 				01C5597E252D5AD0009BA5CB /* WelcomeViewController.swift in Sources */,
+				01C559A5252D5D8B009BA5CB /* SHButton.swift in Sources */,
+				01C559A7252D5D8B009BA5CB /* FontsName.swift in Sources */,
 				01C55983252D5AE3009BA5CB /* ProfileViewController.swift in Sources */,
 				01C55989252D5AEE009BA5CB /* SearchHotelViewController.swift in Sources */,
 				01C55984252D5AE3009BA5CB /* RegisterViewController.swift in Sources */,
 				01C5595A252D4EFE009BA5CB /* AppDelegate.swift in Sources */,
 				01C5595C252D4EFE009BA5CB /* SceneDelegate.swift in Sources */,
+				01C559A6252D5D8B009BA5CB /* SHTextField.swift in Sources */,
 				01C55985252D5AE3009BA5CB /* EditRegisterViewController.swift in Sources */,
 				01C55991252D5AF7009BA5CB /* BookingViewController.swift in Sources */,
 				01C55994252D5B0E009BA5CB /* LoginViewController.swift in Sources */,

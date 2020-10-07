@@ -1,0 +1,54 @@
+//
+//  SHTextField.swift
+//  SuperHotel
+//
+//  Created by Rafael Miguel on 05/10/20.
+//  Copyright © 2020 Rafael Miguel. All rights reserved.
+//
+
+import UIKit
+
+class SHTextField: UITextField {
+    
+    let padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0);
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder);
+        
+        setupControl();
+    }
+    
+    func setupControl()
+    {
+        super.borderStyle = .none
+        super.font = UIFont(name: FontsName.regular, size: 18)
+        super.backgroundColor = .white
+        super.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.31, alpha: 1)
+//        super.attributedPlaceholder = NSAttributedString(string: super.placeholder!,
+//                                                         attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): Estilo.Cores.cinzaClaro]))
+        super.borderStyle = .none
+        
+        super.layer.cornerRadius = 24
+        super.layer.borderWidth = 0
+        super.clipsToBounds = true
+        
+        //super.tintColor = Estilo.Cores.principal
+//        super.layer.borderColor = Estilo.Cores.cinzaBorda.cgColor
+        super.layer.masksToBounds = true
+        
+        super.autocapitalizationType = .sentences
+    }
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+    
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+}
