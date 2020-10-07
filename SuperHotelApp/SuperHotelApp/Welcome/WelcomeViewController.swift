@@ -26,8 +26,7 @@ class WelcomeViewController: UIViewController {
     
     @IBAction func goSignUpAction(_ sender: Any) {
         
-        performSegue(withIdentifier: SegueType.signSegue.rawValue, sender: self)
-        
+       
         
     }
     

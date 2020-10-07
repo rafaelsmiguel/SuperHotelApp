@@ -23,12 +23,12 @@
 		01C55990252D5AF7009BA5CB /* BookingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5598D252D5AF7009BA5CB /* BookingDetailViewController.swift */; };
 		01C55991252D5AF7009BA5CB /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5598E252D5AF7009BA5CB /* BookingViewController.swift */; };
 		01C55994252D5B0E009BA5CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55993252D5B0E009BA5CB /* LoginViewController.swift */; };
-		01C5599E252D5CDD009BA5CB /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01C5599B252D5CDD009BA5CB /* Lato-Regular.ttf */; };
-		01C5599F252D5CDD009BA5CB /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01C5599C252D5CDD009BA5CB /* Lato-Bold.ttf */; };
-		01C559A0252D5CDD009BA5CB /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01C5599D252D5CDD009BA5CB /* Lato-Light.ttf */; };
 		01C559A5252D5D8B009BA5CB /* SHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C559A2252D5D8B009BA5CB /* SHButton.swift */; };
 		01C559A6252D5D8B009BA5CB /* SHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C559A3252D5D8B009BA5CB /* SHTextField.swift */; };
 		01C559A7252D5D8B009BA5CB /* FontsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C559A4252D5D8B009BA5CB /* FontsName.swift */; };
+		E79F5889252E7B5C00C0C055 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79F588B252E7B5C00C0C055 /* Lato-Bold.ttf */; };
+		E79F588D252E7B6900C0C055 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79F588F252E7B6900C0C055 /* Lato-Light.ttf */; };
+		E79F5891252E7B7200C0C055 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79F5893252E7B7200C0C055 /* Lato-Regular.ttf */; };
 		E7A893B5252E2BAA002C31F2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A893B4252E2BAA002C31F2 /* Login.storyboard */; };
 		E7A893B8252E3312002C31F2 /* SegueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A893B7252E3312002C31F2 /* SegueType.swift */; };
 /* End PBXBuildFile section */
@@ -52,12 +52,12 @@
 		01C5598D252D5AF7009BA5CB /* BookingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailViewController.swift; sourceTree = "<group>"; };
 		01C5598E252D5AF7009BA5CB /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		01C55993252D5B0E009BA5CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		01C5599B252D5CDD009BA5CB /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "../../../../../../../Downloads/Lato/Lato-Regular.ttf"; sourceTree = "<group>"; };
-		01C5599C252D5CDD009BA5CB /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "../../../../../../../Downloads/Lato/Lato-Bold.ttf"; sourceTree = "<group>"; };
-		01C5599D252D5CDD009BA5CB /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "../../../../../../../Downloads/Lato/Lato-Light.ttf"; sourceTree = "<group>"; };
 		01C559A2252D5D8B009BA5CB /* SHButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHButton.swift; sourceTree = "<group>"; };
 		01C559A3252D5D8B009BA5CB /* SHTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHTextField.swift; sourceTree = "<group>"; };
 		01C559A4252D5D8B009BA5CB /* FontsName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsName.swift; sourceTree = "<group>"; };
+		E79F588A252E7B5C00C0C055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/Lato-Bold.ttf"; sourceTree = "<group>"; };
+		E79F588E252E7B6900C0C055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/Lato-Light.ttf"; sourceTree = "<group>"; };
+		E79F5892252E7B7200C0C055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		E7A893B4252E2BAA002C31F2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E7A893B7252E3312002C31F2 /* SegueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,9 +170,9 @@
 		01C5599A252D5C76009BA5CB /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				01C5599C252D5CDD009BA5CB /* Lato-Bold.ttf */,
-				01C5599D252D5CDD009BA5CB /* Lato-Light.ttf */,
-				01C5599B252D5CDD009BA5CB /* Lato-Regular.ttf */,
+				E79F588B252E7B5C00C0C055 /* Lato-Bold.ttf */,
+				E79F588F252E7B6900C0C055 /* Lato-Light.ttf */,
+				E79F5893252E7B7200C0C055 /* Lato-Regular.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -235,12 +235,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C55966252D4EFF009BA5CB /* LaunchScreen.storyboard in Resources */,
-				01C5599F252D5CDD009BA5CB /* Lato-Bold.ttf in Resources */,
+				E79F5889252E7B5C00C0C055 /* Lato-Bold.ttf in Resources */,
 				E7A893B5252E2BAA002C31F2 /* Login.storyboard in Resources */,
 				01C55963252D4EFF009BA5CB /* Assets.xcassets in Resources */,
-				01C559A0252D5CDD009BA5CB /* Lato-Light.ttf in Resources */,
+				E79F588D252E7B6900C0C055 /* Lato-Light.ttf in Resources */,
 				01C55961252D4EFE009BA5CB /* Main.storyboard in Resources */,
-				01C5599E252D5CDD009BA5CB /* Lato-Regular.ttf in Resources */,
+				E79F5891252E7B7200C0C055 /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +288,30 @@
 				01C55965252D4EFF009BA5CB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E79F588B252E7B5C00C0C055 /* Lato-Bold.ttf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E79F588A252E7B5C00C0C055 /* Base */,
+			);
+			name = "Lato-Bold.ttf";
+			sourceTree = "<group>";
+		};
+		E79F588F252E7B6900C0C055 /* Lato-Light.ttf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E79F588E252E7B6900C0C055 /* Base */,
+			);
+			name = "Lato-Light.ttf";
+			sourceTree = "<group>";
+		};
+		E79F5893252E7B7200C0C055 /* Lato-Regular.ttf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E79F5892252E7B7200C0C055 /* Base */,
+			);
+			name = "Lato-Regular.ttf";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
