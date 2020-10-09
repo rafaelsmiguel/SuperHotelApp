@@ -12,7 +12,6 @@
 		016857C82531208700867498 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016857C72531208700867498 /* Helper.swift */; };
 		01C5595A252D4EFE009BA5CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55959252D4EFE009BA5CB /* AppDelegate.swift */; };
 		01C5595C252D4EFE009BA5CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5595B252D4EFE009BA5CB /* SceneDelegate.swift */; };
-		01C5595E252D4EFE009BA5CB /* InicialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5595D252D4EFE009BA5CB /* InicialViewController.swift */; };
 		01C55961252D4EFE009BA5CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C5595F252D4EFE009BA5CB /* Main.storyboard */; };
 		01C55963252D4EFF009BA5CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C55962252D4EFF009BA5CB /* Assets.xcassets */; };
 		01C55966252D4EFF009BA5CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C55964252D4EFF009BA5CB /* LaunchScreen.storyboard */; };
@@ -46,7 +45,6 @@
 		01C55956252D4EFE009BA5CB /* SuperHotelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperHotelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C55959252D4EFE009BA5CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01C5595B252D4EFE009BA5CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		01C5595D252D4EFE009BA5CB /* InicialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicialViewController.swift; sourceTree = "<group>"; };
 		01C55960252D4EFE009BA5CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01C55962252D4EFF009BA5CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01C55965252D4EFF009BA5CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				01C5596E252D5995009BA5CB /* Booking */,
 				01C55959252D4EFE009BA5CB /* AppDelegate.swift */,
 				01C5595B252D4EFE009BA5CB /* SceneDelegate.swift */,
-				01C5595D252D4EFE009BA5CB /* InicialViewController.swift */,
 				01C5595F252D4EFE009BA5CB /* Main.storyboard */,
 				01C55962252D4EFF009BA5CB /* Assets.xcassets */,
 				01C55964252D4EFF009BA5CB /* LaunchScreen.storyboard */,
@@ -297,7 +294,6 @@
 				01C5598F252D5AF7009BA5CB /* BookingListViewController.swift in Sources */,
 				01C5598A252D5AEE009BA5CB /* HotelDetailVC.swift in Sources */,
 				01E7CA73252FF31E00A89D75 /* UIViewController.swift in Sources */,
-				01C5595E252D4EFE009BA5CB /* InicialViewController.swift in Sources */,
 				01C5597E252D5AD0009BA5CB /* WelcomeViewController.swift in Sources */,
 				01C559A5252D5D8B009BA5CB /* SHButton.swift in Sources */,
 				01C559A7252D5D8B009BA5CB /* FontsName.swift in Sources */,
