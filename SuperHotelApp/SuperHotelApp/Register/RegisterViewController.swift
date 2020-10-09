@@ -33,12 +33,18 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func backWelcomeTapAction(_ sender: Any) {
+        
+        
+        performSegue(withIdentifier: SegueType.backWelcomeSegue.rawValue, sender:self)
+        
     }
     
     @IBAction func signAction(_ sender: Any) {
     }
     
     @IBAction func miniLoginAction(_ sender: Any) {
+        
+        performSegue(withIdentifier: SegueType.toLoginfromRegister.rawValue, sender: self)
     }
     
     
