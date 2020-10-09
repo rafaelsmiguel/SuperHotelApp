@@ -17,6 +17,10 @@ class WelcomeViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
+        
+        self.backgroundImage.image = UIImage(named: "projetowelco")
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -26,11 +30,15 @@ class WelcomeViewController: UIViewController {
     
     @IBAction func goSignUpAction(_ sender: Any) {
         
+        performSegue(withIdentifier: SegueType.signSegue.rawValue, sender: self)
        
         
     }
     
     @IBAction func goLoginButton(_ sender: Any) {
+        
+        performSegue(withIdentifier: SegueType.loginSegue.rawValue, sender: self)
+        
     }
     
     

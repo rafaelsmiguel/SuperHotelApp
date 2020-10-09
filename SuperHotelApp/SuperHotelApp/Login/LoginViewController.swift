@@ -26,12 +26,18 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func welcoBackAction(_ sender: Any) {
+        
+        performSegue(withIdentifier: SegueType.backWelcoSegue.rawValue, sender: self)
+        
+        
     }
     
     @IBAction func loginAction(_ sender: Any) {
     }
     
     @IBAction func miniSignAction(_ sender: Any) {
+        
+        performSegue(withIdentifier: SegueType.toRegisterFromLogin.rawValue, sender: self)
     }
     
     /*
