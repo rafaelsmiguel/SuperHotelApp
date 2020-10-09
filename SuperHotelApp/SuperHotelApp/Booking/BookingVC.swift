@@ -1,5 +1,5 @@
 //
-//  HotelDetailViewController.swift
+//  BookingVC.swift
 //  SuperHotel
 //
 //  Created by Rafael Miguel on 21/09/20.
@@ -8,12 +8,26 @@
 
 import UIKit
 
-class HotelDetailViewController: UIViewController {
-
+class BookingVC: UIViewController {
+    
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var hotelLabel: UILabel!
+    @IBOutlet weak var stackViewStar: UIStackView!
+    @IBOutlet weak var stackViewFields: UIStackView!
+    @IBOutlet weak var checkinTextField: SHTextField!
+    @IBOutlet weak var checkoutTextField: SHTextField!
+    @IBOutlet weak var quantityTextFields: SHTextField!
+    @IBOutlet weak var confirmButton: SHButton_FilledGreen!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func tapConfirmButton(_ sender: SHButton_FilledGreen) {
     }
     
 
