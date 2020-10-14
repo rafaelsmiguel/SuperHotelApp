@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Search HotelVC-->
+        <!--Buscar-->
         <scene sceneID="fOV-qT-PhI">
             <objects>
                 <viewController storyboardIdentifier="SearchHotelVC" id="TWL-cK-RLh" customClass="SearchHotelVC" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylm-GW-0kc" userLabel="mainView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a cidade..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uDJ-vL-YJz" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
                                         <rect key="frame" x="15" y="10" width="384" height="48"/>
@@ -42,7 +42,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KSu-Gg-kx6">
-                                        <rect key="frame" x="0.0" y="108" width="414" height="710"/>
+                                        <rect key="frame" x="0.0" y="108" width="414" height="661"/>
                                     </mapView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
@@ -69,6 +69,7 @@
                             <constraint firstItem="Dsd-Cc-4jR" firstAttribute="trailing" secondItem="ylm-GW-0kc" secondAttribute="trailing" id="sa0-2c-3xJ"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Buscar" image="magnifyingglass" catalog="system" id="LLy-my-cdN"/>
                     <navigationItem key="navigationItem" id="on8-hR-Tb0"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
@@ -80,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gil-Gc-5Uc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1866.6666666666667" y="185.49107142857142"/>
+            <point key="canvasLocation" x="2776.811594202899" y="185.49107142857142"/>
         </scene>
         <!--Hotel DetailVC-->
         <scene sceneID="m9a-lK-hRc">
@@ -230,18 +231,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K8K-n0-Ezw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2626.0869565217395" y="184.82142857142856"/>
+            <point key="canvasLocation" x="3536.2318840579715" y="184.82142857142856"/>
         </scene>
         <!--BookingVC-->
         <scene sceneID="K0s-Ai-SUB">
             <objects>
                 <viewController storyboardIdentifier="BookingVC" id="igp-W4-yMU" customClass="BookingVC" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nrc-MX-aIN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jym-90-oAK" userLabel="mainView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotel Paulinea" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGr-Vw-jvA">
                                         <rect key="frame" x="20" y="20" width="374" height="34"/>
@@ -292,7 +293,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="i6t-ZX-ed3">
                                         <rect key="frame" x="20" y="130" width="374" height="174"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a cidade..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hK-kX-CRk" userLabel="checkinTextField" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Check-in" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hK-kX-CRk" userLabel="checkinTextField" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="nXM-Zm-5T2"/>
@@ -300,7 +301,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a cidade..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f2H-Yu-g7A" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Check-out" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f2H-Yu-g7A" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="63" width="374" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="vFk-b6-ZUe"/>
@@ -308,7 +309,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a cidade..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bDP-Iv-b4J" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantas hóspedes?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bDP-Iv-b4J" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="126" width="374" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="RUb-ZR-llR"/>
@@ -319,7 +320,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZZ-va-DAc" customClass="SHButton_FilledGreen" customModule="SuperHotelApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="652" width="374" height="48"/>
+                                        <rect key="frame" x="20" y="701" width="374" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="LZo-sT-BwV"/>
                                         </constraints>
@@ -355,7 +356,7 @@
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="checkinTextField" destination="4hK-kX-CRk" id="5YB-ci-ZHn"/>
                         <outlet property="checkoutTextField" destination="f2H-Yu-g7A" id="TNa-X7-gzo"/>
@@ -369,7 +370,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0nB-tG-F0L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3407.2463768115945" y="184.82142857142856"/>
+            <point key="canvasLocation" x="4317.391304347826" y="184.82142857142856"/>
         </scene>
         <!--Main Navigation Contoller-->
         <scene sceneID="vh2-n8-YSR">
@@ -382,16 +383,35 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="TWL-cK-RLh" kind="relationship" relationship="rootViewController" id="v10-qJ-My9"/>
+                        <segue destination="fhb-4V-aMB" kind="relationship" relationship="rootViewController" id="v10-qJ-My9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PA5-vK-RgP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="956.52173913043487" y="185.49107142857142"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="CIy-vc-LHy">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="fhb-4V-aMB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="nWY-jJ-1Al"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LC9-nX-ia5">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="TWL-cK-RLh" kind="relationship" relationship="viewControllers" id="Nai-Ui-MJ8"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ssc-cM-A2o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1866.6666666666667" y="185.49107142857142"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Raster" width="448" height="512"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

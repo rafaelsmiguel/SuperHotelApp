@@ -66,6 +66,15 @@ class HotelDetailVC: UIViewController {
     }
     
     @IBAction func tapBookingButton(_ sender: SHButton_FilledGreen) {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
+        let bookingViewController = storyBoard.instantiateViewController(withIdentifier: "BookingVC") as! BookingVC
+        bookingViewController.modalPresentationStyle = .fullScreen
+        bookingViewController.navigationController?.navigationBar.isHidden = false
+        bookingViewController.hotel = self.hotel
+        self.present(bookingViewController, animated: true, completion: nil)
+        
+        
     }
 
 }
