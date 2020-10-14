@@ -43,13 +43,12 @@ class ProfileViewController: UIViewController {
         
 //        let alterarCadastro = AlterarCadastroVC()
        
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
         let navigationViewController = storyBoard.instantiateViewController(withIdentifier:"EditRegisterViewController") as! EditRegisterViewController
         navigationViewController.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(navigationViewController, animated: true)
 
         
-                //        searchViewController.detalheController = DetalheController(carro: self.controller.sorteio())
 
                 //        self.navigationController?.pushViewController(searchViewController, animated: true)
 //                        navigationViewController.modalPresentationS
