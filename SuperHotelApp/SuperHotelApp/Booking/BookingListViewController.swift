@@ -11,7 +11,7 @@ class BookingListViewController: UIViewController {
     
     @IBOutlet weak var bookingCollectionView: UICollectionView!
     
-    var arrayBookings:[Booking] = []
+    var arrayBookings:[BookingModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +28,11 @@ class BookingListViewController: UIViewController {
         
         
         self.arrayBookings = [
-            Booking(hotelImagem: "hotel1.jpg", hotelName: "Hotel Marriot", periodOfStay: "De 25 de maio até 27 de maio", numberOfPeople: "3", valueByNight: "$199", amount: "$597", address: "Avenida Raimundo 287 - Pirituba - São Paulo - SP", latitude: "-23.560640", longitude: "-46.650570"),
-            Booking(hotelImagem: "hotel2.jpg", hotelName: "Hotel Lorem", periodOfStay: "De 25 de maio até 27 de maio", numberOfPeople: "3", valueByNight: "$199", amount: "$597", address: "Avenida Raimundo 287 - Pirituba - São Paulo - SP", latitude: "-23.560640", longitude: "-46.650570"),
-            Booking(hotelImagem: "hotel3.jpg", hotelName: "Hotel Marriot", periodOfStay: "De 25 de maio até 27 de maio", numberOfPeople: "3", valueByNight: "$199", amount: "$597", address: "Avenida Raimundo 287 - Pirituba - São Paulo - SP", latitude: "-23.560640", longitude: "-46.650570"),
-            Booking(hotelImagem: "hotel4.jpg", hotelName: "Hotel Ipsum", periodOfStay: "De 25 de maio até 27 de maio", numberOfPeople: "3", valueByNight: "$199", amount: "$597", address: "Avenida Raimundo 287 - Pirituba - São Paulo - SP", latitude: "-23.560640", longitude: "-46.650570"),
-            Booking(hotelImagem: "hotel5.jpg", hotelName: "Hotel Dulorem", periodOfStay: "De 25 de maio até 27 de maio", numberOfPeople: "3", valueByNight: "$199", amount: "$597", address: "Avenida Raimundo 287 - Pirituba - São Paulo - SP", latitude: "-23.560640", longitude: "-46.650570"),]
+            BookingModel(hotelImagem: "hotel1.jpg", hotelName: "Hotel Marriot", periodOfStay: "De 25 de maio até 27 de maio", numberOfPeople: "3", valueByNight: "$199", amount: "$597", address: "Avenida Raimundo 287 - Pirituba - São Paulo - SP", latitude: "-23.560640", longitude: "-46.650570"),
+            BookingModel(hotelImagem: "hotel2.jpg", hotelName: "Hotel Lorem", periodOfStay: "De 25 de maio até 27 de maio", numberOfPeople: "3", valueByNight: "$199", amount: "$597", address: "Avenida Raimundo 287 - Pirituba - São Paulo - SP", latitude: "-23.560640", longitude: "-46.650570"),
+            BookingModel(hotelImagem: "hotel3.jpg", hotelName: "Hotel Marriot", periodOfStay: "De 25 de maio até 27 de maio", numberOfPeople: "3", valueByNight: "$199", amount: "$597", address: "Avenida Raimundo 287 - Pirituba - São Paulo - SP", latitude: "-23.560640", longitude: "-46.650570"),
+            BookingModel(hotelImagem: "hotel4.jpg", hotelName: "Hotel Ipsum", periodOfStay: "De 25 de maio até 27 de maio", numberOfPeople: "3", valueByNight: "$199", amount: "$597", address: "Avenida Raimundo 287 - Pirituba - São Paulo - SP", latitude: "-23.560640", longitude: "-46.650570"),
+            BookingModel(hotelImagem: "hotel5.jpg", hotelName: "Hotel Dulorem", periodOfStay: "De 25 de maio até 27 de maio", numberOfPeople: "3", valueByNight: "$199", amount: "$597", address: "Avenida Raimundo 287 - Pirituba - São Paulo - SP", latitude: "-23.560640", longitude: "-46.650570"),]
         
         
     }
@@ -84,7 +84,7 @@ extension BookingListViewController: actionCollectionViewCellDelegate {
         
         bookingViewController.modalPresentationStyle = .fullScreen
         //      bookingViewController.navigationController?.navigationBar.isHidden = false
-        bookingViewController.booking = sender as! Booking
+        bookingViewController.booking = sender as! BookingModel
         self.present(bookingViewController, animated: true, completion: nil)
         
     }

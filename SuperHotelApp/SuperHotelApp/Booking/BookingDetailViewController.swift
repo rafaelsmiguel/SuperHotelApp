@@ -20,7 +20,7 @@ class BookingDetailViewController: UIViewController {
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
-    var booking: Booking?
+    var booking: BookingModel?
     
     
     override func viewDidLoad() {
@@ -60,7 +60,7 @@ class BookingDetailViewController: UIViewController {
     }
     
     
-    func setupHotelLocation(booking: Booking) {
+    func setupHotelLocation(booking: BookingModel) {
         
         let annotation = MKPointAnnotation()
         

@@ -33,9 +33,9 @@
 		01E7CA73252FF31E00A89D75 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7CA72252FF31E00A89D75 /* UIViewController.swift */; };
 		01E7CA77252FF74600A89D75 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7CA76252FF74600A89D75 /* HotelModel.swift */; };
 		01E7CA7A252FF82600A89D75 /* MockHotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7CA79252FF82600A89D75 /* MockHotel.swift */; };
-		544803192536B41C008D5C59 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544803182536B41C008D5C59 /* Booking.swift */; };
 		544803242536B6D5008D5C59 /* BookingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544803222536B6D5008D5C59 /* BookingCollectionViewCell.swift */; };
 		544803252536B6D5008D5C59 /* BookingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 544803232536B6D5008D5C59 /* BookingCollectionViewCell.xib */; };
+		54D4886E2537AEEC00B7658B /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D4886D2537AEEC00B7658B /* BookingModel.swift */; };
 		E7162536253664CD000F62D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7162535253664CD000F62D1 /* User.swift */; };
 		E79F5889252E7B5C00C0C055 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79F588B252E7B5C00C0C055 /* Lato-Bold.ttf */; };
 		E79F588D252E7B6900C0C055 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79F588F252E7B6900C0C055 /* Lato-Light.ttf */; };
@@ -74,10 +74,10 @@
 		01E7CA72252FF31E00A89D75 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		01E7CA76252FF74600A89D75 /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
 		01E7CA79252FF82600A89D75 /* MockHotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHotel.swift; sourceTree = "<group>"; };
-		544803182536B41C008D5C59 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		544803222536B6D5008D5C59 /* BookingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingCollectionViewCell.swift; sourceTree = "<group>"; };
 		544803232536B6D5008D5C59 /* BookingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingCollectionViewCell.xib; sourceTree = "<group>"; };
 		54C321712536D8E300FAC87F /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Black.ttf"; path = "../../../../../Downloads/Lato/Lato-Black.ttf"; sourceTree = "<group>"; };
+		54D4886D2537AEEC00B7658B /* BookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
 		E7162535253664CD000F62D1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E79F588A252E7B5C00C0C055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/Lato-Bold.ttf"; sourceTree = "<group>"; };
 		E79F588E252E7B6900C0C055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/Lato-Light.ttf"; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 		544803172536B40A008D5C59 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				544803182536B41C008D5C59 /* Booking.swift */,
+				54D4886D2537AEEC00B7658B /* BookingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -326,8 +326,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C5598F252D5AF7009BA5CB /* BookingListViewController.swift in Sources */,
-				544803192536B41C008D5C59 /* Booking.swift in Sources */,
 				01C5598A252D5AEE009BA5CB /* HotelDetailVC.swift in Sources */,
+				54D4886E2537AEEC00B7658B /* BookingModel.swift in Sources */,
 				01E7CA73252FF31E00A89D75 /* UIViewController.swift in Sources */,
 				01C5597E252D5AD0009BA5CB /* WelcomeViewController.swift in Sources */,
 				01C559A5252D5D8B009BA5CB /* SHButton.swift in Sources */,

@@ -20,7 +20,7 @@ class BookingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var periodOfStayLabel: UILabel!
     
     var delegate: actionCollectionViewCellDelegate?
-    var booking: Booking?
+    var booking: BookingModel?
     
     
     override func awakeFromNib() {
