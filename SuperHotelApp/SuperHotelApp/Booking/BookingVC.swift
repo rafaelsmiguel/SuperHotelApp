@@ -19,26 +19,44 @@ class BookingVC: UIViewController {
     @IBOutlet weak var quantityTextFields: SHTextField!
     @IBOutlet weak var confirmButton: SHButton_FilledGreen!
     
+    var hotel: HotelModel?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.isNavigationBarHidden = false
         // Do any additional setup after loading the view.
     }
     
     
     @IBAction func tapConfirmButton(_ sender: SHButton_FilledGreen) {
+        
+        if checkinTextField.text == "" {
+            showToast(message: "Check-in deve ser preenchido.")
+            return
+        }
+        
+        if checkoutTextField.text == "" {
+            showToast(message: "Check-out deve ser preenchido.")
+            return
+        }
+        
+        if quantityTextFields.text == "" {
+            showToast(message: "Quantidade de hóspedes deve ser preenchido.")
+            return
+        }
+        
+        let refreshAlert = UIAlertController(title: "Reserva Efetuada", message: "Sua reserva foi efetuada com sucesso!", preferredStyle: UIAlertController.Style.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Fechar", style: .default, handler: { (action: UIAlertAction!) in
+            
+            self.dismiss(animated: true, completion: nil)
+            
+        }))
+        
+        self.present(refreshAlert, animated: true)
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
