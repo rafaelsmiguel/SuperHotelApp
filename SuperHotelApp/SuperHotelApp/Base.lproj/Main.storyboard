@@ -260,7 +260,7 @@
         <!--Login View Controller-->
         <scene sceneID="GBF-T7-2ht">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="6MZ-9j-Ffp" customClass="LoginViewController" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6MZ-9j-Ffp" customClass="LoginViewController" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wfi-9P-LlG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,7 +289,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVa-tv-iUW" customClass="SHButton_FilledGreen" customModule="SuperHotelApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="701" width="374" height="42"/>
-                                <color key="backgroundColor" red="0.33929568529999998" green="0.8244429231" blue="0.76258462670000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.3692988753" green="0.84543985129999999" blue="0.78776746990000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="IMd-uY-LHW"/>
                                 </constraints>
@@ -383,7 +383,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="wJl-eP-Uf4"/>
-        <segue reference="cDT-hV-9Ue"/>
+        <segue reference="LUd-If-zoD"/>
         <segue reference="U7T-u5-HSs"/>
     </inferredMetricsTieBreakers>
     <resources>

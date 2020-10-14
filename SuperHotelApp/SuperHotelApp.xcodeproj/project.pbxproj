@@ -31,11 +31,13 @@
 		01E7CA73252FF31E00A89D75 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7CA72252FF31E00A89D75 /* UIViewController.swift */; };
 		01E7CA77252FF74600A89D75 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7CA76252FF74600A89D75 /* HotelModel.swift */; };
 		01E7CA7A252FF82600A89D75 /* MockHotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7CA79252FF82600A89D75 /* MockHotel.swift */; };
+		E7162536253664CD000F62D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7162535253664CD000F62D1 /* User.swift */; };
 		E79F5889252E7B5C00C0C055 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79F588B252E7B5C00C0C055 /* Lato-Bold.ttf */; };
 		E79F588D252E7B6900C0C055 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79F588F252E7B6900C0C055 /* Lato-Light.ttf */; };
 		E79F5891252E7B7200C0C055 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79F5893252E7B7200C0C055 /* Lato-Regular.ttf */; };
 		E7A893B5252E2BAA002C31F2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A893B4252E2BAA002C31F2 /* Login.storyboard */; };
 		E7A893B8252E3312002C31F2 /* SegueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A893B7252E3312002C31F2 /* SegueType.swift */; };
+		E7ED757425361B300071697D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED757325361B300071697D /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,11 +67,13 @@
 		01E7CA72252FF31E00A89D75 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		01E7CA76252FF74600A89D75 /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
 		01E7CA79252FF82600A89D75 /* MockHotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHotel.swift; sourceTree = "<group>"; };
+		E7162535253664CD000F62D1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E79F588A252E7B5C00C0C055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/Lato-Bold.ttf"; sourceTree = "<group>"; };
 		E79F588E252E7B6900C0C055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/Lato-Light.ttf"; sourceTree = "<group>"; };
 		E79F5892252E7B7200C0C055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		E7A893B4252E2BAA002C31F2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E7A893B7252E3312002C31F2 /* SegueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueType.swift; sourceTree = "<group>"; };
+		E7ED757325361B300071697D /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,7 @@
 				01C55982252D5AE3009BA5CB /* EditRegisterViewController.swift */,
 				01C55980252D5AE3009BA5CB /* ProfileViewController.swift */,
 				01C55981252D5AE3009BA5CB /* RegisterViewController.swift */,
+				E7162535253664CD000F62D1 /* User.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				01C55993252D5B0E009BA5CB /* LoginViewController.swift */,
+				E7ED757325361B300071697D /* LoginController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -302,6 +308,7 @@
 				01E7CA77252FF74600A89D75 /* HotelModel.swift in Sources */,
 				01C55989252D5AEE009BA5CB /* SearchHotelVC.swift in Sources */,
 				016857C82531208700867498 /* Helper.swift in Sources */,
+				E7ED757425361B300071697D /* LoginController.swift in Sources */,
 				01C55984252D5AE3009BA5CB /* RegisterViewController.swift in Sources */,
 				01C5595A252D4EFE009BA5CB /* AppDelegate.swift in Sources */,
 				01C5595C252D4EFE009BA5CB /* SceneDelegate.swift in Sources */,
@@ -312,6 +319,7 @@
 				016857C325311A2300867498 /* MainNavigationController.swift in Sources */,
 				01C55994252D5B0E009BA5CB /* LoginViewController.swift in Sources */,
 				01C55990252D5AF7009BA5CB /* BookingDetailViewController.swift in Sources */,
+				E7162536253664CD000F62D1 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    
+    
+    let controller:LoginController = LoginController()
+    var loginArray:[User] = []
+    
     @IBOutlet weak var welcoBackButton: UIButton!
     @IBOutlet weak var bigLoginLabel: UILabel!
     @IBOutlet weak var emailLoginTextField: UITextField!
@@ -18,8 +23,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var alreadyNotLabel: UILabel!
     @IBOutlet weak var miniSignButton: UIButton!
     
+  
 
     override func viewDidLoad() {
+        
+        
+       
+        self.passLoginTextField.delegate = self
+        self.isEnable(bool: false)
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -28,11 +40,26 @@ class LoginViewController: UIViewController {
     @IBAction func welcoBackAction(_ sender: Any) {
         
         performSegue(withIdentifier: SegueType.backWelcoSegue.rawValue, sender: self)
-        
-        
     }
     
     @IBAction func loginAction(_ sender: Any) {
+        
+        if self.emailLoginTextField.text == loginArray[0].email && self.passLoginTextField.text == loginArray[0].password{
+        
+        self.clearFields()
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
+                        let navigationViewController = storyBoard.instantiateViewController(withIdentifier: "MainNavigationContoller") as! MainNavigationContoller
+                       navigationViewController.modalPresentationStyle = .fullScreen
+                        self.present(navigationViewController, animated: true, completion: nil)
+                
+     
+        
+        print(self.loginArray.count)
+    
+        }else{
+            showToast(message: "Conta Inexistente",showTop: true)
+            
+        }
     }
     
     @IBAction func miniSignAction(_ sender: Any) {
@@ -40,14 +67,50 @@ class LoginViewController: UIViewController {
         performSegue(withIdentifier: SegueType.toRegisterFromLogin.rawValue, sender: self)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        
+        
     }
-    */
-
+    
+    
+    func clearFields(){
+        
+        self.emailLoginTextField.text = nil
+        self.passLoginTextField.text = nil
+    }
+    
+    func isEnable(bool:Bool){
+        
+        if bool == true{
+            
+            self.loginButton.isEnabled = true
+        }else{
+            
+            self.loginButton.isEnabled = false
+            
+        }
+    
+    // MARK: - Navigation
 }
+}
+
+extension LoginViewController: UITextFieldDelegate{
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == emailLoginTextField{
+            
+            self.passLoginTextField.becomeFirstResponder()
+        }else{
+            self.passLoginTextField.resignFirstResponder()
+            self.isEnable(bool: true)
+        }
+        return true
+    }
+    }
+    
+    
+    
+
