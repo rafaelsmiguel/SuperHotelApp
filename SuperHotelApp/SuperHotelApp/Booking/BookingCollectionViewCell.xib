@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Black.ttf">
+            <string>Lato-Black</string>
+        </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BookingCollectionViewCell" customModule="SuperHotelApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="284"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="284"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y7A-70-Gl9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="PST-vK-AaH"/>
+                            <constraint firstAttribute="width" constant="414" id="hfx-FP-fYd"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruG-Ga-vP9">
+                        <rect key="frame" x="20" y="210" width="374" height="31"/>
+                        <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="26"/>
+                        <color key="textColor" red="0.33725490200000002" green="0.82352941180000006" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbQ-NT-D7H">
+                        <rect key="frame" x="20" y="241" width="374" height="20.5"/>
+                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                        <color key="textColor" red="0.55294117649999996" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="y7A-70-Gl9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="00Q-6A-RV8"/>
+                <constraint firstItem="ruG-Ga-vP9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="3Eu-aa-pxI"/>
+                <constraint firstAttribute="trailing" secondItem="ruG-Ga-vP9" secondAttribute="trailing" constant="20" id="7qb-jh-SWu"/>
+                <constraint firstItem="rbQ-NT-D7H" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="CkP-AH-hod"/>
+                <constraint firstAttribute="trailing" secondItem="rbQ-NT-D7H" secondAttribute="trailing" constant="20" id="Edv-XS-BYX"/>
+                <constraint firstItem="y7A-70-Gl9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Nbx-Em-mN0"/>
+                <constraint firstAttribute="trailing" secondItem="y7A-70-Gl9" secondAttribute="trailing" id="Qcd-5L-rmI"/>
+                <constraint firstItem="ruG-Ga-vP9" firstAttribute="top" secondItem="y7A-70-Gl9" secondAttribute="bottom" constant="10" id="Rzb-oM-fGv"/>
+                <constraint firstAttribute="bottom" secondItem="rbQ-NT-D7H" secondAttribute="bottom" constant="22.5" id="VHW-1x-fhi"/>
+                <constraint firstItem="rbQ-NT-D7H" firstAttribute="top" secondItem="ruG-Ga-vP9" secondAttribute="bottom" id="jKb-NR-VMP"/>
+            </constraints>
+            <connections>
+                <outlet property="hotelImageView" destination="y7A-70-Gl9" id="zTo-dC-6Qb"/>
+                <outlet property="hotelNameLabel" destination="ruG-Ga-vP9" id="Roj-Ta-Px2"/>
+                <outlet property="periodOfStayLabel" destination="rbQ-NT-D7H" id="3jr-kq-SHy"/>
+            </connections>
+            <point key="canvasLocation" x="-349.27536231884062" y="105.80357142857143"/>
+        </collectionViewCell>
+    </objects>
+</document>

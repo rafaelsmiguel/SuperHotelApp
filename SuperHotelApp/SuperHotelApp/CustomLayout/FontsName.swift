@@ -13,4 +13,5 @@ struct FontsName {
     static let light = "Lato-Light"
     static let regular = "Lato-Regular"
     static let bold = "Lato-Bold"
+    static let black = "Lato-Black"
 }

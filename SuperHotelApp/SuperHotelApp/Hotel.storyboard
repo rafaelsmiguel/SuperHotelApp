@@ -380,6 +380,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ngk-Ex-xXG">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="19"/>
+                            <color key="textColor" red="0.33725490200000002" green="0.82352941180000006" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -401,6 +406,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.33725490200000002" green="0.82352941180000006" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="TWL-cK-RLh" kind="relationship" relationship="viewControllers" id="Nai-Ui-MJ8"/>
@@ -412,10 +418,10 @@
             </objects>
             <point key="canvasLocation" x="1866.6666666666667" y="185.49107142857142"/>
         </scene>
-        <!--BookingDetailViewController-->
+        <!--BookingListViewController-->
         <scene sceneID="NAY-O7-eKk">
             <objects>
-                <viewControllerPlaceholder storyboardName="Booking" referencedIdentifier="BookingDetailViewController" id="3vr-nd-fTj" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Booking" referencedIdentifier="BookingListViewController" id="3vr-nd-fTj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="dQm-EN-Rzc"/>
                     <navigationItem key="navigationItem" id="xkX-ML-veG"/>
                 </viewControllerPlaceholder>
