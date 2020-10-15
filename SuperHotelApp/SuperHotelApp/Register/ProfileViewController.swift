@@ -38,6 +38,19 @@ class ProfileViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavBar()
+    }
+    
+    
+    func setupNavBar() {
+        let navigationBar = self.parent?.navigationItem
+        navigationBar?.title = "Perfil"
+    }
+    
+    
 
     @IBAction func editProfileButton () {
         print ("edit profile tapped")
