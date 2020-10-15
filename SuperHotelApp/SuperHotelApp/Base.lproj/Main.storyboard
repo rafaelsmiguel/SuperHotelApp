@@ -293,7 +293,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="IMd-uY-LHW"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Entrar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
