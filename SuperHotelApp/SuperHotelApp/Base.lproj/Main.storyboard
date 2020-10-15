@@ -339,7 +339,7 @@
                                             <constraint firstAttribute="height" constant="48" id="spe-4t-3nu"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -383,8 +383,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="wJl-eP-Uf4"/>
-        <segue reference="LUd-If-zoD"/>
-        <segue reference="zIb-72-tZV"/>
+        <segue reference="cDT-hV-9Ue"/>
+        <segue reference="U7T-u5-HSs"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
