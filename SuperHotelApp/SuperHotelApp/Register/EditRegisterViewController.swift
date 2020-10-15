@@ -17,6 +17,8 @@ class EditRegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     
+    let editDatePicker = UIDatePicker()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,10 @@ class EditRegisterViewController: UIViewController {
         self.nascimentoTextField.delegate = self
         self.emailTextField.delegate = self
         self.senhaTextField.delegate = self
+        
+        createDatePicker()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
 
         // Do any additional setup after loading the view.
     }
@@ -39,6 +45,17 @@ class EditRegisterViewController: UIViewController {
     @IBAction func cancelEditProfileButton () {
         
         print ("cancel edit profile tapped")
+    }
+    
+    func createDatePicker () {
+        let editToolBar = UIToolbar()
+        editToolBar.sizeToFit()
+        
+        
+        nascimentoTextField.inputAccessoryView = editToolBar
+        nascimentoTextField.inputView = editDatePicker
+        editDatePicker.preferredDatePickerStyle = .wheels
+        
     }
     
 }
