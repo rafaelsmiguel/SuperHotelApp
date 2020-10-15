@@ -31,8 +31,6 @@ class EditRegisterViewController: UIViewController {
         self.senhaTextField.delegate = self
         
         createDatePicker()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
 
         // Do any additional setup after loading the view.
     }

@@ -42,8 +42,6 @@ class ProfileViewController: UIViewController {
     @IBAction func editProfileButton () {
         print ("edit profile tapped")
         
-//        let alterarCadastro = AlterarCadastroVC()
-       
         let storyBoard: UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
         let navigationViewController = storyBoard.instantiateViewController(withIdentifier:"EditRegisterViewController") as! EditRegisterViewController
         navigationViewController.modalPresentationStyle = .fullScreen
@@ -59,7 +57,22 @@ class ProfileViewController: UIViewController {
     
     @IBAction func exitButton () {
         print ("exit tapped")
+        exitShowAlert()
         
+    }
+    
+    func exitShowAlert() {
+        let alert = UIAlertController(title: "Alerta", message: "Deseja realmente sair do aplicativo?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Não", style: .cancel, handler: {action in
+            print("Não tapped")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Sim", style: .default, handler: {action in
+            print("Sim tapped")
+        }))
+        
+        present(alert, animated: true)
     }
 
 }
