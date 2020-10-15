@@ -26,11 +26,20 @@ class SearchHotelVC: UIViewController {
         setupTextField()
         
         mapView.delegate = self
-        // Do any additional setup after loading the view.
-
+        
+        resultLabel.isHidden = true
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavBar()
     }
  
-    
+    func setupNavBar() {
+        let navigationBar = self.parent?.navigationItem
+        navigationBar?.title = "Buscar"
+        
+    }
 
     func setupTextField() {
             
@@ -70,7 +79,9 @@ class SearchHotelVC: UIViewController {
                 mapView.setRegion(region, animated: true)
             }
             
+            resultLabel.isHidden = false
             resultLabel.text = "\(listHotel.count) Hotéis encontrados!"
+            
         } else {
             self.showToast(message: "Não encontramos hotéis para a cidade informada, tente novamente em outra cidade.",showTop: true)
             return
@@ -79,12 +90,19 @@ class SearchHotelVC: UIViewController {
 
     @IBAction func refresh(_ sender: Any) {
         
+        fecharTeclado(searchTextField)
+        
         if searchTextField.text?.count == 0 {
-            self.showToast(message: "Para buscar um hotel é necessário preencher a cidade de destino.")
+            self.showToast(message: "Para buscar um hotel é necessário preencher a cidade de destino.",showTop: true)
             return
         }
         
         setPins()
+    }
+    
+    @IBAction func fecharTeclado(_ sender: UITextField) {
+        
+        searchTextField.resignFirstResponder()
     }
 }
 

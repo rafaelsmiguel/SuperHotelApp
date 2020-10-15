@@ -40,6 +40,7 @@ class HotelDetailVC: UIViewController {
             
             self.valueLabel.text = Helper.transformToCurrency(value: hotel.valueByNight ?? 0)
             self.addressLabel.text = hotel.address
+            self.imageViewHotel.image = UIImage(named: hotel.image ?? "")
             
             setupHotelLocation(hotel: hotel)
         }

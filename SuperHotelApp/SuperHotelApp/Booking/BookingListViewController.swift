@@ -17,10 +17,6 @@ class BookingListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        setupNavBar()
-        
-        
-        
         self.bookingCollectionView.delegate = self
         self.bookingCollectionView.dataSource = self
         
@@ -37,11 +33,14 @@ class BookingListViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavBar()
+    }
+    
     
     func setupNavBar() {
         let navigationBar = self.parent?.navigationItem
         navigationBar?.title = "Reservas"
-        
     }
     
     
