@@ -48,17 +48,13 @@ class ProfileViewController: UIViewController {
         navigationController?.pushViewController(navigationViewController, animated: true)
         //navigationViewController.title = "Alterar Cadastro"
         
-
-                //        self.navigationController?.pushViewController(searchViewController, animated: true)
-//                        navigationViewController.modalPresentationS
-        
         
     }
     
     @IBAction func exitButton () {
         print ("exit tapped")
         exitShowAlert()
-        
+//        dismiss(animated: true, completion: nil)
     }
     
     func exitShowAlert() {
