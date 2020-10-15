@@ -18,7 +18,7 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        
+        self.logoImage.image = UIImage(named: "logo")
         self.backgroundImage.image = UIImage(named: "projetowelco")
         
         super.viewDidLoad()

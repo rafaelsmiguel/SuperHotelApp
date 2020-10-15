@@ -84,7 +84,7 @@ class RegisterViewController: UIViewController {
         print("Registro Efetuado")
         print(user[0].email ?? "")
         print(user[0].password ?? "")
-        
+            self.clearAllFields()
         }else{
             showToast(message: "Senhas não conferem",showTop: true)
             
@@ -124,6 +124,18 @@ class RegisterViewController: UIViewController {
       
       
         
+        
+    }
+    
+    func clearAllFields() {
+        
+        self.registerNameTextField.text = nil
+        self.fromTextField.text = nil
+        self.genreTextField.text = nil
+        self.emailTextField.text = nil
+        self.birthTextField.text = nil
+        self.passTextField.text = nil
+        self.confirmPassTextField.text = nil
         
     }
     

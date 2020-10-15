@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
     
     
     let controller:LoginController = LoginController()
-    var loginArray:[User] = []
+    var loginArray:[User] = [User(name: "", from: "", genre: "", email: "", birth: "", password: "", confirm: "")]
     
     @IBOutlet weak var welcoBackButton: UIButton!
     @IBOutlet weak var bigLoginLabel: UILabel!
@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         
         
-       
+        self.emailLoginTextField.delegate = self
         self.passLoginTextField.delegate = self
         self.isEnable(bool: false)
         
