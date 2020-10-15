@@ -9,9 +9,24 @@
 import UIKit
 
 class EditRegisterViewController: UIViewController {
+    
+    @IBOutlet weak var nomeTextField: UITextField!
+    @IBOutlet weak var nacionalidadeTextField: UITextField!
+    @IBOutlet weak var sexoTextField: UITextField!
+    @IBOutlet weak var nascimentoTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var senhaTextField: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.nomeTextField.delegate = self
+        self.nacionalidadeTextField.delegate = self
+        self.sexoTextField.delegate = self
+        self.nascimentoTextField.delegate = self
+        self.emailTextField.delegate = self
+        self.senhaTextField.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -28,3 +43,15 @@ class EditRegisterViewController: UIViewController {
     
 }
 
+
+extension EditRegisterViewController:UITextFieldDelegate {
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
+}

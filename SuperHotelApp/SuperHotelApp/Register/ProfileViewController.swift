@@ -31,7 +31,8 @@ class ProfileViewController: UIViewController {
         emailLabel?.text = profileArray[0].email
         senhaLabel?.text = profileArray[0].senha
         
-        title = "Perfil"
+        
+        
         /*self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(displayP3Red: 245.0/255.0, green: 246.0/255.0, blue: 247.0/255.0, alpha: 1.0)]*/
         
         
@@ -47,7 +48,7 @@ class ProfileViewController: UIViewController {
         let navigationViewController = storyBoard.instantiateViewController(withIdentifier:"EditRegisterViewController") as! EditRegisterViewController
         navigationViewController.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(navigationViewController, animated: true)
-
+        //navigationViewController.title = "Alterar Cadastro"
         
 
                 //        self.navigationController?.pushViewController(searchViewController, animated: true)
