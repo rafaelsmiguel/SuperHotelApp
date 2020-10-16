@@ -20,25 +20,23 @@ class SearchHotelVC: UIViewController {
     var listHotel: [HotelModel] = []
     var hotelSelected: HotelModel = HotelModel()
     
+    var searchController = SearchController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTextField()
-        
         mapView.delegate = self
-        
         resultLabel.isHidden = true
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setupNavBar()
+        self.setupNavBar()
     }
  
     func setupNavBar() {
         let navigationBar = self.parent?.navigationItem
-        navigationBar?.title = "Buscar"
-        
+        navigationBar?.title = searchController.setupNavBar()
     }
 
     func setupTextField() {
@@ -55,37 +53,60 @@ class SearchHotelVC: UIViewController {
     
     func setPins() {
         
-        listHotel = MockHotel().listHotel(location: searchTextField.text ?? "")
+        if searchController.arrayCount > 0 {
         
-        if !listHotel.isEmpty {
+        for i in 0...searchController.arrayCount - 1 {
             
-            for item in listHotel {
-                
-                let annotation = MKPointAnnotation()
-                
-                guard let lat = Float(item.latitude ?? "") else {
-                    return
-                }
-                
-                guard let long = Float(item.longitude ?? "") else {
-                    return
-                }
-                
-                annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(long))
-                annotation.title = item.name
-                mapView.addAnnotation(annotation)
-                
-                let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 700, longitudinalMeters: 700)
-                mapView.setRegion(region, animated: true)
-            }
+            let annotation = MKPointAnnotation()
             
-            resultLabel.isHidden = false
-            resultLabel.text = "\(listHotel.count) Hotéis encontrados!"
+            annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(searchController.getLatitude(index: i)), longitude: CLLocationDegrees(searchController.getLongitude(index: i)))
+            
+            annotation.title = searchController.getName(index: i)
+            
+            mapView.addAnnotation(annotation)
+            
+            let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 700, longitudinalMeters: 700)
+            mapView.setRegion(region, animated: true)
+        }
+            
+        resultLabel.isHidden = false
+        resultLabel.text = "\(searchController.arrayCount) Hotéis encontrados!"
+        
+//        listHotel = MockHotel().listHotel(location: searchTextField.text ?? "")
+        
+//        if !listHotel.isEmpty {
+//
+//            for item in listHotel {
+//
+//                let annotation = MKPointAnnotation()
+//
+//                guard let lat = Float(item.latitude ?? "") else {
+//                    return
+//                }
+//
+//                guard let long = Float(item.longitude ?? "") else {
+//                    return
+//                }
+//
+//                annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(long))
+//                annotation.title = item.name
+//                mapView.addAnnotation(annotation)
+//
+//
+//            }
+            
+//            resultLabel.isHidden = false
+//            resultLabel.text = "\(listHotel.count) Hotéis encontrados!"
             
         } else {
             self.showToast(message: "Não encontramos hotéis para a cidade informada, tente novamente em outra cidade.",showTop: true)
             return
         }
+    }
+    
+    func loadLocations() {
+        searchController.loadLocations(city: searchTextField.text)
+        setPins()
     }
 
     @IBAction func refresh(_ sender: Any) {
@@ -97,7 +118,7 @@ class SearchHotelVC: UIViewController {
             return
         }
         
-        setPins()
+        loadLocations()
     }
     
     @IBAction func fecharTeclado(_ sender: UITextField) {
@@ -112,25 +133,33 @@ extension SearchHotelVC: MKMapViewDelegate {
         
         if let annotation = view.annotation {
             
-            for itemHotel in listHotel {
-                if itemHotel.name == annotation.title {
-                    hotelSelected = itemHotel
-                    break
+            for i in 0...searchController.arrayCount - 1 {
+                if let annotationTitle = annotation.title {
+                  let selected = searchController.hotelSelected(annotation: annotationTitle ?? "", index: i)
+                
+                    if selected {
+                        break
+                    }
                 }
             }
             
-            //instantiate
             
-           
-            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
+//            for itemHotel in listHotel {
+//                if itemHotel.name == annotation.title {
+//                    hotelSelected = itemHotel
+//                    break
+//                }
+//            }
+            
+            let storyboard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
 //            var detailViewController = mainStoryboard.instantiateViewController(withIdentifier: "HotelDetailVC") as! HotelDetailVC
 //            let navigationVC = UINavigationController(rootViewController: detailViewController)
             
-            let detailViewController = mainStoryboard.instantiateViewController(withIdentifier: "HotelDetailVC") as! HotelDetailVC
-            detailViewController.hotel = hotelSelected
+            let hotelDetailViewController = storyboard.instantiateViewController(withIdentifier: "HotelDetailVC") as! HotelDetailVC
+            hotelDetailViewController.hotelDetailController = HotelDetailController(hotel: searchController.hotel)
             
 //            detailViewController.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(detailViewController, animated: true)
+            self.navigationController?.pushViewController(hotelDetailViewController, animated: true)
             
             
             

@@ -16,25 +16,37 @@ class BookingVC: UIViewController {
     @IBOutlet weak var stackViewFields: UIStackView!
     @IBOutlet weak var quantityTextFields: SHTextField!
     @IBOutlet weak var confirmButton: SHButton_FilledGreen!
-    
     @IBOutlet weak var checkinButton: SHButton_FilledWhite!
     @IBOutlet weak var checkoutButton: SHButton_FilledWhite!
-    
-    
-    
     @IBOutlet weak var viewToolbar: UIView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    
     var dataSelecionada: Date? = nil
     var dataCheckinValue = ""
     var dataCheckoutValue = ""
     
-    var hotel: HotelModel?
-    
+    var bookingController: BookingController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.isNavigationBarHidden = false
+        
+        setupView()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setupNavBar()
+    }
+    
+    func setupNavBar() {
+        let navigationBar = self.parent?.navigationItem
+        navigationBar?.title = bookingController?.setupNavBar()
+    }
+    
+    func setupView() {
         
         datePicker.isHidden = true
         viewToolbar.isHidden = true
@@ -44,6 +56,8 @@ class BookingVC: UIViewController {
         
         self.datePicker.preferredDatePickerStyle = .wheels
         self.datePicker.datePickerMode = .date
+        
+        self.hotelLabel.text = bookingController?.hotelName
     }
     
     @IBAction func tapCheckin(_ sender: UIButton) {
@@ -66,7 +80,6 @@ class BookingVC: UIViewController {
         toolBar.isUserInteractionEnabled = true
         toolBar.frame = viewToolbar.bounds
         viewToolbar.addSubview(toolBar)
-        
     }
     
     @IBAction func tapCheckout(_ sender: UIButton) {
@@ -95,13 +108,11 @@ class BookingVC: UIViewController {
     
     @objc func selecionarDataCheckin() {
         
-        
         dataSelecionada = datePicker.date
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        //dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         
         datePicker.isHidden = true
         viewToolbar.isHidden = true
@@ -120,7 +131,6 @@ class BookingVC: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        //dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         
         datePicker.isHidden = true
         viewToolbar.isHidden = true
