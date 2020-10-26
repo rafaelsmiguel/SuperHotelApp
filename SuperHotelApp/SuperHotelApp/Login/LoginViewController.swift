@@ -47,8 +47,8 @@ class LoginViewController: UIViewController {
         if self.emailLoginTextField.text == loginArray[0].email && self.passLoginTextField.text == loginArray[0].password{
         
         self.clearFields()
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
-                        let navigationViewController = storyBoard.instantiateViewController(withIdentifier: "MainNavigationContoller") as! MainNavigationContoller
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
+                        let navigationViewController = storyBoard.instantiateViewController(withIdentifier: "MainNavigationController") as! MainNavigationController
                        navigationViewController.modalPresentationStyle = .fullScreen
                         self.present(navigationViewController, animated: true, completion: nil)
                 

@@ -12,6 +12,7 @@
 		0160E69F2536AB55005B55E3 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0160E69E2536AB55005B55E3 /* Profile.storyboard */; };
 		016857C325311A2300867498 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016857C225311A2300867498 /* MainNavigationController.swift */; };
 		016857C82531208700867498 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016857C72531208700867498 /* Helper.swift */; };
+		01773C8B25478F2500ED467A /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01773C8A25478F2500ED467A /* Tabbar.storyboard */; };
 		01842FB92539188400721888 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01842FB82539188400721888 /* SearchController.swift */; };
 		01842FBC25392D8E00721888 /* HotelDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01842FBB25392D8E00721888 /* HotelDetailController.swift */; };
 		01842FC025393BE100721888 /* BookingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01842FBF25393BE100721888 /* BookingController.swift */; };
@@ -58,6 +59,7 @@
 		0160E69E2536AB55005B55E3 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		016857C225311A2300867498 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		016857C72531208700867498 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		01773C8A25478F2500ED467A /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		01842FB82539188400721888 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		01842FBB25392D8E00721888 /* HotelDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailController.swift; sourceTree = "<group>"; };
 		01842FBF25393BE100721888 /* BookingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,15 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		01773C8D2547930B00ED467A /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				01773C8A25478F2500ED467A /* Tabbar.storyboard */,
+				016857C225311A2300867498 /* MainNavigationController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
 		01842FBE2539396800721888 /* MakeBooking */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				016857C62531206D00867498 /* Helper */,
+				01773C8D2547930B00ED467A /* Tabbar */,
 				01C55999252D5C67009BA5CB /* CustomLayout */,
 				01C5597B252D5A61009BA5CB /* Login */,
 				01C55971252D59C5009BA5CB /* Welcome */,
@@ -180,7 +192,6 @@
 				01C55967252D4EFF009BA5CB /* Info.plist */,
 				E7A893B4252E2BAA002C31F2 /* Login.storyboard */,
 				012FC86F252E96A400995FDF /* Hotel.storyboard */,
-				016857C225311A2300867498 /* MainNavigationController.swift */,
 				0160E69E2536AB55005B55E3 /* Profile.storyboard */,
 			);
 			path = SuperHotelApp;
@@ -365,6 +376,7 @@
 			files = (
 				01C55966252D4EFF009BA5CB /* LaunchScreen.storyboard in Resources */,
 				54359715254674E200981521 /* booking.json in Resources */,
+				01773C8B25478F2500ED467A /* Tabbar.storyboard in Resources */,
 				E79F5889252E7B5C00C0C055 /* Lato-Bold.ttf in Resources */,
 				0160E69F2536AB55005B55E3 /* Profile.storyboard in Resources */,
 				E7A893B5252E2BAA002C31F2 /* Login.storyboard in Resources */,

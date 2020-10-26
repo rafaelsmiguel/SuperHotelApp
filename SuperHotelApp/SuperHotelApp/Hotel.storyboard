@@ -21,11 +21,11 @@
             <objects>
                 <viewController storyboardIdentifier="SearchHotelVC" id="TWL-cK-RLh" customClass="SearchHotelVC" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t4H-dW-A13">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylm-GW-0kc" userLabel="mainView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a cidade..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uDJ-vL-YJz" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
                                         <rect key="frame" x="15" y="10" width="384" height="48"/>
@@ -42,7 +42,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KSu-Gg-kx6">
-                                        <rect key="frame" x="0.0" y="108" width="414" height="661"/>
+                                        <rect key="frame" x="0.0" y="108" width="414" height="710"/>
                                     </mapView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
@@ -396,73 +396,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0nB-tG-F0L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4317.391304347826" y="184.82142857142856"/>
-        </scene>
-        <!--Main Navigation Contoller-->
-        <scene sceneID="vh2-n8-YSR">
-            <objects>
-                <navigationController storyboardIdentifier="MainNavigationContoller" automaticallyAdjustsScrollViewInsets="NO" id="iY0-fw-P4X" customClass="MainNavigationContoller" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ngk-Ex-xXG">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="19"/>
-                            <color key="textColor" red="0.33725490200000002" green="0.82352941180000006" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="fhb-4V-aMB" kind="relationship" relationship="rootViewController" id="v10-qJ-My9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PA5-vK-RgP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="956.52173913043487" y="185.49107142857142"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="CIy-vc-LHy">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="fhb-4V-aMB" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="nWY-jJ-1Al"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="LC9-nX-ia5">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" red="0.33725490200000002" green="0.82352941180000006" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="TWL-cK-RLh" kind="relationship" relationship="viewControllers" id="Nai-Ui-MJ8"/>
-                        <segue destination="3vr-nd-fTj" kind="relationship" relationship="viewControllers" id="WjF-mN-qiG"/>
-                        <segue destination="Sdm-Ry-Gxe" kind="relationship" relationship="viewControllers" id="viH-fu-RPU"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ssc-cM-A2o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1866.6666666666667" y="185.49107142857142"/>
-        </scene>
-        <!--BookingListViewController-->
-        <scene sceneID="NAY-O7-eKk">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Booking" referencedIdentifier="BookingListViewController" id="3vr-nd-fTj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="dQm-EN-Rzc"/>
-                    <navigationItem key="navigationItem" id="xkX-ML-veG"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBK-Gt-Xuv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1328" y="747"/>
-        </scene>
-        <!--ProfileViewController-->
-        <scene sceneID="C5U-Kl-fvX">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileViewController" id="Sdm-Ry-Gxe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="aMW-P0-ziC"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3oQ-jP-Rbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2049" y="747"/>
         </scene>
     </scenes>
     <resources>
