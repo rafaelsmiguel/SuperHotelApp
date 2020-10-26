@@ -20,7 +20,8 @@ class BookingDetailViewController: UIViewController {
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
-    var booking: BookingModel?
+    var controller: BookingListController = BookingListController()
+    
     
     
     override func viewDidLoad() {
@@ -40,18 +41,17 @@ class BookingDetailViewController: UIViewController {
     
     func setupBooking() {
         
-        if let booking = self.booking {
+        if self.controller.booking != nil {
             
-            self.hotelImageView.image = UIImage(named: booking.hotelImagem ?? "")
-            self.hotelNameLabel.text = booking.hotelName
-            self.periodOfStayLabel.text = booking.periodOfStay
-            self.numberOfPeople.text = booking.numberOfPeople
-            self.valueByNight.text = booking.valueByNight
-            self.amount.text = booking.amount
-            self.address.text = booking.address
-            
-            setupHotelLocation(booking: booking)
-            
+            self.hotelImageView.image = controller.bookingImage
+            self.hotelNameLabel.text = self.controller.bookingName
+            self.periodOfStayLabel.text = self.controller.bookingPeriod
+            self.numberOfPeople.text = self.controller.bookingPeople
+            self.valueByNight.text = self.controller.bookingValueByNight
+            self.amount.text = self.controller.bookingAmount
+            self.address.text = self.controller.bookingAddress
+                
+            setupHotelLocation()
             
         }
         
@@ -60,27 +60,20 @@ class BookingDetailViewController: UIViewController {
     }
     
     
-    func setupHotelLocation(booking: BookingModel) {
-        
+    func setupHotelLocation() {
+
         let annotation = MKPointAnnotation()
-        
-        guard let lat = Float(booking.latitude ?? "") else {
-            return
-        }
-        
-        guard let lon = Float(booking.longitude ?? "") else {
-            return
-        }
-        
+
+        let lat: Float = controller.bookingLatitude
+        let lon: Float = controller.bookingLongitude
         
         annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon))
-        annotation.title = booking.hotelName
+        annotation.title = controller.bookingName
         mapView.addAnnotation(annotation)
-        
+
         let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 700, longitudinalMeters: 700)
         mapView.setRegion(region, animated: true)
-        
-        
+
     }
     
     

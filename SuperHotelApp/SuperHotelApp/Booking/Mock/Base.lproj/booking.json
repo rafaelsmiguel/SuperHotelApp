@@ -1,0 +1,62 @@
+{"bookings": [{
+    "hotelImage": "hotel1.jpg",
+    "hotelName": "Palácio Tangará",
+    "periodOfStay": "De 25 de maio até 27 de maio",
+    "numberOfPeople": "3",
+    "valueByNight": "$199",
+    "amount": "$597",
+    "address": "Avenida Raimundo 287 - Pirituba - São Paulo - SP",
+    "latitude": "-23.560640",
+    "longitude": "-46.650570"
+},
+{
+    "hotelImage": "hotel2.jpg",
+    "hotelName": "Tivoli Mofarrej",
+    "periodOfStay": "De 25 de maio até 27 de maio",
+    "numberOfPeople": "3",
+    "valueByNight": "$199",
+    "amount": "$597",
+    "address": "Avenida Raimundo 287 - Pirituba - São Paulo - SP",
+    "latitude": "-23.560640",
+    "longitude": "-46.650570"
+},
+{
+    "hotelImage": "hotel3.jpg",
+    "hotelName": "Estanplaza Berrini",
+    "periodOfStay": "De 25 de maio até 27 de maio",
+    "numberOfPeople": "3",
+    "valueByNight": "$199",
+    "amount": "$597",
+    "address": "Avenida Raimundo 287 - Pirituba - São Paulo - SP",
+    "latitude": "-23.560640",
+    "longitude": "-46.650570"
+},
+{
+    "hotelImage": "hotel4.jpg",
+    "hotelName": "Intercity",
+    "periodOfStay": "De 25 de maio até 27 de maio",
+    "numberOfPeople": "3",
+    "valueByNight": "$199",
+    "amount": "$597",
+    "address": "Avenida Raimundo 287 - Pirituba - São Paulo - SP",
+    "latitude": "-23.560640",
+    "longitude": "-46.650570"
+},
+{
+    "hotelImage": "hotel5.jpg",
+    "hotelName": "Hotel & Hostel Alvorada do Sol",
+    "periodOfStay": "De 25 de maio até 27 de maio",
+    "numberOfPeople": "3",
+    "valueByNight": "$199",
+    "amount": "$597",
+    "address": "Avenida Raimundo 287 - Pirituba - São Paulo - SP",
+    "latitude": "-23.560640",
+    "longitude": "-46.650570"
+    
+}
+]
+}
+
+
+
+

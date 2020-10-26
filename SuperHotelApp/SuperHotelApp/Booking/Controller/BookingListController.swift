@@ -1,0 +1,83 @@
+//
+//  BookingListController.swift
+//  SuperHotelApp
+//
+//  Created by Elder Alcantara on 25/10/20.
+//
+
+import Foundation
+import UIKit
+
+class BookingListController {
+    
+    let navigationBarTitle: String = "Reservas"
+    
+    
+    var arrayBookings: Booking?
+    var booking: BookingElement?
+    
+    
+    var numberOfBookings: Int {
+        return arrayBookings?.bookings.count ?? 0
+    }
+    
+    
+    var bookingImage: UIImage {
+        return UIImage(named: self.booking?.hotelImage ?? "") ?? UIImage()
+    }
+    
+    var bookingName: String {
+        return self.booking?.hotelName ?? ""
+    }
+    
+    var bookingPeriod: String {
+        return self.booking?.periodOfStay ?? ""
+    }
+    
+    var bookingPeople: String {
+        return self.booking?.numberOfPeople ?? ""
+    }
+    
+    var bookingValueByNight: String {
+        return self.booking?.valueByNight ?? ""
+    }
+    
+    var bookingAmount: String {
+        return self.booking?.amount ?? ""
+    }
+    
+    var bookingAddress: String {
+        return self.booking?.address ?? ""
+    }
+   
+    var bookingLatitude: Float {
+        return Float(self.booking?.latitude ?? "") ?? 0
+    }
+    
+    var bookingLongitude: Float {
+        return Float(self.booking?.longitude ?? "") ?? 0
+    }
+    
+    
+    func getListBooking(completion: (Bool) -> Void) {
+        
+        BookingWorker().getListBooking { (success, error) in
+            
+            if error == false {
+                
+                self.arrayBookings = success
+                completion(true)
+                
+            } else {
+                
+                completion(false)
+                print("Erro no parse do JSON")
+                
+            }
+            
+        }
+        
+    }
+    
+    
+}

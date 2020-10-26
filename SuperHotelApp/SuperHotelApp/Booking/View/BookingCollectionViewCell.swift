@@ -9,7 +9,7 @@ import UIKit
 
 protocol actionCollectionViewCellDelegate {
     
-    func cliqueReservation(sender: Any?)
+    func tappedBooking(sender: Any?)
     
 }
 
@@ -19,8 +19,8 @@ class BookingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var hotelNameLabel: UILabel!
     @IBOutlet weak var periodOfStayLabel: UILabel!
     
+    var controller: BookingListController = BookingListController()
     var delegate: actionCollectionViewCellDelegate?
-    var booking: BookingModel?
     
     
     override func awakeFromNib() {
@@ -39,7 +39,7 @@ class BookingCollectionViewCell: UICollectionViewCell {
     
     @objc func didTapped(sender: UITapGestureRecognizer){
         
-        delegate?.cliqueReservation(sender: booking)
+        delegate?.tappedBooking(sender: controller.booking)
         
     }
     
@@ -47,9 +47,9 @@ class BookingCollectionViewCell: UICollectionViewCell {
     
     func setupCell(){
         
-        self.hotelImageView.image = UIImage(named: booking?.hotelImagem ?? "")
-        self.hotelNameLabel.text = booking?.hotelName
-        self.periodOfStayLabel.text = booking?.periodOfStay
+        self.hotelImageView.image = controller.bookingImage
+        self.hotelNameLabel.text = controller.bookingName
+        self.periodOfStayLabel.text = controller.bookingPeriod
         
     }
     
