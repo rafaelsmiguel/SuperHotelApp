@@ -9,9 +9,9 @@ import Foundation
 
 class HotelDetailController {
     
-    private var hotel: HotelModel?
+    private var hotel: HotelElement?
     
-    init(hotel: HotelModel?) {
+    init(hotel: HotelElement?) {
         self.hotel = hotel
     }
     
@@ -49,8 +49,8 @@ class HotelDetailController {
         return 0
     }
     
-    func getHotelDetail() -> HotelModel {
-        return self.hotel ?? HotelModel()
+    func getHotelDetail() -> HotelElement {
+        return self.hotel ?? HotelElement()
     }
     
     func setupNavBar() -> String {

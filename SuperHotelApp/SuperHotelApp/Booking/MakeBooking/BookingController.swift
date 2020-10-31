@@ -9,9 +9,9 @@ import Foundation
 
 class BookingController {
     
-    private var hotel: HotelModel?
+    private var hotel: HotelElement?
     
-    init(hotel: HotelModel?) {
+    init(hotel: HotelElement?) {
         self.hotel = hotel
     }
     

@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct HotelModel {
+// MARK: - Hotel
+struct Hotel: Codable {
+    let hotels: [HotelElement]
+}
+
+// MARK: - HotelElement
+struct HotelElement: Codable {
     var destinationId: String?
     var name: String?
     var latitude: String?
