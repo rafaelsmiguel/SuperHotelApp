@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HotelDetailController {
+class HotelDetailViewModel {
     
     private var hotel: HotelModel?
     
@@ -27,8 +27,8 @@ class HotelDetailController {
         return self.hotel?.address
     }
     
-    var image: String? {
-        return self.hotel?.image
+    var images: [String]? {
+        return self.hotel?.images
     }
     
     

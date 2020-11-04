@@ -219,16 +219,16 @@
             </objects>
             <point key="canvasLocation" x="2817" y="185"/>
         </scene>
-        <!--Hotel DetailVC-->
+        <!--Detalhe-->
         <scene sceneID="7K9-Y3-Dtf">
             <objects>
-                <viewController storyboardIdentifier="HotelDetailVC" id="tzK-Xk-ffv" customClass="HotelDetailVC" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HotelDetailVC" title="Detalhe" id="tzK-Xk-ffv" customClass="HotelDetailVC" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AsL-lA-Dc8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Y7-4z-ATW">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fe7-8W-UQh">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="886.5"/>
@@ -373,6 +373,7 @@
                             <constraint firstItem="8Y7-4z-ATW" firstAttribute="top" secondItem="MOR-G4-psE" secondAttribute="top" id="mN2-2z-QWA"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="addressLabel" destination="pjs-MS-Rvk" id="20V-fR-5fk"/>
                         <outlet property="bookingButton" destination="DpF-4G-Nhm" id="QmT-aZ-KwS"/>

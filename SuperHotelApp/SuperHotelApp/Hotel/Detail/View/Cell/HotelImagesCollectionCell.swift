@@ -17,9 +17,7 @@ class HotelImagesCollectionCell: UICollectionViewCell {
     }
     
     func setup(foto:String) {
-        
         imgHotel.image = UIImage(named: foto)
-        
     }
 
 }

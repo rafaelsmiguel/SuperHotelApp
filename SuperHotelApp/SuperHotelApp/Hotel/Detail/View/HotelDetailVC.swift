@@ -23,9 +23,7 @@ class HotelDetailVC: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var bookingButton: SHButton_FilledGreen!
     
-    var hotelDetailController: HotelDetailController?
-    
-    var fotos: [String] = ["hotel1.jpg","hotel2.jpg","hotel3.jpg","hotel4.jpg"]
+    var hotelDetailViewModel: HotelDetailViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,22 +36,12 @@ class HotelDetailVC: UIViewController {
         collectionView.dataSource = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        setupNavBar()
-    }
-    
-    func setupNavBar() {
-        let navigationBar = self.parent?.navigationItem
-        navigationBar?.title = hotelDetailController?.setupNavBar()
-    }
-    
     func setupHotel() {
         
-        self.hotelNameLabel.text = hotelDetailController?.hotelName
-        self.valueLabel.text = hotelDetailController?.valueByNight
-        self.addressLabel.text = hotelDetailController?.address
-        //self.imageViewHotel.image = UIImage(named: hotelDetailController?.image ?? "")
+        self.hotelNameLabel.text = hotelDetailViewModel?.hotelName
+        self.valueLabel.text = hotelDetailViewModel?.valueByNight
+        self.addressLabel.text = hotelDetailViewModel?.address
+        //self.imageViewHotel.image = UIImage(named: hotelDetailViewModel?.image ?? "")
         
         setupHotelLocation()
     }
@@ -62,8 +50,8 @@ class HotelDetailVC: UIViewController {
         
         let annotation = MKPointAnnotation()
         
-        annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(hotelDetailController?.getLatitude() ?? 0), longitude: CLLocationDegrees(hotelDetailController?.getLongitude() ?? 0))
-        annotation.title = hotelDetailController?.hotelName
+        annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(hotelDetailViewModel?.getLatitude() ?? 0), longitude: CLLocationDegrees(hotelDetailViewModel?.getLongitude() ?? 0))
+        annotation.title = hotelDetailViewModel?.hotelName
         mapView.addAnnotation(annotation)
         
         let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 700, longitudinalMeters: 700)
@@ -76,7 +64,7 @@ class HotelDetailVC: UIViewController {
         let bookingViewController = storyBoard.instantiateViewController(withIdentifier: "BookingVC") as! BookingVC
         bookingViewController.modalPresentationStyle = .fullScreen
         bookingViewController.navigationController?.navigationBar.isHidden = false
-        bookingViewController.bookingController = BookingController(hotel: hotelDetailController?.getHotelDetail())
+        bookingViewController.bookingController = BookingController(hotel: hotelDetailViewModel?.getHotelDetail())
         self.present(bookingViewController, animated: true, completion: nil)
     }
 
@@ -85,14 +73,14 @@ class HotelDetailVC: UIViewController {
 extension HotelDetailVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fotos.count
+        return self.hotelDetailViewModel?.images?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell: HotelImagesCollectionCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "HotelImagesCollectionCell", for: indexPath) as? HotelImagesCollectionCell
         
-        cell?.setup(foto: fotos[indexPath.item])
+        cell?.setup(foto: hotelDetailViewModel?.images?[indexPath.item] ?? "")
         
         return cell ?? UICollectionViewCell()
     }

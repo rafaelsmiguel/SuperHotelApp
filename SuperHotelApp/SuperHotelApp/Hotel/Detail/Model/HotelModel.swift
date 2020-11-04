@@ -14,5 +14,5 @@ struct HotelModel {
     var longitude: String?
     var valueByNight: Double?
     var address: String?
-    var image: String?
+    var images: [String]?
 }

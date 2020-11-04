@@ -156,7 +156,7 @@ extension SearchHotelVC: MKMapViewDelegate {
 //            let navigationVC = UINavigationController(rootViewController: detailViewController)
             
             let hotelDetailViewController = storyboard.instantiateViewController(withIdentifier: "HotelDetailVC") as! HotelDetailVC
-            hotelDetailViewController.hotelDetailController = HotelDetailController(hotel: searchController.hotel)
+            hotelDetailViewController.hotelDetailViewModel = HotelDetailViewModel(hotel: searchController.hotel)
             
 //            detailViewController.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(hotelDetailViewController, animated: true)
