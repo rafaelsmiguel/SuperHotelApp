@@ -12,8 +12,9 @@ import MapKit
 class HotelDetailVC: UIViewController {
 
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var imageViewHotel: UIImageView!
     @IBOutlet weak var hotelNameLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     
     @IBOutlet weak var stackViewStars: UIStackView!
     @IBOutlet weak var valueLabel: UILabel!
@@ -24,10 +25,17 @@ class HotelDetailVC: UIViewController {
     
     var hotelDetailController: HotelDetailController?
     
+    var fotos: [String] = ["hotel1.jpg","hotel2.jpg","hotel3.jpg","hotel4.jpg"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupHotel()
+        
+        self.collectionView.register(UINib(nibName: "HotelImagesCollectionCell", bundle: nil), forCellWithReuseIdentifier: "HotelImagesCollectionCell")
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +53,7 @@ class HotelDetailVC: UIViewController {
         self.hotelNameLabel.text = hotelDetailController?.hotelName
         self.valueLabel.text = hotelDetailController?.valueByNight
         self.addressLabel.text = hotelDetailController?.address
-        self.imageViewHotel.image = UIImage(named: hotelDetailController?.image ?? "")
+        //self.imageViewHotel.image = UIImage(named: hotelDetailController?.image ?? "")
         
         setupHotelLocation()
     }
@@ -72,4 +80,22 @@ class HotelDetailVC: UIViewController {
         self.present(bookingViewController, animated: true, completion: nil)
     }
 
+}
+
+extension HotelDetailVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return fotos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell: HotelImagesCollectionCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "HotelImagesCollectionCell", for: indexPath) as? HotelImagesCollectionCell
+        
+        cell?.setup(foto: fotos[indexPath.item])
+        
+        return cell ?? UICollectionViewCell()
+    }
+    
+    
 }
