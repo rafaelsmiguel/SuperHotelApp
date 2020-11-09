@@ -28,7 +28,7 @@ class SHButton_FilledGreen: UIButton {
     func setupControl()
     {
         super.titleLabel?.textAlignment = NSTextAlignment.center
-        super.titleLabel?.font = UIFont(name: FontsName.regular, size: 18)
+        super.titleLabel?.font = UIFont(name: FontsName.bold, size: 18)
         super.setTitleColor(.white, for: UIControl.State.normal)
         super.backgroundColor = UIColor(red: 0.34, green: 0.82, blue: 0.76, alpha: 1)
         super.contentVerticalAlignment   = UIControl.ContentVerticalAlignment.center;

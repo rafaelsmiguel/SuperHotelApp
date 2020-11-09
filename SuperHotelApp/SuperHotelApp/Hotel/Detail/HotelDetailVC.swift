@@ -47,6 +47,8 @@ class HotelDetailVC: UIViewController {
         self.addressLabel.text = hotelDetailController?.address
         self.imageViewHotel.image = UIImage(named: hotelDetailController?.image ?? "")
         
+        self.title = hotelDetailController?.hotelName
+        
         setupHotelLocation()
     }
     
@@ -66,10 +68,12 @@ class HotelDetailVC: UIViewController {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
         let bookingViewController = storyBoard.instantiateViewController(withIdentifier: "BookingVC") as! BookingVC
-        bookingViewController.modalPresentationStyle = .fullScreen
-        bookingViewController.navigationController?.navigationBar.isHidden = false
-        bookingViewController.bookingController = BookingController(hotel: hotelDetailController?.getHotelDetail())
-        self.present(bookingViewController, animated: true, completion: nil)
+//        bookingViewController.modalPresentationStyle = .fullScreen
+//        bookingViewController.navigationController?.navigationBar.isHidden = false
+//        bookingViewController.bookingController = BookingController(hotel: hotelDetailController?.getHotelDetail())
+        
+        self.navigationController?.pushViewController(bookingViewController, animated: true)
+//        self.present(bookingViewController, animated: true, completion: nil)
     }
 
 }

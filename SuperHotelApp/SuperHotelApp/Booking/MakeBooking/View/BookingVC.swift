@@ -18,22 +18,26 @@ class BookingVC: UIViewController {
     @IBOutlet weak var confirmButton: SHButton_FilledGreen!
     @IBOutlet weak var checkinButton: SHButton_FilledWhite!
     @IBOutlet weak var checkoutButton: SHButton_FilledWhite!
+    @IBOutlet weak var adultsButton: SHButton_FilledWhite!
     @IBOutlet weak var viewToolbar: UIView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var pickerViewAdults: UIPickerView!
     
     var dataSelecionada: Date? = nil
-    var dataCheckinValue = ""
-    var dataCheckoutValue = ""
+
+    var bookingViewModel: BookingViewModel = BookingViewModel()
     
-    var bookingController: BookingController?
+    var adults: [Int] = [1,2,3,4,5,6,7,8]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.isNavigationBarHidden = false
         
-        setupView()
+        setupTextField()
+        setupDatePicker()
+        setupPickerView()
         
+        self.title = "Reserva"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,28 +47,42 @@ class BookingVC: UIViewController {
     
     func setupNavBar() {
         let navigationBar = self.parent?.navigationItem
-        navigationBar?.title = bookingController?.setupNavBar()
+        navigationBar?.title = bookingViewModel.setupNavBar()
     }
     
-    func setupView() {
-        
-        datePicker.isHidden = true
-        viewToolbar.isHidden = true
-    
-        self.quantityTextFields.delegate = self
-        self.quantityTextFields.keyboardType = .numberPad
+    func setupDatePicker() {
+       
+        setupVisibilityDatePicker(value: true)
         
         self.datePicker.preferredDatePickerStyle = .wheels
         self.datePicker.datePickerMode = .date
-        
-        self.hotelLabel.text = bookingController?.hotelName
     }
+    
+    func setupVisibilityDatePicker(value: Bool) {
+        datePicker.isHidden = value
+        viewToolbar.isHidden = value
+    }
+    
+    func setupPickerView() {
+       
+        setupVisibilityPicker(value: true)
+        
+        self.pickerViewAdults.dataSource = self
+        self.pickerViewAdults.delegate = self
+        self.datePicker.datePickerMode = .date
+    }
+    
+    func setupVisibilityPicker(value: Bool) {
+        pickerViewAdults.isHidden = value
+        viewToolbar.isHidden = value
+    }
+    
     
     @IBAction func tapCheckin(_ sender: UIButton) {
         
         fecharTeclado(quantityTextFields)
-        datePicker.isHidden = false
-        viewToolbar.isHidden = false
+        
+        setupVisibilityDatePicker(value:false)
         
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
@@ -85,10 +103,9 @@ class BookingVC: UIViewController {
     @IBAction func tapCheckout(_ sender: UIButton) {
         
         fecharTeclado(quantityTextFields)
-        datePicker.isHidden = false
-        viewToolbar.isHidden = false
         
-        
+        setupVisibilityDatePicker(value:false)
+    
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
@@ -105,22 +122,24 @@ class BookingVC: UIViewController {
         viewToolbar.addSubview(toolBar)
     }
     
+    @IBAction func tapAdults(_ sender: UIButton) {
+        
+        buildPickerView()
+    }
+    
     
     @objc func selecionarDataCheckin() {
         
+//        var teste = self.bookingViewModel.maxAdultsForRoom()
+        
         dataSelecionada = datePicker.date
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        
-        datePicker.isHidden = true
-        viewToolbar.isHidden = true
+        setupVisibilityDatePicker(value:true)
         
         if let data = dataSelecionada
         {
-            checkinButton.setTitle("\(dateFormatter.string(from: data))", for: .normal)
-            dataCheckinValue = "\(dateFormatter.string(from: data))"
+            checkinButton.setTitle(self.bookingViewModel.formatDate(date: data), for: .normal)
+            self.bookingViewModel.setCheckin(checkIn: self.bookingViewModel.formatDate(date: data))
         }
     }
     
@@ -128,24 +147,18 @@ class BookingVC: UIViewController {
         
         dataSelecionada = datePicker.date
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        
-        datePicker.isHidden = true
-        viewToolbar.isHidden = true
+        setupVisibilityDatePicker(value:true)
         
         if let data = dataSelecionada
         {
-            checkoutButton.setTitle("\(dateFormatter.string(from: data))", for: .normal)
-            dataCheckoutValue = "\(dateFormatter.string(from: data))"
+            checkoutButton.setTitle(self.bookingViewModel.formatDate(date: data), for: .normal)
+            self.bookingViewModel.setCheckout(checkOut: self.bookingViewModel.formatDate(date: data))
         }
     }
     
     @objc func fecharData()
     {
-        datePicker.isHidden = true
-        viewToolbar.isHidden = true
+        setupVisibilityDatePicker(value:true)
     }
     
     @IBAction func fecharTeclado(_ sender: UITextField) {
@@ -158,17 +171,17 @@ class BookingVC: UIViewController {
         fecharTeclado(quantityTextFields)
         fecharData()
         
-        if dataCheckinValue == "" {
+        if self.bookingViewModel.checkIn == nil {
             showToast(message: "Check-in deve ser preenchido.")
             return
         }
-
-        if dataCheckoutValue == "" {
+        
+        if self.bookingViewModel.checkOut == nil {
             showToast(message: "Check-out deve ser preenchido.")
             return
         }
         
-        if quantityTextFields.text == "" {
+        if self.bookingViewModel.adults == nil || self.bookingViewModel.adults == 0 {
             showToast(message: "Quantidade de hóspedes deve ser preenchido.")
             return
         }
@@ -177,7 +190,7 @@ class BookingVC: UIViewController {
         
         refreshAlert.addAction(UIAlertAction(title: "Fechar", style: .default, handler: { (action: UIAlertAction!) in
             
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popToRootViewController(animated: true)
             
         }))
         
@@ -189,5 +202,72 @@ class BookingVC: UIViewController {
 
 extension BookingVC: UITextFieldDelegate {
    
+    func setupTextField() {
+        
+        quantityTextFields.isHidden = true
+        self.quantityTextFields.delegate = self
+        self.quantityTextFields.keyboardType = .numberPad
+    }
+}
 
+extension BookingVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func buildPickerView()
+    {
+        fecharTeclado(quantityTextFields)
+        
+        setupVisibilityPicker(value: false)
+        
+        pickerViewAdults.backgroundColor = .lightGray
+        pickerViewAdults.setValue(1, forKeyPath: "alpha")
+        
+        // ToolBar
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.barTintColor = .darkGray
+        toolBar.sizeToFit()
+        
+        let selecionarButton = UIBarButtonItem(title: "Selecionar", style: .plain, target: self, action: #selector(BookingVC.selectValuePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let fecharButton = UIBarButtonItem(title: "Fechar", style: .plain, target: self, action: #selector(BookingVC.closePickerView))
+        toolBar.setItems([fecharButton, spaceButton, selecionarButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        toolBar.frame = viewToolbar.bounds
+        viewToolbar.addSubview(toolBar)
+        
+        pickerViewAdults.reloadAllComponents()
+    }
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return adults.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return "\(adults[row])"
+    }
+    
+    @objc func selectValuePicker() {
+        
+        let adult = adults[pickerViewAdults.selectedRow(inComponent: 0)]
+            
+        adultsButton.setTitle("\(adult)", for: .normal)
+        
+        self.bookingViewModel.setAdults(adults: adult)
+
+        setupVisibilityPicker(value: true)
+    }
+    
+    @objc func closePickerView() {
+        
+        setupVisibilityPicker(value: true)
+        
+    }
+    
 }

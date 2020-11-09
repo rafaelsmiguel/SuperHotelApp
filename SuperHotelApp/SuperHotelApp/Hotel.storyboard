@@ -291,7 +291,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="i6t-ZX-ed3">
-                                        <rect key="frame" x="20" y="130" width="374" height="166"/>
+                                        <rect key="frame" x="20" y="130" width="374" height="225"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieI-jt-Rkm" userLabel="checkinButton" customClass="SHButton_FilledWhite" customModule="SuperHotelApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
@@ -313,8 +313,18 @@
                                                     <action selector="tapCheckout:" destination="igp-W4-yMU" eventType="touchUpInside" id="uDr-hw-yNy"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4f-qv-osC" userLabel="adultsButton" customClass="SHButton_FilledWhite" customModule="SuperHotelApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="118" width="374" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="Ueg-pt-xeh"/>
+                                                </constraints>
+                                                <state key="normal" title="Hóspedes"/>
+                                                <connections>
+                                                    <action selector="tapAdults:" destination="igp-W4-yMU" eventType="touchUpInside" id="W6Z-pF-i5O"/>
+                                                </connections>
+                                            </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantas hóspedes?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bDP-Iv-b4J" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="118" width="374" height="48"/>
+                                                <rect key="frame" x="0.0" y="177" width="374" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="RUb-ZR-llR"/>
                                                 </constraints>
@@ -324,7 +334,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZZ-va-DAc" customClass="SHButton_FilledGreen" customModule="SuperHotelApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="311" width="374" height="48"/>
+                                        <rect key="frame" x="20" y="370" width="374" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="LZo-sT-BwV"/>
                                         </constraints>
@@ -339,6 +349,9 @@
                                             <constraint firstAttribute="height" constant="216" id="Vz5-vS-w0L"/>
                                         </constraints>
                                     </datePicker>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8t-EK-c3X">
+                                        <rect key="frame" x="0.0" y="558" width="414" height="216"/>
+                                    </pickerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gth-yq-2XJ" userLabel="viewToolbar">
                                         <rect key="frame" x="0.0" y="514" width="414" height="44"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -350,9 +363,11 @@
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="NNI-Cf-PRa" firstAttribute="leading" secondItem="jym-90-oAK" secondAttribute="leading" id="2Iq-RM-Z7c"/>
+                                    <constraint firstAttribute="trailing" secondItem="b8t-EK-c3X" secondAttribute="trailing" id="ETm-tZ-ZDE"/>
                                     <constraint firstItem="NNI-Cf-PRa" firstAttribute="top" secondItem="gth-yq-2XJ" secondAttribute="bottom" id="GXZ-UT-5s2"/>
                                     <constraint firstAttribute="trailing" secondItem="gth-yq-2XJ" secondAttribute="trailing" id="Grc-1f-jub"/>
                                     <constraint firstItem="2ZZ-va-DAc" firstAttribute="leading" secondItem="jym-90-oAK" secondAttribute="leading" constant="20" id="RDR-ij-kge"/>
+                                    <constraint firstAttribute="bottom" secondItem="b8t-EK-c3X" secondAttribute="bottom" id="RWC-xF-6E1"/>
                                     <constraint firstItem="sGr-Vw-jvA" firstAttribute="top" secondItem="jym-90-oAK" secondAttribute="top" constant="20" id="UKr-9R-1di"/>
                                     <constraint firstItem="i6t-ZX-ed3" firstAttribute="top" secondItem="hvQ-jG-5ap" secondAttribute="bottom" constant="50" id="Uxh-wp-b0R"/>
                                     <constraint firstAttribute="trailing" secondItem="NNI-Cf-PRa" secondAttribute="trailing" id="W1i-os-8qH"/>
@@ -365,6 +380,8 @@
                                     <constraint firstAttribute="trailing" secondItem="sGr-Vw-jvA" secondAttribute="trailing" constant="20" id="jW7-Bt-Qjt"/>
                                     <constraint firstItem="hvQ-jG-5ap" firstAttribute="top" secondItem="sGr-Vw-jvA" secondAttribute="bottom" constant="5" id="jpF-qL-Vd6"/>
                                     <constraint firstAttribute="trailing" secondItem="i6t-ZX-ed3" secondAttribute="trailing" constant="20" id="mJ0-1c-XZR"/>
+                                    <constraint firstItem="b8t-EK-c3X" firstAttribute="leading" secondItem="jym-90-oAK" secondAttribute="leading" id="vrO-fE-u7E"/>
+                                    <constraint firstItem="b8t-EK-c3X" firstAttribute="top" secondItem="gth-yq-2XJ" secondAttribute="bottom" id="vrr-7n-MK7"/>
                                     <constraint firstItem="gth-yq-2XJ" firstAttribute="leading" secondItem="jym-90-oAK" secondAttribute="leading" id="zVb-f4-evS"/>
                                 </constraints>
                             </view>
@@ -381,12 +398,14 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="adultsButton" destination="b4f-qv-osC" id="aP8-Xi-2VG"/>
                         <outlet property="checkinButton" destination="ieI-jt-Rkm" id="O9p-2k-KnE"/>
                         <outlet property="checkoutButton" destination="qZu-ed-nd3" id="Joi-zP-1qK"/>
                         <outlet property="confirmButton" destination="2ZZ-va-DAc" id="Ul8-Yd-YGF"/>
                         <outlet property="datePicker" destination="NNI-Cf-PRa" id="GSy-bT-vYy"/>
                         <outlet property="hotelLabel" destination="sGr-Vw-jvA" id="ecK-Cu-Env"/>
                         <outlet property="mainView" destination="jym-90-oAK" id="m1W-Js-GEb"/>
+                        <outlet property="pickerViewAdults" destination="b8t-EK-c3X" id="WqT-Ux-hBS"/>
                         <outlet property="quantityTextFields" destination="bDP-Iv-b4J" id="JJr-4D-94V"/>
                         <outlet property="stackViewFields" destination="i6t-ZX-ed3" id="47c-wa-0XH"/>
                         <outlet property="stackViewStar" destination="hvQ-jG-5ap" id="RGr-FS-8Cj"/>
