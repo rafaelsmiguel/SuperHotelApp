@@ -7,25 +7,28 @@
 
 import Foundation
 
-class SearchController {
+class SearchViewModel {
     
     var listHotel: [HotelElement] = []
     var hotel: HotelElement = HotelElement()
     var searchWorker = SearchWorker()
     var searchHotel: SearchModel?
     var currentSearch: String?
+    var arraySuggestion: [Suggestion] = []
+    var hotelsAPI: [Entities] = []
+    var hotelAPI: Entities?
     
     func setupNavBar() -> String {
         return "Buscar"
     }
     
     var arrayCount: Int {
-        return self.listHotel.count
+        return self.hotelsAPI.count
     }
     
     func getLatitude(index: Int) -> Float {
-        if let lat = Float(self.listHotel[index].latitude ?? "") {
-            return lat
+        if let lat = self.hotelsAPI[index].latitude ?? 0.0 {
+            return Float(lat)
         }
             
         return 0
@@ -33,15 +36,15 @@ class SearchController {
     
     func getLongitude(index: Int) -> Float {
         
-        if let long = Float(self.listHotel[index].longitude ?? "") {
-            return long
+        if let long = self.hotelsAPI[index].longitude ?? 0.0 {
+            return Float(long)
         }
             
         return 0
     }
     
     func getName(index: Int) -> String {
-        return self.listHotel[index].name ?? ""
+        return self.hotelsAPI[index].name ?? ""
     }
     
     func loadLocations(city: String?) {
@@ -50,6 +53,10 @@ class SearchController {
         
 //        self.searchWorker.getListSearchAPI(completion: <#T##(SearchModel?, Bool) -> Void#>)
         //listHotel = MockHotel().listHotel(location: city ?? "")
+        
+        
+        
+        
     }
     
     
@@ -58,9 +65,20 @@ class SearchController {
         self.searchWorker.currentSearch(city: self.currentSearch ?? "")
         
         self.searchWorker.getListSearchAPI { (response, error) in
-            if error == nil {
-                self.searchHotel = response
-                completion(true)
+            if error == false {
+                self.searchHotel = response as! SearchModel
+                
+                if self.searchHotel?.moresuggestions != 0 {
+                    
+                    if let suggestions = self.searchHotel?.suggestions {
+                        self.arraySuggestion = suggestions.filter({$0.group == "HOTEL_GROUP"})
+                        self.hotelsAPI = self.arraySuggestion[0].entities ?? []
+                    }
+                    
+                    completion(true)
+                } else {
+                    completion(false)
+                }
             } else {
                 print("deu erro")
                 completion(false)
@@ -86,11 +104,15 @@ class SearchController {
     }
     
     func hotelSelected(annotation: String, index:Int) -> Bool {
-        if self.listHotel[index].name == annotation {
-            hotel = self.listHotel[index]
+        if self.hotelsAPI[index].name == annotation {
+            hotelAPI = self.hotelsAPI[index]
             return true
         }
         return false
+    }
+    
+    func listaHotel(){
+        
     }
 
     

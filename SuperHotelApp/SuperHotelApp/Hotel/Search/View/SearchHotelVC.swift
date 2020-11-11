@@ -21,7 +21,7 @@ class SearchHotelVC: UIViewController {
     var destinationId: String = ""
     var listHotel: [HotelElement] = []
     var hotelSelected: HotelElement = HotelElement()
-    var searchController = SearchController()
+    var searchViewModel = SearchViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class SearchHotelVC: UIViewController {
     
     func setupNavBar() {
         let navigationBar = self.parent?.navigationItem
-        navigationBar?.title = searchController.setupNavBar()
+        navigationBar?.title = searchViewModel.setupNavBar()
     }
     
     func setupTextField() {
@@ -53,42 +53,51 @@ class SearchHotelVC: UIViewController {
     
     func setPins() {
         
-        if searchController.arrayCount > 0 {
+        if searchViewModel.arrayCount > 0 {
             
-            for i in 0...searchController.arrayCount - 1 {
+            for i in 0...searchViewModel.arrayCount - 1 {
                 
                 let annotation = MKPointAnnotation()
                 
-                annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(searchController.getLatitude(index: i)), longitude: CLLocationDegrees(searchController.getLongitude(index: i)))
+                annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(searchViewModel.getLatitude(index: i)), longitude: CLLocationDegrees(searchViewModel.getLongitude(index: i)))
                 
-                annotation.title = searchController.getName(index: i)
+                annotation.title = searchViewModel.getName(index: i)
                 
                 mapView.addAnnotation(annotation)
                 
-                let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 700, longitudinalMeters: 700)
-                mapView.setRegion(region, animated: true)
+                DispatchQueue.main.async {
+                    let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 20000, longitudinalMeters: 20000)
+                    self.mapView.setRegion(region, animated: true)
+                }
             }
             
-            constraintMapSize.isActive = false
-            resultLabel.text = searchController.getQuantitySearchHotel()
-            
+            DispatchQueue.main.async {
+                self.constraintMapSize.isActive = false
+                self.resultLabel.text = self.searchViewModel.getQuantitySearchHotel()
+            }
            
         } else {
             self.mapView.removeAnnotations(self.mapView.annotations)
-            constraintMapSize.isActive = true
-            self.showToast(message: searchController.getMessageNotFoundHotel(),showTop: true)
+            self.constraintMapSize.isActive = true
+            self.showToast(message: searchViewModel.getMessageNotFoundHotel(),showTop: true)
             return
         }
     }
     
     func loadLocations() {
         
-        searchController.loadLocations(city: searchTextField.text)
+        searchViewModel.loadLocations(city: searchTextField.text)
         
-        self.searchController.getListSearch { (success) in
+        self.searchViewModel.getListSearch { (success) in
             if success {
                 self.mapView.delegate = self
                 self.setPins()
+            } else {
+                DispatchQueue.main.async {
+                    self.constraintMapSize.isActive = true
+                    self.mapView.removeAnnotations(self.mapView.annotations)
+                    self.showToast(message: self.searchViewModel.getMessageNotFoundHotel(),showTop: true)
+                }
             }
         }
     }
@@ -100,7 +109,7 @@ class SearchHotelVC: UIViewController {
         if searchTextField.text?.count == 0 {
             self.mapView.removeAnnotations(self.mapView.annotations)
             constraintMapSize.isActive = true
-            self.showToast(message: searchController.getMessageNeedWrite(),showTop: true)
+            self.showToast(message: searchViewModel.getMessageNeedWrite(),showTop: true)
             return
         }
         
@@ -119,9 +128,9 @@ extension SearchHotelVC: MKMapViewDelegate {
         
         if let annotation = view.annotation {
             
-            for i in 0...searchController.arrayCount - 1 {
+            for i in 0...searchViewModel.arrayCount - 1 {
                 if let annotationTitle = annotation.title {
-                    let selected = searchController.hotelSelected(annotation: annotationTitle ?? "", index: i)
+                    let selected = searchViewModel.hotelSelected(annotation: annotationTitle ?? "", index: i)
                     
                     if selected {
                         break
@@ -132,7 +141,7 @@ extension SearchHotelVC: MKMapViewDelegate {
             let storyboard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
         
             let hotelDetailViewController = storyboard.instantiateViewController(withIdentifier: "HotelDetailVC") as! HotelDetailVC
-            hotelDetailViewController.hotelDetailController = HotelDetailController(hotel: searchController.hotel)
+            hotelDetailViewController.hotelDetailController = HotelDetailController(hotel: searchViewModel.hotel)
             self.navigationController?.pushViewController(hotelDetailViewController, animated: true)
         }
     }
