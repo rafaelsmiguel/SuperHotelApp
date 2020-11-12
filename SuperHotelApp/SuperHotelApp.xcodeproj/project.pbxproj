@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0122CD43255DF66C00BE7A0D /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0122CD40255DF66B00BE7A0D /* Lato-Bold.ttf */; };
+		0122CD44255DF66C00BE7A0D /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0122CD41255DF66C00BE7A0D /* Lato-Regular.ttf */; };
+		0122CD45255DF66C00BE7A0D /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0122CD42255DF66C00BE7A0D /* Lato-Light.ttf */; };
 		012FC870252E96A400995FDF /* Hotel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012FC86F252E96A400995FDF /* Hotel.storyboard */; };
 		014E53002552048500D26CD7 /* HotelImagesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014E52FE2552048500D26CD7 /* HotelImagesCollectionCell.swift */; };
 		014E53012552048500D26CD7 /* HotelImagesCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014E52FF2552048500D26CD7 /* HotelImagesCollectionCell.xib */; };
@@ -20,10 +23,10 @@
 		0196C224255CC1ED0024E0A3 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196C223255CC1ED0024E0A3 /* SearchModel.swift */; };
 		0196C227255CC24C0024E0A3 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196C226255CC24C0024E0A3 /* SearchViewModel.swift */; };
 		01B188C625391378008FA5F9 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B188C525391378008FA5F9 /* Booking.swift */; };
-		01B398BE25538A7700AFD068 /* BookingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B398BD25538A7700AFD068 /* BookingRequest.swift */; };
-		01B398C125538B9D00AFD068 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B398C025538B9D00AFD068 /* BookingViewModel.swift */; };
 		01B3559C2547A7680081C972 /* hotels.json in Sources */ = {isa = PBXBuildFile; fileRef = 01B3559B2547A7680081C972 /* hotels.json */; };
 		01B355A02547ABA50081C972 /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B3559F2547ABA50081C972 /* SearchWorker.swift */; };
+		01B398BE25538A7700AFD068 /* BookingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B398BD25538A7700AFD068 /* BookingRequest.swift */; };
+		01B398C125538B9D00AFD068 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B398C025538B9D00AFD068 /* BookingViewModel.swift */; };
 		01C5595A252D4EFE009BA5CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55959252D4EFE009BA5CB /* AppDelegate.swift */; };
 		01C5595C252D4EFE009BA5CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5595B252D4EFE009BA5CB /* SceneDelegate.swift */; };
 		01C55961252D4EFE009BA5CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C5595F252D4EFE009BA5CB /* Main.storyboard */; };
@@ -52,15 +55,15 @@
 		E7162536253664CD000F62D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7162535253664CD000F62D1 /* User.swift */; };
 		E727C9EA2538FF97007063D3 /* BookingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727C9E92538FF97007063D3 /* BookingCollectionViewCell.swift */; };
 		E727C9ED2538FFA8007063D3 /* BookingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E727C9EC2538FFA8007063D3 /* BookingCollectionViewCell.xib */; };
-		E79F5889252E7B5C00C0C055 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79F588B252E7B5C00C0C055 /* Lato-Bold.ttf */; };
-		E79F588D252E7B6900C0C055 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79F588F252E7B6900C0C055 /* Lato-Light.ttf */; };
-		E79F5891252E7B7200C0C055 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79F5893252E7B7200C0C055 /* Lato-Regular.ttf */; };
 		E7A893B5252E2BAA002C31F2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A893B4252E2BAA002C31F2 /* Login.storyboard */; };
 		E7A893B8252E3312002C31F2 /* SegueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A893B7252E3312002C31F2 /* SegueType.swift */; };
 		E7ED757425361B300071697D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED757325361B300071697D /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0122CD40255DF66B00BE7A0D /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		0122CD41255DF66C00BE7A0D /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		0122CD42255DF66C00BE7A0D /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		012FC86F252E96A400995FDF /* Hotel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Hotel.storyboard; sourceTree = "<group>"; };
 		013B17CC255A0C6B002B2C14 /* SuperHotelApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuperHotelApp.entitlements; sourceTree = "<group>"; };
 		014E52FE2552048500D26CD7 /* HotelImagesCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelImagesCollectionCell.swift; sourceTree = "<group>"; };
@@ -75,10 +78,10 @@
 		0196C223255CC1ED0024E0A3 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		0196C226255CC24C0024E0A3 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		01B188C525391378008FA5F9 /* Booking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
-		01B398BD25538A7700AFD068 /* BookingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRequest.swift; sourceTree = "<group>"; };
-		01B398C025538B9D00AFD068 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
 		01B3559B2547A7680081C972 /* hotels.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hotels.json; sourceTree = "<group>"; };
 		01B3559F2547ABA50081C972 /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
+		01B398BD25538A7700AFD068 /* BookingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRequest.swift; sourceTree = "<group>"; };
+		01B398C025538B9D00AFD068 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
 		01C55956252D4EFE009BA5CB /* SuperHotelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperHotelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C55959252D4EFE009BA5CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01C5595B252D4EFE009BA5CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,9 +112,6 @@
 		E7162535253664CD000F62D1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E727C9E92538FF97007063D3 /* BookingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingCollectionViewCell.swift; sourceTree = "<group>"; };
 		E727C9EC2538FFA8007063D3 /* BookingCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingCollectionViewCell.xib; sourceTree = "<group>"; };
-		E79F588A252E7B5C00C0C055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/Lato-Bold.ttf"; sourceTree = "<group>"; };
-		E79F588E252E7B6900C0C055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/Lato-Light.ttf"; sourceTree = "<group>"; };
-		E79F5892252E7B7200C0C055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		E7A893B4252E2BAA002C31F2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E7A893B7252E3312002C31F2 /* SegueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueType.swift; sourceTree = "<group>"; };
 		E7ED757325361B300071697D /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -385,9 +385,9 @@
 		01C5599A252D5C76009BA5CB /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				E79F588B252E7B5C00C0C055 /* Lato-Bold.ttf */,
-				E79F588F252E7B6900C0C055 /* Lato-Light.ttf */,
-				E79F5893252E7B7200C0C055 /* Lato-Regular.ttf */,
+				0122CD40255DF66B00BE7A0D /* Lato-Bold.ttf */,
+				0122CD42255DF66C00BE7A0D /* Lato-Light.ttf */,
+				0122CD41255DF66C00BE7A0D /* Lato-Regular.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -497,16 +497,16 @@
 				54359715254674E200981521 /* booking.json in Resources */,
 				014E53012552048500D26CD7 /* HotelImagesCollectionCell.xib in Resources */,
 				01773C8B25478F2500ED467A /* Tabbar.storyboard in Resources */,
-				E79F5889252E7B5C00C0C055 /* Lato-Bold.ttf in Resources */,
 				0160E69F2536AB55005B55E3 /* Profile.storyboard in Resources */,
 				E7A893B5252E2BAA002C31F2 /* Login.storyboard in Resources */,
+				0122CD44255DF66C00BE7A0D /* Lato-Regular.ttf in Resources */,
+				0122CD43255DF66C00BE7A0D /* Lato-Bold.ttf in Resources */,
 				012FC870252E96A400995FDF /* Hotel.storyboard in Resources */,
 				01C55963252D4EFF009BA5CB /* Assets.xcassets in Resources */,
 				0160E69C2536A7C4005B55E3 /* Booking.storyboard in Resources */,
-				E79F588D252E7B6900C0C055 /* Lato-Light.ttf in Resources */,
 				01C55961252D4EFE009BA5CB /* Main.storyboard in Resources */,
-				E79F5891252E7B7200C0C055 /* Lato-Regular.ttf in Resources */,
 				E727C9ED2538FFA8007063D3 /* BookingCollectionViewCell.xib in Resources */,
+				0122CD45255DF66C00BE7A0D /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,30 +582,6 @@
 				54359716254674E200981521 /* Base */,
 			);
 			name = booking.json;
-			sourceTree = "<group>";
-		};
-		E79F588B252E7B5C00C0C055 /* Lato-Bold.ttf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E79F588A252E7B5C00C0C055 /* Base */,
-			);
-			name = "Lato-Bold.ttf";
-			sourceTree = "<group>";
-		};
-		E79F588F252E7B6900C0C055 /* Lato-Light.ttf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E79F588E252E7B6900C0C055 /* Base */,
-			);
-			name = "Lato-Light.ttf";
-			sourceTree = "<group>";
-		};
-		E79F5893252E7B7200C0C055 /* Lato-Regular.ttf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E79F5892252E7B7200C0C055 /* Base */,
-			);
-			name = "Lato-Regular.ttf";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
