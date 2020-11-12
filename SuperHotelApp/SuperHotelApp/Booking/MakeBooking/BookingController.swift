@@ -9,15 +9,15 @@ import Foundation
 
 class BookingController {
     
-    private var hotel: HotelElement?
+//    private var hotel: HotelElement?
+//
+//    init(hotel: HotelElement?) {
+//        self.hotel = hotel
+//    }
     
-    init(hotel: HotelElement?) {
-        self.hotel = hotel
-    }
-    
-    var hotelName: String? {
-        return self.hotel?.name
-    }
+//    var hotelName: String? {
+//        return self.hotel?.name
+//    }
     
     func setupNavBar() -> String {
         return "Reserva"

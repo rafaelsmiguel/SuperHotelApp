@@ -9,8 +9,8 @@ import Foundation
 
 class SearchViewModel {
     
-    var listHotel: [HotelElement] = []
-    var hotel: HotelElement = HotelElement()
+//    var listHotel: [HotelElement] = []
+//    var hotel: HotelElement = HotelElement()
     var searchWorker = SearchWorker()
     var searchHotel: SearchModel?
     var currentSearch: String?

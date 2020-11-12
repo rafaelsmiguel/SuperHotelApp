@@ -19,8 +19,8 @@ class SearchHotelVC: UIViewController {
     @IBOutlet var constraintMapSize: NSLayoutConstraint!
     
     var destinationId: String = ""
-    var listHotel: [HotelElement] = []
-    var hotelSelected: HotelElement = HotelElement()
+//    var listHotel: [HotelElement] = []
+//    var hotelSelected: HotelElement = HotelElement()
     var searchViewModel = SearchViewModel()
     
     override func viewDidLoad() {
@@ -141,7 +141,7 @@ extension SearchHotelVC: MKMapViewDelegate {
             let storyboard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
         
             let hotelDetailViewController = storyboard.instantiateViewController(withIdentifier: "HotelDetailVC") as! HotelDetailVC
-            hotelDetailViewController.hotelDetailController = HotelDetailController(hotel: searchViewModel.hotel)
+            hotelDetailViewController.hotelDetailViewModel = HotelDetailViewModel(hotel: HotelModel(destinationId: "", name: "", latitude:"", longitude: "", valueByNight: 0, address: "", images: []))
             self.navigationController?.pushViewController(hotelDetailViewController, animated: true)
         }
     }

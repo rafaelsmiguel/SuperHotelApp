@@ -15,23 +15,23 @@ class SearchWorker {
         self.currentSearch = city
     }
     
-    func getListSearch( completion:(Hotel?, Bool) -> Void) {
-        
-        if let path = Bundle.main.path(forResource: "hotels", ofType: "json") {
-            
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let decodeObject = try JSONDecoder().decode(Hotel.self, from: data)
-                
-                print(decodeObject)
-                completion(decodeObject, false)
-                
-            } catch {
-                print("Erro ao carregar JSON! :(")
-                completion(nil, true)
-            }
-        }
-    }
+//    func getListSearch( completion:(Hotel?, Bool) -> Void) {
+//        
+//        if let path = Bundle.main.path(forResource: "hotels", ofType: "json") {
+//            
+//            do {
+//                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+//                let decodeObject = try JSONDecoder().decode(Hotel.self, from: data)
+//                
+//                print(decodeObject)
+//                completion(decodeObject, false)
+//                
+//            } catch {
+//                print("Erro ao carregar JSON! :(")
+//                completion(nil, true)
+//            }
+//        }
+//    }
     
     
     func getListSearchAPI( completion: @escaping (SearchModel?, _ error: Bool) -> Void) {

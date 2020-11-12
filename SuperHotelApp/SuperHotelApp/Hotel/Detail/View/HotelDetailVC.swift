@@ -94,7 +94,7 @@ class HotelDetailVC: UIViewController {
         let bookingViewController = storyBoard.instantiateViewController(withIdentifier: "BookingVC") as! BookingVC
         bookingViewController.modalPresentationStyle = .fullScreen
         bookingViewController.navigationController?.navigationBar.isHidden = false
-        bookingViewController.bookingController = BookingController(hotel: hotelDetailViewModel?.getHotelDetail())
+//        bookingViewController.bookingController = BookingController(hotel: hotelDetailViewModel?.getHotelDetail())
         self.present(bookingViewController, animated: true, completion: nil)
     }
 

@@ -57,7 +57,7 @@ class BookingVC: UIViewController {
         self.datePicker.preferredDatePickerStyle = .wheels
         self.datePicker.datePickerMode = .date
         
-        self.hotelLabel.text = bookingController?.hotelName
+//        self.hotelLabel.text = bookingController?.hotelName
     }
     
     @IBAction func tapCheckin(_ sender: UIButton) {
