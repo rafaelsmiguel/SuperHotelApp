@@ -92,10 +92,13 @@ class HotelDetailVC: UIViewController {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
         let bookingViewController = storyBoard.instantiateViewController(withIdentifier: "BookingVC") as! BookingVC
-        bookingViewController.modalPresentationStyle = .fullScreen
-        bookingViewController.navigationController?.navigationBar.isHidden = false
+        bookingViewController.bookingViewModel = BookingViewModel(hotel: HotelModel(destinationId: "", name: self.hotelDetailViewModel?.hotelName, latitude: "", longitude: "", valueByNight: 0, address: "", images: []))
+        
+        self.navigationController?.pushViewController(bookingViewController, animated: true)
+//        bookingViewController.modalPresentationStyle = .fullScreen
+//        bookingViewController.navigationController?.navigationBar.isHidden = false
 //        bookingViewController.bookingController = BookingController(hotel: hotelDetailViewModel?.getHotelDetail())
-        self.present(bookingViewController, animated: true, completion: nil)
+//        self.present(bookingViewController, animated: true, completion: nil)
     }
 
 }

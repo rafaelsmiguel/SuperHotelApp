@@ -16,9 +16,9 @@ class BookingViewModel {
 //        self.bookingRequest = bookingRequest
 //    }
     
-//    init(hotel: HotelModel?) {
-//        self.hotel = hotel
-//    }
+    init(hotel: HotelModel?) {
+        self.hotel = hotel
+    }
     
     var hotelName: String? {
         return self.hotel?.name

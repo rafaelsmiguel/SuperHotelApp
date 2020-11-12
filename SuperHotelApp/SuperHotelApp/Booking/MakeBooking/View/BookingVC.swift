@@ -25,14 +25,14 @@ class BookingVC: UIViewController {
     
     var dataSelecionada: Date? = nil
 
-    var bookingViewModel: BookingViewModel = BookingViewModel()
+    var bookingViewModel: BookingViewModel?
     
-    var adults: [Int] = [1,2,3,4,5,6,7,8]
+    var adults: [Int]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        self.hotelLabel.text = self.bookingViewModel?.hotelName
         setupTextField()
         setupDatePicker()
         setupPickerView()
@@ -47,7 +47,7 @@ class BookingVC: UIViewController {
     
     func setupNavBar() {
         let navigationBar = self.parent?.navigationItem
-        navigationBar?.title = bookingViewModel.setupNavBar()
+        navigationBar?.title = bookingViewModel?.setupNavBar()
     }
     
     func setupDatePicker() {
@@ -70,30 +70,37 @@ class BookingVC: UIViewController {
         self.pickerViewAdults.dataSource = self
         self.pickerViewAdults.delegate = self
         self.datePicker.datePickerMode = .date
+        
+        self.adults = self.bookingViewModel?.maxAdultsForRoom()
     }
     
     func setupVisibilityPicker(value: Bool) {
         pickerViewAdults.isHidden = value
         viewToolbar.isHidden = value
+
+//        self.hotelLabel.text = bookingController?.hotelName
     }
     
     
     @IBAction func tapCheckin(_ sender: UIButton) {
         
         fecharTeclado(quantityTextFields)
+        closePickerView()
         
         setupVisibilityDatePicker(value:false)
         
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        toolBar.barTintColor = UIColor.gray
+        toolBar.barTintColor = .lightGray
         toolBar.sizeToFit()
         
         // Adding Button ToolBar
         let selecionarButton = UIBarButtonItem(title: "Selecionar", style: .plain, target: self, action: #selector(BookingVC.selecionarDataCheckin))
+        selecionarButton.tintColor = .white
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let fecharButton = UIBarButtonItem(title: "Fechar", style: .plain, target: self, action: #selector(BookingVC.fecharData))
+        fecharButton.tintColor = .white
         toolBar.setItems([fecharButton, spaceButton, selecionarButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         toolBar.frame = viewToolbar.bounds
@@ -103,19 +110,22 @@ class BookingVC: UIViewController {
     @IBAction func tapCheckout(_ sender: UIButton) {
         
         fecharTeclado(quantityTextFields)
+        closePickerView()
         
         setupVisibilityDatePicker(value:false)
     
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        toolBar.barTintColor = UIColor.gray
+        toolBar.barTintColor = .lightGray
         toolBar.sizeToFit()
         
         // Adding Button ToolBar
         let selecionarButton = UIBarButtonItem(title: "Selecionar", style: .plain, target: self, action: #selector(BookingVC.selecionarDataCheckout))
+        selecionarButton.tintColor = .white
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let fecharButton = UIBarButtonItem(title: "Fechar", style: .plain, target: self, action: #selector(BookingVC.fecharData))
+        fecharButton.tintColor = .white
         toolBar.setItems([fecharButton, spaceButton, selecionarButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         toolBar.frame = viewToolbar.bounds
@@ -138,8 +148,8 @@ class BookingVC: UIViewController {
         
         if let data = dataSelecionada
         {
-            checkinButton.setTitle(self.bookingViewModel.formatDate(date: data), for: .normal)
-            self.bookingViewModel.setCheckin(checkIn: self.bookingViewModel.formatDate(date: data))
+            checkinButton.setTitle(self.bookingViewModel?.formatDate(date: data), for: .normal)
+            self.bookingViewModel?.setCheckin(checkIn: self.bookingViewModel?.formatDate(date: data) ?? "")
         }
     }
     
@@ -151,8 +161,8 @@ class BookingVC: UIViewController {
         
         if let data = dataSelecionada
         {
-            checkoutButton.setTitle(self.bookingViewModel.formatDate(date: data), for: .normal)
-            self.bookingViewModel.setCheckout(checkOut: self.bookingViewModel.formatDate(date: data))
+            checkoutButton.setTitle(self.bookingViewModel?.formatDate(date: data), for: .normal)
+            self.bookingViewModel?.setCheckout(checkOut: self.bookingViewModel?.formatDate(date: data) ?? "")
         }
     }
     
@@ -170,18 +180,20 @@ class BookingVC: UIViewController {
         
         fecharTeclado(quantityTextFields)
         fecharData()
+        closePickerView()
         
-        if self.bookingViewModel.checkIn == nil {
+        
+        if self.bookingViewModel?.checkIn == nil {
             showToast(message: "Check-in deve ser preenchido.")
             return
         }
         
-        if self.bookingViewModel.checkOut == nil {
+        if self.bookingViewModel?.checkOut == nil {
             showToast(message: "Check-out deve ser preenchido.")
             return
         }
         
-        if self.bookingViewModel.adults == nil || self.bookingViewModel.adults == 0 {
+        if self.bookingViewModel?.adults == nil || self.bookingViewModel?.adults == 0 {
             showToast(message: "Quantidade de hóspedes deve ser preenchido.")
             return
         }
@@ -215,22 +227,23 @@ extension BookingVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func buildPickerView()
     {
         fecharTeclado(quantityTextFields)
+        fecharData()
         
         setupVisibilityPicker(value: false)
-        
-        pickerViewAdults.backgroundColor = .lightGray
-        pickerViewAdults.setValue(1, forKeyPath: "alpha")
         
         // ToolBar
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        toolBar.barTintColor = .darkGray
+        toolBar.barTintColor = .lightGray
         toolBar.sizeToFit()
         
         let selecionarButton = UIBarButtonItem(title: "Selecionar", style: .plain, target: self, action: #selector(BookingVC.selectValuePicker))
+        selecionarButton.tintColor = .white
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let fecharButton = UIBarButtonItem(title: "Fechar", style: .plain, target: self, action: #selector(BookingVC.closePickerView))
+        fecharButton.tintColor = .white
+       
         toolBar.setItems([fecharButton, spaceButton, selecionarButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         toolBar.frame = viewToolbar.bounds
@@ -245,23 +258,33 @@ extension BookingVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return adults.count
+        return adults?.count ?? 0
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return "\(adults[row])"
+        if let adults = self.adults {
+            return "\(adults[row])"
+        }
+        
+        return ""
+       
     }
     
     @objc func selectValuePicker() {
         
-        let adult = adults[pickerViewAdults.selectedRow(inComponent: 0)]
+        if let adults = self.adults {
+            let adult = adults[pickerViewAdults.selectedRow(inComponent: 0)]
             
-        adultsButton.setTitle("\(adult)", for: .normal)
-        
-        self.bookingViewModel.setAdults(adults: adult)
+            adultsButton.setTitle("\(adult)", for: .normal)
+            
+            self.bookingViewModel?.setAdults(adults: adult )
 
-        setupVisibilityPicker(value: true)
+            setupVisibilityPicker(value: true)
+        }
+        
+            
+        
     }
     
     @objc func closePickerView() {
