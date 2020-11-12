@@ -50,11 +50,10 @@ class LoginViewController: UIViewController {
             controller.clearFields(fields: emailLoginTextField)
             controller.clearFields(fields: passLoginTextField)
             
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
-        let navigationViewController = storyBoard.instantiateViewController(withIdentifier: "MainNavigationContoller") as! MainNavigationContoller
-            navigationViewController.modalPresentationStyle = .fullScreen
-        self.present(navigationViewController, animated: true, completion: nil)
-                
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
+                            let navigationViewController = storyBoard.instantiateViewController(withIdentifier: "MainNavigationController") as! MainNavigationController
+                           navigationViewController.modalPresentationStyle = .fullScreen
+                            self.present(navigationViewController, animated: true, completion: nil)
      
         
         print(self.loginArray.count)
