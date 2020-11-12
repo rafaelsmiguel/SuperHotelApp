@@ -1,0 +1,66 @@
+
+
+[{
+  "destinationId": "2",
+  "name": "Hotel Marriot",
+  "latitude": "-23.560640",
+  "longitude": "-46.650570",
+  "valueByNight": 192.0,
+  "address": "Avenida Raimundo 287 - Pirituba - São Paulo - SP",
+  "image": "hotel1.jpg"
+},
+{
+  "destinationId": "3",
+  "name": "Hotel Liberda",
+  "latitude": "-23.5612621",
+  "longitude": "-46.6532267",
+  "valueByNight": 300.0,
+  "address": "Avenida Paulista 232 - Jardim Paulista - São Paulo - SP",
+  "image": "hotel2.jpg"
+},
+{
+  "destinationId": "2",
+  "name": "Hotel Hilton",
+  "latitude": "-23.5617561",
+  "longitude": "-46.6519259",
+  "valueByNight": 500.0,
+  "address": "Avenida Hadock Lobo 1500 - Centro - São Paulo - SP",
+  "image": "hotel3.jpg"
+}]
+//vem da API
+{
+    "hotels": [{
+            "geoId": "1100000000000112922",
+            "destinationId": "112922",
+            "landmarkCityDestinationId": null,
+            "type": "HOTEL",
+            "caption": "<span class='highlighted'>New</span> <span class='highlighted'>York</span> Hilton Midtown, New York, New York, United States of America",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": 40.76225,
+            "longitude": -73.97874,
+            "name": "New York Hilton Midtown"
+        },
+        {
+            "geoId": "1100000000000115902",
+            "destinationId": "115902",
+            "landmarkCityDestinationId": null,
+            "type": "HOTEL",
+            "caption": "<span class='highlighted'>New</span> <span class='highlighted'>York</span> Marriott Marquis, New York, New York, United States of America",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": 40.758234,
+            "longitude": -73.985457,
+            "name": "New York Marriott Marquis"
+        },
+        {
+            "geoId": "1100000000000106443",
+            "destinationId": "106443",
+            "landmarkCityDestinationId": null,
+            "type": "HOTEL",
+            "caption": "<span class='highlighted'>New</span> <span class='highlighted'>York</span> LaGuardia Airport Marriott, East Elmhurst, New York, United States of America",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": 40.768417,
+            "longitude": -73.867602,
+            "name": "New York LaGuardia Airport Marriott"
+        }
+    ]
+}
