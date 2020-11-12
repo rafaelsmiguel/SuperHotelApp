@@ -42,7 +42,7 @@ class SearchController {
     }
     
     func loadLocations(city: String?) {
-        listHotel = MockHotel().listHotel(location: city ?? "")
+        listHotel = HotelDetailWorker().listHotel(location: city ?? "")
     }
     
     func hotelSelected(annotation: String, index:Int) -> Bool {

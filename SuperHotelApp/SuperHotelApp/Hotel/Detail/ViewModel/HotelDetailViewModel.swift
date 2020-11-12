@@ -10,21 +10,23 @@ import Foundation
 class HotelDetailViewModel {
     
     private var hotel: HotelModel?
+    var hotelDetailWorker = HotelDetailWorker()
+    var getDetails: GetDetails?
     
     init(hotel: HotelModel?) {
         self.hotel = hotel
     }
     
     var hotelName: String? {
-        return self.hotel?.name
+        return self.getDetails?.data.body.propertyDescription.name
     }
     
     var valueByNight: String? {
-        return Helper.transformToCurrency(value: self.hotel?.valueByNight ?? 0)
+        return Helper.transformToCurrency(value: Double(self.getDetails?.data.body.propertyDescription.featuredPrice.currentPrice.plain ?? 0))
     }
     
     var address: String? {
-        return self.hotel?.address
+        return self.getDetails?.data.body.propertyDescription.address.fullAddress
     }
     
     var images: [String]? {
@@ -33,7 +35,7 @@ class HotelDetailViewModel {
     
     
     func getLatitude() -> Float {
-        if let lat = Float(self.hotel?.latitude ?? "") {
+        if let lat = self.getDetails?.data.body.pdpHeader.hotelLocation.coordinates.latitude {
             return lat
         }
             
@@ -42,7 +44,7 @@ class HotelDetailViewModel {
     
     func getLongitude() -> Float {
         
-        if let long = Float(self.hotel?.longitude ?? "") {
+        if let long = self.getDetails?.data.body.pdpHeader.hotelLocation.coordinates.longitude {
             return long
         }
             
@@ -56,5 +58,30 @@ class HotelDetailViewModel {
     func setupNavBar() -> String {
         return "Detalhes"
     }
+    
+    func getHotelDetailAPI(completion: @escaping (Bool) -> Void) {
+        
+        //            self.hotelDetailWorker.currentSearch(city: self.currentSearch ?? "")
+        
+        self.hotelDetailWorker.getHotelDetailAPI { (response, error) in
+            if error == false {
+                
+                self.getDetails = response!
+                
+                if self.getDetails?.result == "OK" {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            } else {
+                print("deu erro")
+                completion(false)
+            }
+        }
+    }
+    
+    
+    
+    
     
 }

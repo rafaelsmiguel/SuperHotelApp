@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MockHotel {
+class HotelDetailWorker {
     
     func listHotel(location: String) -> [HotelModel] {
         
@@ -43,4 +43,47 @@ class MockHotel {
         
     }
     
+    func getHotelDetailAPI( completion: @escaping (GetDetails?, _ error: Bool) -> Void) {
+        
+        var decodeObject: GetDetails?
+        
+        
+        let headers = [
+            "x-rapidapi-key": "b6ef719826msh7b413b7790ce60ep18a365jsn5955326dd2c3",
+            "x-rapidapi-host": "hotels4.p.rapidapi.com"
+        ]
+        
+        //        let queryItems = [URLQueryItem(name: "locale", value: "en_US"), URLQueryItem(name: "query", value: self.currentSearch!)]
+        //        var urlComps = URLComponents(string: "https://hotels4.p.rapidapi.com/locations/search")!
+        //        urlComps.queryItems = queryItems
+        
+        let request = NSMutableURLRequest(url: NSURL(string: "https://hotels4.p.rapidapi.com/properties/get-details?id=424023&locale=en_US&currency=USD&checkOut=2020-01-15&adults1=1&checkIn=2020-01-08")! as URL,
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print(error ?? "")
+            } else {
+                _ = response as? HTTPURLResponse
+                let responseData = String(data: data!, encoding: String.Encoding.utf8)
+                
+                let dataJson = responseData?.data(using: .utf8)!
+                
+                do {
+                    decodeObject = try JSONDecoder().decode(GetDetails.self, from: dataJson!)
+                    
+                    completion(decodeObject, false)
+                    
+                }catch {
+                    print("erro")
+                }
+            }
+        })
+        
+        dataTask.resume()
+    }
 }

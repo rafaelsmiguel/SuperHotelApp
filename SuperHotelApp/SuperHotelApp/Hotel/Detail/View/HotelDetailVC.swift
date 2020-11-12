@@ -15,8 +15,13 @@ class HotelDetailVC: UIViewController {
     @IBOutlet weak var hotelNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
     @IBOutlet weak var stackViewStars: UIStackView!
+    @IBOutlet weak var star1: UIImageView!
+    @IBOutlet weak var star2: UIImageView!
+    @IBOutlet weak var star3: UIImageView!
+    @IBOutlet weak var star4: UIImageView!
+    @IBOutlet weak var star5: UIImageView!
+    
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var nightsLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -28,6 +33,8 @@ class HotelDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainView.isHidden = true
+        
         setupHotel()
         
         self.collectionView.register(UINib(nibName: "HotelImagesCollectionCell", bundle: nil), forCellWithReuseIdentifier: "HotelImagesCollectionCell")
@@ -37,13 +44,30 @@ class HotelDetailVC: UIViewController {
     }
     
     func setupHotel() {
+    
+            self.hotelDetailViewModel?.getHotelDetailAPI { (success) in
+                if success {
+                    DispatchQueue.main.async {
+                        self.mainView.isHidden = false
+                        self.hotelNameLabel.text = self.hotelDetailViewModel?.hotelName
+                        self.valueLabel.text = self.hotelDetailViewModel?.valueByNight
+                        self.addressLabel.text = self.hotelDetailViewModel?.address
+                        self.setupHotelLocation()
+                    }
+                    
+                } else {
+                    DispatchQueue.main.async {
+                        self.mainView.isHidden = true
+                        self.showToast(message: "Não foi possível carregar o hotel.")
+                    }
+                }
+            }
         
-        self.hotelNameLabel.text = hotelDetailViewModel?.hotelName
-        self.valueLabel.text = hotelDetailViewModel?.valueByNight
-        self.addressLabel.text = hotelDetailViewModel?.address
+        
+        
         //self.imageViewHotel.image = UIImage(named: hotelDetailViewModel?.image ?? "")
         
-        setupHotelLocation()
+        
     }
     
     func setupHotelLocation() {
@@ -56,6 +80,12 @@ class HotelDetailVC: UIViewController {
         
         let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 700, longitudinalMeters: 700)
         mapView.setRegion(region, animated: true)
+    }
+    
+    func setupStars() {
+        
+        
+        
     }
     
     @IBAction func tapBookingButton(_ sender: SHButton_FilledGreen) {

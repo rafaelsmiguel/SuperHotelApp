@@ -39,7 +39,7 @@
 		01C559A7252D5D8B009BA5CB /* FontsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C559A4252D5D8B009BA5CB /* FontsName.swift */; };
 		01E7CA73252FF31E00A89D75 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7CA72252FF31E00A89D75 /* UIViewController.swift */; };
 		01E7CA77252FF74600A89D75 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7CA76252FF74600A89D75 /* HotelModel.swift */; };
-		01E7CA7A252FF82600A89D75 /* MockHotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7CA79252FF82600A89D75 /* MockHotel.swift */; };
+		01E7CA7A252FF82600A89D75 /* HotelDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7CA79252FF82600A89D75 /* HotelDetailWorker.swift */; };
 		54359715254674E200981521 /* booking.json in Resources */ = {isa = PBXBuildFile; fileRef = 54359717254674E200981521 /* booking.json */; };
 		549B9C002545B3D4002E5D83 /* BookingListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549B9BFF2545B3D4002E5D83 /* BookingListController.swift */; };
 		54A0E79825465DFE009577EE /* BookingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0E79725465DFE009577EE /* BookingWorker.swift */; };
@@ -90,7 +90,7 @@
 		01C559A4252D5D8B009BA5CB /* FontsName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsName.swift; sourceTree = "<group>"; };
 		01E7CA72252FF31E00A89D75 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		01E7CA76252FF74600A89D75 /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
-		01E7CA79252FF82600A89D75 /* MockHotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHotel.swift; sourceTree = "<group>"; };
+		01E7CA79252FF82600A89D75 /* HotelDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailWorker.swift; sourceTree = "<group>"; };
 		54359716254674E200981521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/booking.json; sourceTree = "<group>"; };
 		549B9BFF2545B3D4002E5D83 /* BookingListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingListController.swift; sourceTree = "<group>"; };
 		54A0E79725465DFE009577EE /* BookingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingWorker.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		014E532C2552447600D26CD7 /* Worker */ = {
 			isa = PBXGroup;
 			children = (
-				01E7CA79252FF82600A89D75 /* MockHotel.swift */,
+				01E7CA79252FF82600A89D75 /* HotelDetailWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -454,7 +454,7 @@
 				01842FB92539188400721888 /* SearchController.swift in Sources */,
 				01C559A7252D5D8B009BA5CB /* FontsName.swift in Sources */,
 				01C55983252D5AE3009BA5CB /* ProfileViewController.swift in Sources */,
-				01E7CA7A252FF82600A89D75 /* MockHotel.swift in Sources */,
+				01E7CA7A252FF82600A89D75 /* HotelDetailWorker.swift in Sources */,
 				01E7CA77252FF74600A89D75 /* HotelModel.swift in Sources */,
 				01C55989252D5AEE009BA5CB /* SearchHotelVC.swift in Sources */,
 				016857C82531208700867498 /* Helper.swift in Sources */,

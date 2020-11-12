@@ -379,9 +379,15 @@
                         <outlet property="bookingButton" destination="DpF-4G-Nhm" id="QmT-aZ-KwS"/>
                         <outlet property="collectionView" destination="UAt-P5-ZoC" id="T3M-sC-2Dq"/>
                         <outlet property="hotelNameLabel" destination="mMZ-PM-kZZ" id="ND0-IW-Dja"/>
+                        <outlet property="mainView" destination="Fe7-8W-UQh" id="pxj-sr-3fB"/>
                         <outlet property="mapView" destination="pO6-c8-crV" id="VPF-kd-R3E"/>
                         <outlet property="nightsLabel" destination="G1y-q5-hIn" id="pac-5O-2cz"/>
                         <outlet property="stackViewStars" destination="0li-gO-fmR" id="oRX-9p-Rbr"/>
+                        <outlet property="star1" destination="cHE-Fz-zIV" id="A1n-eu-4C8"/>
+                        <outlet property="star2" destination="Mns-9K-R9s" id="IAy-b4-7mS"/>
+                        <outlet property="star3" destination="miC-7D-Zgc" id="gro-na-0zZ"/>
+                        <outlet property="star4" destination="G7N-GB-Bze" id="1ba-DO-k7F"/>
+                        <outlet property="star5" destination="Qyj-p4-vCd" id="hwb-tY-Fag"/>
                         <outlet property="valueLabel" destination="B3V-F0-v4B" id="bEK-x6-X9B"/>
                     </connections>
                 </viewController>
