@@ -26,11 +26,16 @@ class RegisterViewController: UIViewController {
     
     var user:[User] = []
 
-    var viewModel:RegisterViewModel = RegisterViewModel()
+    
     var datePicker:UIDatePicker?
     
     
+    
+    
     override func viewDidLoad() {
+        
+        
+        
         
         self.registerNameTextField.delegate = self
         self.fromTextField.delegate = self
@@ -46,10 +51,9 @@ class RegisterViewController: UIViewController {
         birthTextField.inputView = datePicker
         datePicker?.addTarget(self, action: #selector(RegisterViewController.dateChanged(datePicker:)), for: .valueChanged)
         
-        
-        
-        
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
     
     
@@ -76,20 +80,11 @@ class RegisterViewController: UIViewController {
       
         if passTextField.text == confirmPassTextField.text{
         
-            viewModel.registerArray(
-                name: self.registerNameTextField.text ?? "",
-                from: self.fromTextField.text ?? "",
-                genre: self.genreTextField.text ?? "",
-                email: self.emailTextField.text ?? "",
-                birth: self.birthTextField.text ?? "",
-                password: self.passTextField.text ?? "",
-                confirm: self.confirmPassTextField.text ?? "",
-                array: &user)
-            
-            
-            viewModel.printRegister(array: &user)
-            viewModel.clearAllFields(name: self.registerNameTextField, from: self.fromTextField, genre: self.genreTextField, email: self.emailTextField, birth: self.birthTextField, password: self.passTextField, confirm: self.confirmPassTextField)
-            
+        self.registerArray()
+        print("Registro Efetuado")
+        print(user[0].email ?? "")
+        print(user[0].password ?? "")
+            self.clearAllFields()
         }else{
             showToast(message: "Senhas não conferem",showTop: true)
             
@@ -115,10 +110,48 @@ class RegisterViewController: UIViewController {
     
 
 
-
+    
+    func registerArray(){
+        
+        self.user = [User(name: self.registerNameTextField.text ?? "",
+                               from: self.fromTextField.text ?? "",
+                               genre: self.genreTextField.text ?? "",
+                               email: self.emailTextField.text ?? "",
+                               birth: self.birthTextField.text ?? "",
+                               password: self.passTextField.text ?? "",
+                               confirm: self.confirmPassTextField.text ?? "")]
+        
+      
+      
+        
+        
+    }
+    
+    func clearAllFields() {
+        
+        self.registerNameTextField.text = nil
+        self.fromTextField.text = nil
+        self.genreTextField.text = nil
+        self.emailTextField.text = nil
+        self.birthTextField.text = nil
+        self.passTextField.text = nil
+        self.confirmPassTextField.text = nil
+        
     }
     
     
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
 extension RegisterViewController:UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
