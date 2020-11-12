@@ -1,0 +1,170 @@
+{
+    "term": "sao paulo",
+    "moresuggestions": 7072,
+    "autoSuggestInstance": null,
+    "trackingID": "67655253-f06d-4172-b3e7-69f15246ab2f",
+    "misspellingfallback": false,
+    "suggestions": [{
+        "group": "CITY_GROUP",
+        "entities": [{
+            "geoId": "1000000000006127089",
+            "destinationId": "1747106",
+            "landmarkCityDestinationId": null,
+            "type": "REGION",
+            "caption": "<span class='highlighted'>Sao</span> <span class='highlighted'>Paulo</span> North Shore (and vicinity), Brazil",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -23.681697,
+            "longitude": -45.42823,
+            "name": "Sao Paulo North Shore (and vicinity)"
+        }, {
+            "geoId": "1000000000000003074",
+            "destinationId": "160256",
+            "landmarkCityDestinationId": null,
+            "type": "CITY",
+            "caption": "<span class='highlighted'>Sao</span> <span class='highlighted'>Paulo</span>, Brazil",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -23.5459,
+            "longitude": -46.63667,
+            "name": "Sao Paulo"
+        }, {
+            "geoId": "1000000000006052648",
+            "destinationId": "10234143",
+            "landmarkCityDestinationId": null,
+            "type": "REGION",
+            "caption": "<span class='highlighted'>Sao</span> <span class='highlighted'>Paulo</span> (state), Brazil",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -22.428913,
+            "longitude": -48.530756,
+            "name": "Sao Paulo (state)"
+        }, {
+            "geoId": "1000000000006084431",
+            "destinationId": "1668972",
+            "landmarkCityDestinationId": null,
+            "type": "CITY",
+            "caption": "Morro de <span class='highlighted'>Sao</span> <span class='highlighted'>Paulo</span>, Brazil",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -13.381852,
+            "longitude": -38.911306,
+            "name": "Morro de Sao Paulo"
+        }, {
+            "geoId": "1000000000006407687",
+            "destinationId": "10419573",
+            "landmarkCityDestinationId": null,
+            "type": "CITY",
+            "caption": "Litoral Norte Paulista, Brazil (<span class='highlighted'>Sao</span> <span class='highlighted'>Paulo</span> (state))",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -23.621248,
+            "longitude": -45.415531,
+            "name": "Litoral Norte Paulista"
+        }, {
+            "geoId": "1000000000006730359",
+            "destinationId": "10971223",
+            "landmarkCityDestinationId": null,
+            "type": "CITY",
+            "caption": "<span class='highlighted'>São</span> <span class='highlighted'>Paulo</span> das Missões, Brazil",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -27.98861,
+            "longitude": -54.975167,
+            "name": "São Paulo das Missões"
+        }]
+    }, {
+        "group": "LANDMARK_GROUP",
+        "entities": [{
+            "geoId": "1000000000006769405",
+            "destinationId": "11109268",
+            "landmarkCityDestinationId": "160256",
+            "type": "LANDMARK",
+            "caption": "Parque Anhembi, <span class='highlighted'>Sao</span> <span class='highlighted'>Paulo</span>, Brazil",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -23.516209,
+            "longitude": -46.636573,
+            "name": "Parque Anhembi"
+        }, {
+            "geoId": "1000000000006352370",
+            "destinationId": "1903645",
+            "landmarkCityDestinationId": "160256",
+            "type": "LANDMARK",
+            "caption": "Rua Augusta, <span class='highlighted'>Sao</span> <span class='highlighted'>Paulo</span>, Brazil",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -23.557585,
+            "longitude": -46.658909,
+            "name": "Rua Augusta"
+        }, {
+            "geoId": "1000000000006176417",
+            "destinationId": "1740247",
+            "landmarkCityDestinationId": "160256",
+            "type": "LANDMARK",
+            "caption": "Luiz Carlos Berrini Engineer's Avenue, <span class='highlighted'>Sao</span> <span class='highlighted'>Paulo</span>, Brazil",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -23.605477,
+            "longitude": -46.692313,
+            "name": "Luiz Carlos Berrini Engineer's Avenue"
+        }]
+    }, {
+        "group": "TRANSPORT_GROUP",
+        "entities": [{
+            "geoId": "1000000000005591623",
+            "destinationId": "1666305",
+            "landmarkCityDestinationId": null,
+            "type": "AIRPORT",
+            "caption": "<span class='highlighted'>Sao</span> <span class='highlighted'>Paulo</span> (GRU-Guarulhos - Governor Andre Franco Montoro Intl.), Brazil",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -23.425717,
+            "longitude": -46.481788,
+            "name": "Sao Paulo (GRU-Guarulhos - Governor Andre Franco Montoro Intl.)"
+        }, {
+            "geoId": "1000000000004736835",
+            "destinationId": "1666289",
+            "landmarkCityDestinationId": null,
+            "type": "AIRPORT",
+            "caption": "<span class='highlighted'>Sao</span> <span class='highlighted'>Paulo</span> (CGH-Congonhas), Brazil",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -23.626789,
+            "longitude": -46.659618,
+            "name": "Sao Paulo (CGH-Congonhas)"
+        }, {
+            "geoId": "1000000000006232220",
+            "destinationId": "1753030",
+            "landmarkCityDestinationId": null,
+            "type": "TRAIN_STATION",
+            "caption": "<span class='highlighted'>Sao</span> <span class='highlighted'>Paulo</span> Morumbi Station, Sao Paulo, Brazil",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -23.621617,
+            "longitude": -46.701626,
+            "name": "Sao Paulo Morumbi Station"
+        }]
+    }, {
+        "group": "HOTEL_GROUP",
+        "entities": [{
+            "geoId": "1100000000000133068",
+            "destinationId": "133068",
+            "landmarkCityDestinationId": null,
+            "type": "HOTEL",
+            "caption": "<span class='highlighted'>Sao</span> <span class='highlighted'>Paulo</span> Airport Marriott Hotel, Guarulhos, Brazil",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -23.457316,
+            "longitude": -46.492539,
+            "name": "Sao Paulo Airport Marriott Hotel"
+        }, {
+            "geoId": "1100000000000455748",
+            "destinationId": "455748",
+            "landmarkCityDestinationId": null,
+            "type": "HOTEL",
+            "caption": "<span class='highlighted'>São</span> <span class='highlighted'>Paulo</span> Lodge Business Hostel, Sao Paulo, Brazil",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -23.592314,
+            "longitude": -46.636852,
+            "name": "São Paulo Lodge Business Hostel"
+        }, {
+            "geoId": "1100000000000438970",
+            "destinationId": "438970",
+            "landmarkCityDestinationId": null,
+            "type": "HOTEL",
+            "caption": "<span class='highlighted'>São</span> <span class='highlighted'>Paulo</span> Inn, Sao Paulo, Brazil",
+            "redirectPage": "DEFAULT_PAGE",
+            "latitude": -23.541593,
+            "longitude": -46.636647,
+            "name": "São Paulo Inn"
+        }]
+    }]
+}
