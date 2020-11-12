@@ -47,6 +47,7 @@
 		E7A893B5252E2BAA002C31F2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A893B4252E2BAA002C31F2 /* Login.storyboard */; };
 		E7A893B8252E3312002C31F2 /* SegueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A893B7252E3312002C31F2 /* SegueType.swift */; };
 		E7ED757425361B300071697D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED757325361B300071697D /* LoginController.swift */; };
+		E7FCBD5325478C6F004F37D6 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FCBD5225478C6F004F37D6 /* RegisterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		E7A893B4252E2BAA002C31F2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E7A893B7252E3312002C31F2 /* SegueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueType.swift; sourceTree = "<group>"; };
 		E7ED757325361B300071697D /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		E7FCBD5225478C6F004F37D6 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,11 +210,10 @@
 		01C55970252D59A4009BA5CB /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				01C55982252D5AE3009BA5CB /* EditRegisterViewController.swift */,
-				01C55980252D5AE3009BA5CB /* ProfileViewController.swift */,
-				E1CC7B882536D6CB000FE355 /* Profile.swift */,
-				01C55981252D5AE3009BA5CB /* RegisterViewController.swift */,
-				E7162535253664CD000F62D1 /* User.swift */,
+				E715C50C255CB0DD00BA6E0C /* Model */,
+				E715C50B255CB0D000BA6E0C /* View */,
+				E715C50A255CB0C000BA6E0C /* ViewModel */,
+				E715C509255CB0B600BA6E0C /* Worker */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -255,6 +256,40 @@
 				E79F5893252E7B7200C0C055 /* Lato-Regular.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		E715C509255CB0B600BA6E0C /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		E715C50A255CB0C000BA6E0C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E7FCBD5225478C6F004F37D6 /* RegisterViewModel.swift */,
+				01C55980252D5AE3009BA5CB /* ProfileViewController.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E715C50B255CB0D000BA6E0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01C55981252D5AE3009BA5CB /* RegisterViewController.swift */,
+				01C55982252D5AE3009BA5CB /* EditRegisterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E715C50C255CB0DD00BA6E0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1CC7B882536D6CB000FE355 /* Profile.swift */,
+				E7162535253664CD000F62D1 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E727C9E52538FF3C007063D3 /* Model */ = {
@@ -363,6 +398,7 @@
 				01842FC025393BE100721888 /* BookingController.swift in Sources */,
 				01842FBC25392D8E00721888 /* HotelDetailController.swift in Sources */,
 				01B188C625391378008FA5F9 /* BookingModel.swift in Sources */,
+				E7FCBD5325478C6F004F37D6 /* RegisterViewModel.swift in Sources */,
 				01C5595C252D4EFE009BA5CB /* SceneDelegate.swift in Sources */,
 				01C559A6252D5D8B009BA5CB /* SHTextField.swift in Sources */,
 				01C55985252D5AE3009BA5CB /* EditRegisterViewController.swift in Sources */,

@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         
         self.emailLoginTextField.delegate = self
         self.passLoginTextField.delegate = self
-        self.isEnable(bool: false)
+        controller.isEnable(bool: false, button: loginButton)
         
         super.viewDidLoad()
 
@@ -44,23 +44,28 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginAction(_ sender: Any) {
         
+        
         if self.emailLoginTextField.text == loginArray[0].email && self.passLoginTextField.text == loginArray[0].password{
         
-        self.clearFields()
+            controller.clearFields(fields: emailLoginTextField)
+            controller.clearFields(fields: passLoginTextField)
+            
         let storyBoard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
-                        let navigationViewController = storyBoard.instantiateViewController(withIdentifier: "MainNavigationContoller") as! MainNavigationContoller
-                       navigationViewController.modalPresentationStyle = .fullScreen
-                        self.present(navigationViewController, animated: true, completion: nil)
+        let navigationViewController = storyBoard.instantiateViewController(withIdentifier: "MainNavigationContoller") as! MainNavigationContoller
+            navigationViewController.modalPresentationStyle = .fullScreen
+        self.present(navigationViewController, animated: true, completion: nil)
                 
      
         
         print(self.loginArray.count)
     
         }else{
-            showToast(message: "Conta Inexistente",showTop: true)
             
+            showToast(message: "Conta Inexistente",showTop: true)
+            controller.clearFields(fields: passLoginTextField)
         }
     }
+    
     
     @IBAction func miniSignAction(_ sender: Any) {
         
@@ -69,30 +74,17 @@ class LoginViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        
-        
-    }
+            }
     
     
-    func clearFields(){
-        
-        self.emailLoginTextField.text = nil
-        self.passLoginTextField.text = nil
-    }
+   
     
-    func isEnable(bool:Bool){
+    
+
         
-        if bool == true{
-            
-            self.loginButton.isEnabled = true
-        }else{
-            
-            self.loginButton.isEnabled = false
-            
-        }
     
     // MARK: - Navigation
-}
+
 }
 
 extension LoginViewController: UITextFieldDelegate{
@@ -105,10 +97,19 @@ extension LoginViewController: UITextFieldDelegate{
             self.passLoginTextField.becomeFirstResponder()
         }else{
             self.passLoginTextField.resignFirstResponder()
-            self.isEnable(bool: true)
+            controller.isEnable(bool: true, button: loginButton)
         }
         return true
     }
+    
+    
+    
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
+    
+    
     }
     
     

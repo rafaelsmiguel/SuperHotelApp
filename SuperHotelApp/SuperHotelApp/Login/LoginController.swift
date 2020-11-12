@@ -6,15 +6,28 @@
 //
 
 import Foundation
+import UIKit
 
 
 class LoginController {
     
     
-    var usuarioCadastrado:[User] = []
+    func clearFields(fields:UITextField){
+        
+        fields.text = nil
+        
+    }
     
     
+    func isEnable(bool:Bool, button:UIButton){
     
+        if bool == true{
+            
+            button.isEnabled = true
+        }else{
+            
+            button.isEnabled = false
+        }
     }
     
     
@@ -23,3 +36,4 @@ class LoginController {
     
     
 
+}
