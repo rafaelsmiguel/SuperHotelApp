@@ -141,7 +141,7 @@ extension SearchHotelVC: MKMapViewDelegate {
             let storyboard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
         
             let hotelDetailViewController = storyboard.instantiateViewController(withIdentifier: "HotelDetailVC") as! HotelDetailVC
-            hotelDetailViewController.hotelDetailViewModel = HotelDetailViewModel(hotel: HotelModel(destinationId: "", name: "", latitude:"", longitude: "", valueByNight: 0, address: "", images: []))
+            hotelDetailViewController.hotelDetailViewModel = HotelDetailViewModel(hotel: HotelModel(destinationId: "", name: "", latitude:"", longitude: "", valueByNight: 0, address: "", images: ["hotel1.jpg","hotel2.jpg","hotel3.jpg","hotel4.jpg"]))
             self.navigationController?.pushViewController(hotelDetailViewController, animated: true)
         }
     }
