@@ -364,8 +364,9 @@
 		01C5597B252D5A61009BA5CB /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				01C55993252D5B0E009BA5CB /* LoginViewController.swift */,
-				E7ED757325361B300071697D /* LoginController.swift */,
+				E7E8D44B25647222004FC14A /* View */,
+				E7E8D44A25647219004FC14A /* ViewModel */,
+				E7E8D44925647212004FC14A /* Model */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -461,6 +462,29 @@
 				01B188C525391378008FA5F9 /* Booking.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E7E8D44925647212004FC14A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E7E8D44A25647219004FC14A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E7ED757325361B300071697D /* LoginController.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E7E8D44B25647222004FC14A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01C55993252D5B0E009BA5CB /* LoginViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

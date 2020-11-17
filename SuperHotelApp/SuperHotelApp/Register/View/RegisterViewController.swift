@@ -97,6 +97,11 @@ class RegisterViewController: UIViewController {
 
     }
     }
+    @IBAction func toLoginFromRegisterAction(_ sender: Any) {
+       
+        performSegue(withIdentifier: SegueType.toLoginfromRegister.rawValue, sender:self)
+        
+    }
 }
     
 extension RegisterViewController: UITextFieldDelegate{
