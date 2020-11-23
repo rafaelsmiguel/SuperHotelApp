@@ -9,50 +9,52 @@ import Foundation
 
 class HotelDetailViewModel {
     
-    private var hotel: HotelModel?
+    private var hotel: Results?
     var hotelDetailWorker = HotelDetailWorker()
     var getDetails: GetDetails?
+    var hotelPhotos: HotelPhotos?
     
-    init(hotel: HotelModel?) {
+    
+    init(hotel: Results?) {
         self.hotel = hotel
     }
     
     var hotelName: String? {
-        return self.getDetails?.data.body.propertyDescription.name
+        return self.hotel?.name
     }
     
     var valueByNight: String? {
-        return Helper.transformToCurrency(value: Double(self.getDetails?.data.body.propertyDescription.featuredPrice.currentPrice.plain ?? 0))
+        return Helper.transformToCurrency(value: self.hotel?.ratePlan?.price?.exactCurrent ?? 0)
     }
     
     var address: String? {
-        return self.getDetails?.data.body.propertyDescription.address.fullAddress
+        return self.hotel?.address?.extendedAddress
     }
     
-    var images: [String]? {
-        return self.hotel?.images
+    var images: [ImagesHotel]? {
+        return hotelPhotos?.hotelImages
     }
     
     
-    func getLatitude() -> Float {
-        if let lat = self.getDetails?.data.body.pdpHeader.hotelLocation.coordinates.latitude {
+    func getLatitude() -> Double {
+        if let lat = self.hotel?.coordinate?.lat {
             return lat
         }
             
         return 0
     }
     
-    func getLongitude() -> Float {
+    func getLongitude() -> Double {
         
-        if let long = self.getDetails?.data.body.pdpHeader.hotelLocation.coordinates.longitude {
+        if let long = self.hotel?.coordinate?.lon {
             return long
         }
             
         return 0
     }
     
-    func getHotelDetail() -> HotelModel {
-        return self.hotel ?? HotelModel()
+    func getHotelDetail() -> Results {
+        return self.hotel ?? Results(id: 0, name: "", thumbnailUrl: "", starRating: 0.0, address: nil, ratePlan: nil, coordinate: nil)
     }
     
     func setupNavBar() -> String {
@@ -69,6 +71,27 @@ class HotelDetailViewModel {
                 self.getDetails = response!
                 
                 if self.getDetails?.result == "OK" {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            } else {
+                print("deu erro")
+                completion(false)
+            }
+        }
+    }
+    
+    func getHotelPhotos(completion: @escaping (Bool) -> Void) {
+        
+        self.hotelDetailWorker.hotelId = self.hotel?.id ?? 0
+        
+        self.hotelDetailWorker.getHotelPhotos { (response, error) in
+            if error == false {
+                
+                self.hotelPhotos = response!
+                
+                if self.hotelPhotos != nil {
                     completion(true)
                 } else {
                     completion(false)

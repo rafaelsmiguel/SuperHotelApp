@@ -9,6 +9,8 @@ import Foundation
 
 class HotelDetailWorker {
     
+    var hotelId: Int = 0
+    
     func listHotel(location: String) -> [HotelModel] {
         
         var listHotel:[HotelModel] = []
@@ -86,4 +88,53 @@ class HotelDetailWorker {
         
         dataTask.resume()
     }
+    
+    func getHotelPhotos( completion: @escaping (HotelPhotos?, _ error: Bool) -> Void) {
+        
+        var decodeObject: HotelPhotos?
+        
+        
+        let headers = [
+            "x-rapidapi-key": "b6ef719826msh7b413b7790ce60ep18a365jsn5955326dd2c3",
+            "x-rapidapi-host": "hotels4.p.rapidapi.com"
+        ]
+        
+        let queryItems = [URLQueryItem(name: "id", value: "\(hotelId)")]
+        var urlComps = URLComponents(string: "https://hotels4.p.rapidapi.com/properties/get-hotel-photos")!
+        urlComps.queryItems = queryItems
+        
+//        let request = NSMutableURLRequest(url: NSURL(string: "https://hotels4.p.rapidapi.com/properties/get-details?id=424023&locale=en_US&currency=USD&checkOut=2020-01-15&adults1=1&checkIn=2020-01-08")! as URL,
+//                                          cachePolicy: .useProtocolCachePolicy,
+//                                          timeoutInterval: 10.0)
+        
+        
+        let request = NSMutableURLRequest(url: urlComps.url ?? NSURL(string:"") as! URL)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print(error ?? "")
+            } else {
+                _ = response as? HTTPURLResponse
+                let responseData = String(data: data!, encoding: String.Encoding.utf8)
+                
+                let dataJson = responseData?.data(using: .utf8)!
+                
+                do {
+                    decodeObject = try JSONDecoder().decode(HotelPhotos.self, from: dataJson!)
+                    
+                    completion(decodeObject, false)
+                    
+                }catch {
+                    print("erro")
+                }
+            }
+        })
+        
+        dataTask.resume()
+    }
+    
+    
 }

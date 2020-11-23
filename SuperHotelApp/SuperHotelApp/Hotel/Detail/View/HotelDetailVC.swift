@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class HotelDetailVC: UIViewController {
-
+    
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var hotelNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -39,36 +39,37 @@ class HotelDetailVC: UIViewController {
         
         self.collectionView.register(UINib(nibName: "HotelImagesCollectionCell", bundle: nil), forCellWithReuseIdentifier: "HotelImagesCollectionCell")
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        
     }
     
     func setupHotel() {
-    
-            self.hotelDetailViewModel?.getHotelDetailAPI { (success) in
-                if success {
-                    DispatchQueue.main.async {
-                        self.mainView.isHidden = false
-                        self.hotelNameLabel.text = self.hotelDetailViewModel?.hotelName
-                        self.valueLabel.text = self.hotelDetailViewModel?.valueByNight
-                        self.addressLabel.text = self.hotelDetailViewModel?.address
-                        self.setupHotelLocation()
-                    }
-                    
-                } else {
-                    DispatchQueue.main.async {
-                        self.mainView.isHidden = true
-                        self.showToast(message: "Não foi possível carregar o hotel.")
-                    }
-                }
-            }
         
+        //            self.hotelDetailViewModel?.getHotelDetailAPI { (success) in
+        //                if success {
+        //                    DispatchQueue.main.async {
+        self.mainView.isHidden = false
+        self.hotelNameLabel.text = self.hotelDetailViewModel?.hotelName
+        self.valueLabel.text = self.hotelDetailViewModel?.valueByNight
+        self.addressLabel.text = self.hotelDetailViewModel?.address
         
-        
-        //self.imageViewHotel.image = UIImage(named: hotelDetailViewModel?.image ?? "")
-        
-        
+        self.setupPhotos()
+        self.setupHotelLocation()
+        //                    }
+        //
+        //                } else {
+        //                    DispatchQueue.main.async {
+        //                        self.mainView.isHidden = true
+        //                        self.showToast(message: "Não foi possível carregar o hotel.")
+        //                    }
+        //                }
     }
+    
+    
+    
+    //self.imageViewHotel.image = UIImage(named: hotelDetailViewModel?.image ?? "")
+    
+    
+    //    }
     
     func setupHotelLocation() {
         
@@ -88,6 +89,24 @@ class HotelDetailVC: UIViewController {
         
     }
     
+    func setupPhotos() {
+        
+        self.hotelDetailViewModel?.getHotelPhotos(completion: { (success) in
+            if success {
+                DispatchQueue.main.async {
+                    self.collectionView.delegate = self
+                    self.collectionView.dataSource = self
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.showToast(message: "Não foi possível carregar as imagens do hotel.",showTop: true)
+                }
+                
+            }
+        })
+        
+    }
+    
     @IBAction func tapBookingButton(_ sender: SHButton_FilledGreen) {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
@@ -95,12 +114,12 @@ class HotelDetailVC: UIViewController {
         bookingViewController.bookingViewModel = BookingViewModel(hotel: HotelModel(destinationId: "", name: self.hotelDetailViewModel?.hotelName, latitude: "", longitude: "", valueByNight: 0, address: "", images: []))
         
         self.navigationController?.pushViewController(bookingViewController, animated: true)
-//        bookingViewController.modalPresentationStyle = .fullScreen
-//        bookingViewController.navigationController?.navigationBar.isHidden = false
-//        bookingViewController.bookingController = BookingController(hotel: hotelDetailViewModel?.getHotelDetail())
-//        self.present(bookingViewController, animated: true, completion: nil)
+        //        bookingViewController.modalPresentationStyle = .fullScreen
+        //        bookingViewController.navigationController?.navigationBar.isHidden = false
+        //        bookingViewController.bookingController = BookingController(hotel: hotelDetailViewModel?.getHotelDetail())
+        //        self.present(bookingViewController, animated: true, completion: nil)
     }
-
+    
 }
 
 extension HotelDetailVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -113,7 +132,7 @@ extension HotelDetailVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         let cell: HotelImagesCollectionCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "HotelImagesCollectionCell", for: indexPath) as? HotelImagesCollectionCell
         
-        cell?.setup(foto: hotelDetailViewModel?.images?[indexPath.item] ?? "")
+        cell?.setup(foto: hotelDetailViewModel?.images?[indexPath.item].baseUrl ?? "")
         
         return cell ?? UICollectionViewCell()
     }
