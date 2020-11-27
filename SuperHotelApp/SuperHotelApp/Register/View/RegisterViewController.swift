@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
     
@@ -85,6 +86,11 @@ class RegisterViewController: UIViewController {
                 password: self.passTextField.text ?? "",
                 confirm: self.confirmPassTextField.text ?? "",
                 array: &user)
+            
+            
+            Auth.auth().signIn(withEmail: user[0].email, password: user[0].password) { (<#AuthDataResult?#>, <#Error?#>) in
+                <#code#>
+            }
             
             
             viewModel.printRegister(array: &user)
