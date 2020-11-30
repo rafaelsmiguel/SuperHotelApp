@@ -32,3 +32,8 @@ struct Entities: Codable {
     let longitude: Double?
     let name: String?
 }
+
+
+struct LandMarkGroup {
+    let destinationId: String
+}

@@ -19,15 +19,12 @@ class SearchHotelVC: UIViewController {
     @IBOutlet var constraintMapSize: NSLayoutConstraint!
     
     var destinationId: String = ""
-//    var listHotel: [HotelElement] = []
-//    var hotelSelected: HotelElement = HotelElement()
     var searchViewModel = SearchViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTextField()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,11 +81,26 @@ class SearchHotelVC: UIViewController {
         }
     }
     
-    func loadLocations() {
-        
+    
+    func searchTerms() {
         searchViewModel.loadLocations(city: searchTextField.text)
         
         self.searchViewModel.getListSearch { (success) in
+            if success {
+                self.loadLocations()
+            } else {
+                DispatchQueue.main.async {
+//                    self.constraintMapSize.isActive = true
+//                    self.mapView.removeAnnotations(self.mapView.annotations)
+//                    self.showToast(message: self.searchViewModel.getMessageNotFoundHotel(),showTop: true)
+                }
+            }
+        }
+    }
+    
+    func loadLocations() {
+        
+        self.searchViewModel.getListHotel { (success) in
             if success {
                 self.mapView.delegate = self
                 self.setPins()
@@ -113,7 +125,7 @@ class SearchHotelVC: UIViewController {
             return
         }
         
-        loadLocations()
+        searchTerms()
     }
     
     @IBAction func fecharTeclado(_ sender: UITextField) {
@@ -141,7 +153,7 @@ extension SearchHotelVC: MKMapViewDelegate {
             let storyboard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
         
             let hotelDetailViewController = storyboard.instantiateViewController(withIdentifier: "HotelDetailVC") as! HotelDetailVC
-            hotelDetailViewController.hotelDetailViewModel = HotelDetailViewModel(hotel: HotelModel(destinationId: "", name: "", latitude:"", longitude: "", valueByNight: 0, address: "", images: ["hotel1.jpg","hotel2.jpg","hotel3.jpg","hotel4.jpg"]))
+            hotelDetailViewController.hotelDetailViewModel = HotelDetailViewModel(hotel: self.searchViewModel.resultHotel)
             self.navigationController?.pushViewController(hotelDetailViewController, animated: true)
         }
     }

@@ -15,36 +15,39 @@ class SearchViewModel {
     var searchHotel: SearchModel?
     var currentSearch: String?
     var arraySuggestion: [Suggestion] = []
-    var hotelsAPI: [Entities] = []
-    var hotelAPI: Entities?
+    var locationsSearchAPI: [Entities] = []
+    var entitieAPI: Entities?
+    var propertiesListModel: PropertiesListModel?
+    var listHotel: [Results] = []
+    var resultHotel: Results?
     
     func setupNavBar() -> String {
         return "Buscar"
     }
     
     var arrayCount: Int {
-        return self.hotelsAPI.count
+        return self.listHotel.count
     }
     
-    func getLatitude(index: Int) -> Float {
-        if let lat = self.hotelsAPI[index].latitude ?? 0.0 {
-            return Float(lat)
+    func getLatitude(index: Int) -> Double {
+        if let lat = self.listHotel[index].coordinate?.lat {
+            return Double(lat)
         }
             
         return 0
     }
     
-    func getLongitude(index: Int) -> Float {
+    func getLongitude(index: Int) -> Double {
         
-        if let long = self.hotelsAPI[index].longitude ?? 0.0 {
-            return Float(long)
+        if let long = self.listHotel[index].coordinate?.lon {
+            return Double(long)
         }
             
         return 0
     }
     
     func getName(index: Int) -> String {
-        return self.hotelsAPI[index].name ?? ""
+        return self.listHotel[index].name ?? ""
     }
     
     func loadLocations(city: String?) {
@@ -71,8 +74,9 @@ class SearchViewModel {
                 if self.searchHotel?.moresuggestions != 0 {
                     
                     if let suggestions = self.searchHotel?.suggestions {
-                        self.arraySuggestion = suggestions.filter({$0.group == "HOTEL_GROUP"})
-                        self.hotelsAPI = self.arraySuggestion[0].entities ?? []
+                        self.arraySuggestion = suggestions.filter({$0.group == "LANDMARK_GROUP"})
+                        self.locationsSearchAPI = self.arraySuggestion[0].entities ?? []
+                        self.entitieAPI = self.locationsSearchAPI[0]
                     }
                     
                     completion(true)
@@ -85,6 +89,32 @@ class SearchViewModel {
             }
         }
     }
+    
+    func getListHotel(completion: @escaping (Bool) -> Void) {
+        
+        self.searchWorker.destinationId = self.entitieAPI?.destinationId
+        
+        self.searchWorker.getListHotel { (response, error) in
+            if error == false {
+                self.propertiesListModel = response as! PropertiesListModel
+                
+                if self.propertiesListModel?.result == "OK" {
+                    
+                    if let results = self.propertiesListModel?.data?.body?.searchResults?.results {
+                        self.listHotel = results
+                    }
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            } else {
+                print("deu erro")
+                completion(false)
+            }
+        }
+    }
+    
+    
     
     func getQuantitySearchHotel() -> String {
         
@@ -104,8 +134,8 @@ class SearchViewModel {
     }
     
     func hotelSelected(annotation: String, index:Int) -> Bool {
-        if self.hotelsAPI[index].name == annotation {
-            hotelAPI = self.hotelsAPI[index]
+        if self.listHotel[index].name == annotation {
+            resultHotel = self.listHotel[index]
             return true
         }
         return false

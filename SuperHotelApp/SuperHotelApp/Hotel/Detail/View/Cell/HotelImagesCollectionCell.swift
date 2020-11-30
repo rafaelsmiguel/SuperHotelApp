@@ -8,7 +8,7 @@
 import UIKit
 
 class HotelImagesCollectionCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var imgHotel: UIImageView!
     
     override func awakeFromNib() {
@@ -17,7 +17,22 @@ class HotelImagesCollectionCell: UICollectionViewCell {
     }
     
     func setup(foto:String) {
-        imgHotel.image = UIImage(named: foto)
+        
+        let urlPhoto = foto.replacingOccurrences(of: "{size}", with: "w")
+        
+        guard let url = URL(string: urlPhoto) else {
+            return
+        }
+        
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.imgHotel.image = image
+                    }
+                }
+            }
+        }
     }
-
+    
 }
