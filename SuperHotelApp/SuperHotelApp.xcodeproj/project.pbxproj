@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -51,6 +51,7 @@
 		01E7CA73252FF31E00A89D75 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7CA72252FF31E00A89D75 /* UIViewController.swift */; };
 		01E7CA77252FF74600A89D75 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7CA76252FF74600A89D75 /* HotelModel.swift */; };
 		01E7CA7A252FF82600A89D75 /* HotelDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E7CA79252FF82600A89D75 /* HotelDetailWorker.swift */; };
+		28C43FFA3E6BF56F304C5AA6 /* Pods_SuperHotelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30586FCF9BBC0825885869FE /* Pods_SuperHotelApp.framework */; };
 		54359715254674E200981521 /* booking.json in Resources */ = {isa = PBXBuildFile; fileRef = 54359717254674E200981521 /* booking.json */; };
 		549B9C002545B3D4002E5D83 /* BookingListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549B9BFF2545B3D4002E5D83 /* BookingListController.swift */; };
 		54A0E79825465DFE009577EE /* BookingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0E79725465DFE009577EE /* BookingWorker.swift */; };
@@ -59,6 +60,7 @@
 		E7162536253664CD000F62D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7162535253664CD000F62D1 /* User.swift */; };
 		E727C9EA2538FF97007063D3 /* BookingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727C9E92538FF97007063D3 /* BookingCollectionViewCell.swift */; };
 		E727C9ED2538FFA8007063D3 /* BookingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E727C9EC2538FFA8007063D3 /* BookingCollectionViewCell.xib */; };
+		E7370B42256EBA7300549FD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7370B41256EBA7300549FD7 /* GoogleService-Info.plist */; };
 		E7A893B5252E2BAA002C31F2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A893B4252E2BAA002C31F2 /* Login.storyboard */; };
 		E7A893B8252E3312002C31F2 /* SegueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A893B7252E3312002C31F2 /* SegueType.swift */; };
 		E7ED757425361B300071697D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED757325361B300071697D /* LoginController.swift */; };
@@ -112,14 +114,18 @@
 		01E7CA72252FF31E00A89D75 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		01E7CA76252FF74600A89D75 /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
 		01E7CA79252FF82600A89D75 /* HotelDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailWorker.swift; sourceTree = "<group>"; };
+		30586FCF9BBC0825885869FE /* Pods_SuperHotelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperHotelApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54359716254674E200981521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/booking.json; sourceTree = "<group>"; };
 		549B9BFF2545B3D4002E5D83 /* BookingListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingListController.swift; sourceTree = "<group>"; };
 		54A0E79725465DFE009577EE /* BookingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingWorker.swift; sourceTree = "<group>"; };
+		7374C0657435D7FC35D81F5B /* Pods-SuperHotelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHotelApp.release.xcconfig"; path = "Target Support Files/Pods-SuperHotelApp/Pods-SuperHotelApp.release.xcconfig"; sourceTree = "<group>"; };
+		95366AE2885257E183148EC0 /* Pods-SuperHotelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHotelApp.debug.xcconfig"; path = "Target Support Files/Pods-SuperHotelApp/Pods-SuperHotelApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E1CC7B882536D6CB000FE355 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		E7021355255DE95300CEBFE6 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		E7162535253664CD000F62D1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E727C9E92538FF97007063D3 /* BookingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingCollectionViewCell.swift; sourceTree = "<group>"; };
 		E727C9EC2538FFA8007063D3 /* BookingCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingCollectionViewCell.xib; sourceTree = "<group>"; };
+		E7370B41256EBA7300549FD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7A893B4252E2BAA002C31F2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E7A893B7252E3312002C31F2 /* SegueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueType.swift; sourceTree = "<group>"; };
 		E7ED757325361B300071697D /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28C43FFA3E6BF56F304C5AA6 /* Pods_SuperHotelApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +299,8 @@
 			children = (
 				01C55958252D4EFE009BA5CB /* SuperHotelApp */,
 				01C55957252D4EFE009BA5CB /* Products */,
+				D14F7C7A7AA0D528A954B1EB /* Pods */,
+				2BBBC13FE63C9471EE718C1F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -324,6 +333,7 @@
 				E7A893B4252E2BAA002C31F2 /* Login.storyboard */,
 				012FC86F252E96A400995FDF /* Hotel.storyboard */,
 				0160E69E2536AB55005B55E3 /* Profile.storyboard */,
+				E7370B41256EBA7300549FD7 /* GoogleService-Info.plist */,
 			);
 			path = SuperHotelApp;
 			sourceTree = "<group>";
@@ -372,8 +382,9 @@
 		01C5597B252D5A61009BA5CB /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				01C55993252D5B0E009BA5CB /* LoginViewController.swift */,
-				E7ED757325361B300071697D /* LoginController.swift */,
+				E7E8D44B25647222004FC14A /* View */,
+				E7E8D44A25647219004FC14A /* ViewModel */,
+				E7E8D44925647212004FC14A /* Model */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -399,6 +410,14 @@
 				0122CD41255DF66C00BE7A0D /* Lato-Regular.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		2BBBC13FE63C9471EE718C1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30586FCF9BBC0825885869FE /* Pods_SuperHotelApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		543597112546726400981521 /* Mock */ = {
@@ -437,6 +456,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		D14F7C7A7AA0D528A954B1EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				95366AE2885257E183148EC0 /* Pods-SuperHotelApp.debug.xcconfig */,
+				7374C0657435D7FC35D81F5B /* Pods-SuperHotelApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E702134F255DE6B400CEBFE6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +500,29 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E7E8D44925647212004FC14A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E7E8D44A25647219004FC14A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E7ED757325361B300071697D /* LoginController.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E7E8D44B25647222004FC14A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01C55993252D5B0E009BA5CB /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -479,9 +530,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01C5596A252D4EFF009BA5CB /* Build configuration list for PBXNativeTarget "SuperHotelApp" */;
 			buildPhases = (
+				D047736AC3C560176FC40BFE /* [CP] Check Pods Manifest.lock */,
 				01C55952252D4EFE009BA5CB /* Sources */,
 				01C55953252D4EFE009BA5CB /* Frameworks */,
 				01C55954252D4EFE009BA5CB /* Resources */,
+				944A6C875F026DF1AF6ABBDF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -531,6 +584,7 @@
 			files = (
 				01C55966252D4EFF009BA5CB /* LaunchScreen.storyboard in Resources */,
 				54359715254674E200981521 /* booking.json in Resources */,
+				E7370B42256EBA7300549FD7 /* GoogleService-Info.plist in Resources */,
 				014E53012552048500D26CD7 /* HotelImagesCollectionCell.xib in Resources */,
 				01773C8B25478F2500ED467A /* Tabbar.storyboard in Resources */,
 				0160E69F2536AB55005B55E3 /* Profile.storyboard in Resources */,
@@ -547,6 +601,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		944A6C875F026DF1AF6ABBDF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SuperHotelApp/Pods-SuperHotelApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SuperHotelApp/Pods-SuperHotelApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SuperHotelApp/Pods-SuperHotelApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D047736AC3C560176FC40BFE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SuperHotelApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		01C55952252D4EFE009BA5CB /* Sources */ = {
@@ -745,6 +841,7 @@
 		};
 		01C5596B252D4EFF009BA5CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95366AE2885257E183148EC0 /* Pods-SuperHotelApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -765,6 +862,7 @@
 		};
 		01C5596C252D4EFF009BA5CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7374C0657435D7FC35D81F5B /* Pods-SuperHotelApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

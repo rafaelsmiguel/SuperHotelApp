@@ -10,13 +10,13 @@ import Foundation
 
 class User{
     
-    var name:String?
-    var from:String?
-    var genre:String?
-    var email:String?
-    var birth:String?
-    var password:String?
-    var confirm:String?
+    var name:String
+    var from:String
+    var genre:String
+    var email:String
+    var birth:String
+    var password:String
+    var confirm:String
     
     
     init(name:String, from:String, genre:String, email:String, birth:String, password:String, confirm:String){

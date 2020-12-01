@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>136394408056-ttqpi216nrddpljl070veqkeec5e3uus.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.136394408056-ttqpi216nrddpljl070veqkeec5e3uus</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCb3VoZSsjcXcDZPfbNl83wDMwDhRFmsH4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>136394408056</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Rafael-Miguel.SuperHotelApp</string>
+	<key>PROJECT_ID</key>
+	<string>autenticacaosuperhotel</string>
+	<key>STORAGE_BUCKET</key>
+	<string>autenticacaosuperhotel.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:136394408056:ios:b1d5fcf434180bcb0e2d8d</string>
+	<key>DATABASE_URL</key>
+	<string>https://autenticacaosuperhotel.firebaseio.com</string>
+</dict>
+</plist>

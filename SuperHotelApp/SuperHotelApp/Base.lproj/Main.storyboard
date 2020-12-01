@@ -109,6 +109,9 @@
                                 <state key="normal" title="Entrar">
                                     <color key="titleColor" red="0.17970024649999999" green="0.4367398395" blue="0.40406089810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="toLoginFromRegisterAction:" destination="ru6-4b-o7C" eventType="touchUpInside" id="12d-hu-ZUz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3T4-vw-Yhk" customClass="SHButton_FilledGreen" customModule="SuperHotelApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="703" width="374" height="40"/>

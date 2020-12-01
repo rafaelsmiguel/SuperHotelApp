@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
     
@@ -87,6 +88,8 @@ class RegisterViewController: UIViewController {
                 array: &user)
             
             
+            
+            
             viewModel.printRegister(array: &user)
             viewModel.clearAllFields(name: self.registerNameTextField, from: self.fromTextField, genre: self.genreTextField, email: self.emailTextField, birth: self.birthTextField, password: self.passTextField, confirm: self.confirmPassTextField)
             
@@ -96,6 +99,11 @@ class RegisterViewController: UIViewController {
         
 
     }
+    }
+    @IBAction func toLoginFromRegisterAction(_ sender: Any) {
+       
+        performSegue(withIdentifier: SegueType.toLoginfromRegister.rawValue, sender:self)
+        
     }
 }
     
