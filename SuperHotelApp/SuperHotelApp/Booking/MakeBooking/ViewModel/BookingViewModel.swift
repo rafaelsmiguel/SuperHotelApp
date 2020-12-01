@@ -36,6 +36,28 @@ class BookingViewModel {
         return self.bookingRequest.adults1
     }
     
+    var checkInDate: Date {
+        
+        let dateString = self.bookingRequest.checkIn ?? ""
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.locale = Locale.init(identifier: "pt_BR")
+
+       return dateFormatter.date(from: dateString) ?? Date()
+    }
+    
+    var checkOutDate: Date {
+        
+        let dateString = self.bookingRequest.checkOut ?? ""
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.locale = Locale.init(identifier: "pt_BR")
+
+        return dateFormatter.date(from: dateString) ?? Date()
+    }
+    
     func setupNavBar() -> String {
         return "Reserva"
     }

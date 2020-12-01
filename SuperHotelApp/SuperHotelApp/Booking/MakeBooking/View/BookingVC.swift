@@ -14,28 +14,31 @@ class BookingVC: UIViewController {
     @IBOutlet weak var hotelLabel: UILabel!
     @IBOutlet weak var stackViewStar: UIStackView!
     @IBOutlet weak var stackViewFields: UIStackView!
-    @IBOutlet weak var quantityTextFields: SHTextField!
     @IBOutlet weak var confirmButton: SHButton_FilledGreen!
-    @IBOutlet weak var checkinButton: SHButton_FilledWhite!
-    @IBOutlet weak var checkoutButton: SHButton_FilledWhite!
-    @IBOutlet weak var adultsButton: SHButton_FilledWhite!
-    @IBOutlet weak var viewToolbar: UIView!
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var pickerViewAdults: UIPickerView!
+    @IBOutlet weak var textFieldCheckin: UITextField!
+    @IBOutlet weak var textFieldCheckout: UITextField!
+    @IBOutlet weak var textFieldAdults: UITextField!
     
-    var dataSelecionada: Date? = nil
+    private var pickerView: UIPickerView?
+    private var datePicker: UIDatePicker!
+    
+    private var dateCheckin: Date?
+    private var dateCheckout: Date?
 
     var bookingViewModel: BookingViewModel?
     
-    var adults: [Int]?
+    var adults = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        self.bookingViewModel = BookingViewModel(hotel: HotelModel(destinationId: "", name: "", latitude: "", longitude: "", valueByNight: 0.0, address: "", images: []))
+        
         self.hotelLabel.text = self.bookingViewModel?.hotelName
-        setupTextField()
-        setupDatePicker()
-        setupPickerView()
+        self.setupTextField()
+       
+        self.setupPickerView()
+        self.setupDatePicker()
         
         self.title = "Reserva"
     }
@@ -50,138 +53,7 @@ class BookingVC: UIViewController {
         navigationBar?.title = bookingViewModel?.setupNavBar()
     }
     
-    func setupDatePicker() {
-       
-        setupVisibilityDatePicker(value: true)
-        
-        self.datePicker.preferredDatePickerStyle = .wheels
-        self.datePicker.datePickerMode = .date
-    }
-    
-    func setupVisibilityDatePicker(value: Bool) {
-        datePicker.isHidden = value
-        viewToolbar.isHidden = value
-    }
-    
-    func setupPickerView() {
-       
-        setupVisibilityPicker(value: true)
-        
-        self.pickerViewAdults.dataSource = self
-        self.pickerViewAdults.delegate = self
-        self.datePicker.datePickerMode = .date
-        
-        self.adults = self.bookingViewModel?.maxAdultsForRoom()
-    }
-    
-    func setupVisibilityPicker(value: Bool) {
-        pickerViewAdults.isHidden = value
-        viewToolbar.isHidden = value
-
-//        self.hotelLabel.text = bookingController?.hotelName
-    }
-    
-    
-    @IBAction func tapCheckin(_ sender: UIButton) {
-        
-        fecharTeclado(quantityTextFields)
-        closePickerView()
-        
-        setupVisibilityDatePicker(value:false)
-        
-        let toolBar = UIToolbar()
-        toolBar.barStyle = .default
-        toolBar.isTranslucent = true
-        toolBar.barTintColor = .lightGray
-        toolBar.sizeToFit()
-        
-        // Adding Button ToolBar
-        let selecionarButton = UIBarButtonItem(title: "Selecionar", style: .plain, target: self, action: #selector(BookingVC.selecionarDataCheckin))
-        selecionarButton.tintColor = .white
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let fecharButton = UIBarButtonItem(title: "Fechar", style: .plain, target: self, action: #selector(BookingVC.fecharData))
-        fecharButton.tintColor = .white
-        toolBar.setItems([fecharButton, spaceButton, selecionarButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        toolBar.frame = viewToolbar.bounds
-        viewToolbar.addSubview(toolBar)
-    }
-    
-    @IBAction func tapCheckout(_ sender: UIButton) {
-        
-        fecharTeclado(quantityTextFields)
-        closePickerView()
-        
-        setupVisibilityDatePicker(value:false)
-    
-        let toolBar = UIToolbar()
-        toolBar.barStyle = .default
-        toolBar.isTranslucent = true
-        toolBar.barTintColor = .lightGray
-        toolBar.sizeToFit()
-        
-        // Adding Button ToolBar
-        let selecionarButton = UIBarButtonItem(title: "Selecionar", style: .plain, target: self, action: #selector(BookingVC.selecionarDataCheckout))
-        selecionarButton.tintColor = .white
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let fecharButton = UIBarButtonItem(title: "Fechar", style: .plain, target: self, action: #selector(BookingVC.fecharData))
-        fecharButton.tintColor = .white
-        toolBar.setItems([fecharButton, spaceButton, selecionarButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        toolBar.frame = viewToolbar.bounds
-        viewToolbar.addSubview(toolBar)
-    }
-    
-    @IBAction func tapAdults(_ sender: UIButton) {
-        
-        buildPickerView()
-    }
-    
-    
-    @objc func selecionarDataCheckin() {
-        
-//        var teste = self.bookingViewModel.maxAdultsForRoom()
-        
-        dataSelecionada = datePicker.date
-        
-        setupVisibilityDatePicker(value:true)
-        
-        if let data = dataSelecionada
-        {
-            checkinButton.setTitle(self.bookingViewModel?.formatDate(date: data), for: .normal)
-            self.bookingViewModel?.setCheckin(checkIn: self.bookingViewModel?.formatDate(date: data) ?? "")
-        }
-    }
-    
-    @objc func selecionarDataCheckout() {
-        
-        dataSelecionada = datePicker.date
-        
-        setupVisibilityDatePicker(value:true)
-        
-        if let data = dataSelecionada
-        {
-            checkoutButton.setTitle(self.bookingViewModel?.formatDate(date: data), for: .normal)
-            self.bookingViewModel?.setCheckout(checkOut: self.bookingViewModel?.formatDate(date: data) ?? "")
-        }
-    }
-    
-    @objc func fecharData()
-    {
-        setupVisibilityDatePicker(value:true)
-    }
-    
-    @IBAction func fecharTeclado(_ sender: UITextField) {
-        
-        quantityTextFields.resignFirstResponder()
-    }
-    
     @IBAction func tapConfirmButton(_ sender: SHButton_FilledGreen) {
-        
-        fecharTeclado(quantityTextFields)
-        fecharData()
-        closePickerView()
-        
         
         if self.bookingViewModel?.checkIn == nil {
             showToast(message: "Check-in deve ser preenchido.")
@@ -190,6 +62,11 @@ class BookingVC: UIViewController {
         
         if self.bookingViewModel?.checkOut == nil {
             showToast(message: "Check-out deve ser preenchido.")
+            return
+        }
+        
+        if self.bookingViewModel?.checkInDate ?? Date() > self.bookingViewModel?.checkOutDate ?? Date(){
+            showToast(message: "A data de check-in não pode ser após a data de check-out.")
             return
         }
         
@@ -209,88 +86,125 @@ class BookingVC: UIViewController {
         self.present(refreshAlert, animated: true)
         
     }
+    
+    //DatePicker
+    
+    private func setupDatePicker() {
+        
+        datePicker = UIDatePicker.init(frame: CGRect(x:0,y:0, width: self.view.bounds.width, height: 200))
+        datePicker.datePickerMode = .date
+//        datePicker.addTarget(self, action: #selector(self.dateChanged), for: .allEvents)
+        
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
+
+        self.textFieldCheckin.inputView = datePicker
+        self.textFieldCheckout.inputView = datePicker
+        
+        let toolBar: UIToolbar = UIToolbar.init(frame: CGRect(x:0, y:0,width: self.view.bounds.width, height: 44))
+        
+        let spaceButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        
+        let confirmButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.confirmDate))
+        
+        let cancelButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(self.cancelDate))
+        
+        toolBar.setItems([cancelButton, spaceButton, confirmButton], animated: true)
+        
+        
+        self.textFieldCheckin.inputAccessoryView = toolBar
+        self.textFieldCheckout.inputAccessoryView = toolBar
+        
+    }
+    
+    @objc func confirmDate() {
+        if textFieldCheckin.isFirstResponder {
+            self.textFieldCheckin.text = self.bookingViewModel?.formatDate(date: self.datePicker.date)
+            self.bookingViewModel?.setCheckin(checkIn: self.textFieldCheckin.text ?? "")
+        } else {
+            self.textFieldCheckout.text = self.bookingViewModel?.formatDate(date: self.datePicker.date)
+            self.bookingViewModel?.setCheckout(checkOut: self.textFieldCheckout.text ?? "")
+        }
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDate() {
+        self.textFieldCheckin.resignFirstResponder()
+    }
 
 }
 
 extension BookingVC: UITextFieldDelegate {
-   
+    
     func setupTextField() {
         
-        quantityTextFields.isHidden = true
-        self.quantityTextFields.delegate = self
-        self.quantityTextFields.keyboardType = .numberPad
+        self.textFieldCheckin.delegate = self
+        self.textFieldCheckout.delegate = self
+        self.textFieldAdults.delegate = self
     }
 }
 
 extension BookingVC: UIPickerViewDelegate, UIPickerViewDataSource {
     
-    func buildPickerView()
-    {
-        fecharTeclado(quantityTextFields)
-        fecharData()
+    private func setupPickerView() {
+        self.pickerView =  UIPickerView()
+        self.pickerView?.delegate = self
+        self.pickerView?.dataSource = self
         
-        setupVisibilityPicker(value: false)
+        self.pickerView?.backgroundColor = .white
+        self.pickerView?.setValue(UIColor.black, forKey: "textColor")
+        self.textFieldAdults.inputView = self.pickerView
         
-        // ToolBar
+        self.adults = self.bookingViewModel?.maxAdultsForRoom() ?? []
+        
+        self.configToolBar()
+    }
+    
+    
+    private func configToolBar() {
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        toolBar.barTintColor = .lightGray
+        toolBar.tintColor = UIColor.black
+        toolBar.backgroundColor = UIColor.gray
         toolBar.sizeToFit()
         
-        let selecionarButton = UIBarButtonItem(title: "Selecionar", style: .plain, target: self, action: #selector(BookingVC.selectValuePicker))
-        selecionarButton.tintColor = .white
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let fecharButton = UIBarButtonItem(title: "Fechar", style: .plain, target: self, action: #selector(BookingVC.closePickerView))
-        fecharButton.tintColor = .white
-       
-        toolBar.setItems([fecharButton, spaceButton, selecionarButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        toolBar.frame = viewToolbar.bounds
-        viewToolbar.addSubview(toolBar)
+        let cancelButton = UIBarButtonItem(title: "Cancelar", style: .plain, target: self, action: #selector(cancelAdults))
         
-        pickerViewAdults.reloadAllComponents()
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let doneButton = UIBarButtonItem(title: "Selecionar", style: .plain, target: self, action: #selector(selectAdults))
+        
+        toolBar.setItems([cancelButton,spaceButton,doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        self.textFieldAdults.inputAccessoryView = toolBar
     }
     
+    @objc private func cancelAdults() {
+        self.textFieldAdults.resignFirstResponder()
+    }
+    
+    @objc private func selectAdults() {
+        
+        let quantitySelected = self.pickerView?.selectedRow(inComponent: 0)
+        
+        self.textFieldAdults.text = "\(self.adults[quantitySelected ?? 0])"
+        self.bookingViewModel?.setAdults(adults: self.adults[quantitySelected ?? 0])
+        self.textFieldAdults.resignFirstResponder()
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return adults?.count ?? 0
+        return adults.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        if let adults = self.adults {
-            return "\(adults[row])"
-        }
-        
-        return ""
-       
+        return "\(adults[row])"
     }
-    
-    @objc func selectValuePicker() {
-        
-        if let adults = self.adults {
-            let adult = adults[pickerViewAdults.selectedRow(inComponent: 0)]
-            
-            adultsButton.setTitle("\(adult)", for: .normal)
-            
-            self.bookingViewModel?.setAdults(adults: adult )
-
-            setupVisibilityPicker(value: true)
-        }
-        
-            
-        
-    }
-    
-    @objc func closePickerView() {
-        
-        setupVisibilityPicker(value: true)
-        
-    }
-    
 }
+
