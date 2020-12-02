@@ -43,10 +43,7 @@ class HotelDetailVC: UIViewController {
     }
     
     func setupHotel() {
-        
-        //            self.hotelDetailViewModel?.getHotelDetailAPI { (success) in
-        //                if success {
-        //                    DispatchQueue.main.async {
+
         self.mainView.isHidden = false
         self.hotelNameLabel.text = self.hotelDetailViewModel?.hotelName
         self.valueLabel.text = self.hotelDetailViewModel?.valueByNight
@@ -54,22 +51,7 @@ class HotelDetailVC: UIViewController {
         
         self.setupPhotos()
         self.setupHotelLocation()
-        //                    }
-        //
-        //                } else {
-        //                    DispatchQueue.main.async {
-        //                        self.mainView.isHidden = true
-        //                        self.showToast(message: "Não foi possível carregar o hotel.")
-        //                    }
-        //                }
     }
-    
-    
-    
-    //self.imageViewHotel.image = UIImage(named: hotelDetailViewModel?.image ?? "")
-    
-    
-    //    }
     
     func setupHotelLocation() {
         
@@ -84,8 +66,6 @@ class HotelDetailVC: UIViewController {
     }
     
     func setupStars() {
-        
-        
         
     }
     
@@ -114,10 +94,6 @@ class HotelDetailVC: UIViewController {
         bookingViewController.bookingViewModel = BookingViewModel(hotel: HotelModel(destinationId: "", name: self.hotelDetailViewModel?.hotelName, latitude: "", longitude: "", valueByNight: 0, address: "", images: []))
         
         self.navigationController?.pushViewController(bookingViewController, animated: true)
-        //        bookingViewController.modalPresentationStyle = .fullScreen
-        //        bookingViewController.navigationController?.navigationBar.isHidden = false
-        //        bookingViewController.bookingController = BookingController(hotel: hotelDetailViewModel?.getHotelDetail())
-        //        self.present(bookingViewController, animated: true, completion: nil)
     }
     
 }
