@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class SearchHotelVC: UIViewController {
+class SearchHotelVC: BaseViewController {
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var searchTextField: SHTextField!
@@ -103,12 +103,15 @@ class SearchHotelVC: UIViewController {
         self.searchViewModel.getListHotel { (success) in
             if success {
                 self.mapView.delegate = self
+                self.hiddenLoading()
                 self.setPins()
             } else {
                 DispatchQueue.main.async {
                     self.constraintMapSize.isActive = true
                     self.mapView.removeAnnotations(self.mapView.annotations)
+                    self.hiddenLoading()
                     self.showToast(message: self.searchViewModel.getMessageNotFoundHotel(),showTop: true)
+                    
                 }
             }
         }
@@ -117,6 +120,8 @@ class SearchHotelVC: UIViewController {
     @IBAction func refresh(_ sender: Any) {
         
         fecharTeclado(searchTextField)
+        
+        self.showLoading()
         
         if searchTextField.text?.count == 0 {
             self.mapView.removeAnnotations(self.mapView.annotations)

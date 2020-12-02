@@ -48,6 +48,4 @@ extension UIViewController {
             toastView.removeFromSuperview()
         })
     }
-    
-    
 }
