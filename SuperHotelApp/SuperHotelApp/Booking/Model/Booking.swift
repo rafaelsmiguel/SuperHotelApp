@@ -17,7 +17,7 @@ struct BookingElement: Codable {
     let hotelImage: String?
     let hotelName: String?
     let periodOfStay: String?
-    let numberOfPeople: String?
+    let numberOfPeople: Int?
     let valueByNight: String?
     let amount: String?
     let address: String?

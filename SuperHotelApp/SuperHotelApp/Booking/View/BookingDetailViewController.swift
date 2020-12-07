@@ -46,7 +46,7 @@ class BookingDetailViewController: UIViewController {
             self.hotelImageView.image = controller.bookingImage
             self.hotelNameLabel.text = self.controller.bookingName
             self.periodOfStayLabel.text = self.controller.bookingPeriod
-            self.numberOfPeople.text = self.controller.bookingPeople
+            self.numberOfPeople.text = "\(self.controller.bookingPeople)"
             self.valueByNight.text = self.controller.bookingValueByNight
             self.amount.text = self.controller.bookingAmount
             self.address.text = self.controller.bookingAddress

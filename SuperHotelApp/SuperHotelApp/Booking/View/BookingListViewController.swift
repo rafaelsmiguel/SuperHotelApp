@@ -18,20 +18,29 @@ class BookingListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+//        var aBooking: [BookingElement] = []
+//        let defaults = UserDefaults.standard
+//
+//        if let reservas = defaults.object(forKey: "reservas") as? Data {
+//          let decoder = JSONDecoder()
+//          if let loadBooking = try? decoder.decode([BookingElement].self, from: reservas) {
+//            aBooking = loadBooking
+//          }
+//        }
+        
         self.controller = BookingListController()
         
-        self.controller.getListBooking(completion: { (success) in
-            
-            if success {
-                self.bookingCollectionView.delegate = self
-                self.bookingCollectionView.dataSource = self
-                self.bookingCollectionView.register(UINib(nibName: "BookingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BookingCollectionViewCell")
-            } else {
-                print("ERRO getListBooking >> BookingListViewController")
-            }
-            
-        })
-        
+//        self.controller.getListBooking(completion: { (success) in
+//
+//            if success {
+//                self.bookingCollectionView.delegate = self
+//                self.bookingCollectionView.dataSource = self
+//                self.bookingCollectionView.register(UINib(nibName: "BookingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BookingCollectionViewCell")
+//            } else {
+//                print("ERRO getListBooking >> BookingListViewController")
+//            }
+//
+//        })
         
         
     }
@@ -39,6 +48,22 @@ class BookingListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         let navigationBar = self.parent?.navigationItem
         navigationBar?.title = controller.navigationBarTitle
+        
+        self.bookingCollectionView.register(UINib(nibName: "BookingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BookingCollectionViewCell")
+        
+        self.controller.getListBookingUserDefault (completion: { (success) in
+            
+            if success {
+                self.bookingCollectionView.delegate = self
+                self.bookingCollectionView.dataSource = self
+                self.bookingCollectionView.reloadData()
+                
+            } else {
+                print("ERRO getListBooking >> BookingListViewController")
+            }
+            
+        })
+        
     }
     
     
@@ -58,7 +83,7 @@ extension BookingListViewController: UICollectionViewDelegate, UICollectionViewD
         let cell: BookingCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "BookingCollectionViewCell", for: indexPath) as? BookingCollectionViewCell
         
         cell?.delegate = self
-        cell?.controller.booking = self.controller.arrayBookings?.bookings[indexPath.row]
+        cell?.controller.booking = self.controller.aBooking?[indexPath.row]
         cell?.setupCell()
         
         

@@ -23,7 +23,11 @@ class HotelDetailViewModel {
         return self.hotel?.name
     }
     
-    var valueByNight: String? {
+    var valueByNight: Double? {
+        return self.hotel?.ratePlan?.price?.exactCurrent ?? 0
+    }
+    
+    var valueByNightFormat: String? {
         return Helper.transformToCurrency(value: self.hotel?.ratePlan?.price?.exactCurrent ?? 0)
     }
     

@@ -75,9 +75,24 @@ class BookingVC: UIViewController {
             return
         }
         
+        
+//        let booking = BookingElement(hotelImage: "hotel1.jpg", hotelName: self.bookingViewModel?.hotelName, periodOfStay: self.bookingViewModel?.periodOfStay(), numberOfPeople: self.bookingViewModel?.adults, valueByNight: self.bookingViewModel?.valueByNightFormat, amount: self.bookingViewModel?.amount(), address: self.bookingViewModel?.address, latitude: "", longitude: "")
+//
+//        var aBooking: [BookingElement] = []
+//
+//        aBooking.append(booking)
+        
         let refreshAlert = UIAlertController(title: "Reserva Efetuada", message: "Sua reserva foi efetuada com sucesso!", preferredStyle: UIAlertController.Style.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Fechar", style: .default, handler: { (action: UIAlertAction!) in
+            
+//            let encoder = JSONEncoder()
+//            if let encoded = try? encoder.encode(aBooking) {
+//              let defaults = UserDefaults.standard
+//              defaults.set(encoded, forKey: "reservas")
+//            }
+            
+            self.bookingViewModel?.fillInfoBooking()
             
             self.navigationController?.popToRootViewController(animated: true)
             

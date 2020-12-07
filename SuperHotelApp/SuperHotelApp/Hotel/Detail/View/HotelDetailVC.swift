@@ -46,7 +46,7 @@ class HotelDetailVC: UIViewController {
 
         self.mainView.isHidden = false
         self.hotelNameLabel.text = self.hotelDetailViewModel?.hotelName
-        self.valueLabel.text = self.hotelDetailViewModel?.valueByNight
+        self.valueLabel.text = self.hotelDetailViewModel?.valueByNightFormat
         self.addressLabel.text = self.hotelDetailViewModel?.address
         
         self.setupPhotos()
@@ -91,7 +91,7 @@ class HotelDetailVC: UIViewController {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
         let bookingViewController = storyBoard.instantiateViewController(withIdentifier: "BookingVC") as! BookingVC
-        bookingViewController.bookingViewModel = BookingViewModel(hotel: HotelModel(destinationId: "", name: self.hotelDetailViewModel?.hotelName, latitude: "", longitude: "", valueByNight: 0, address: "", images: []))
+        bookingViewController.bookingViewModel = BookingViewModel(hotel: HotelModel(destinationId: "", name: self.hotelDetailViewModel?.hotelName, latitude: "", longitude: "", valueByNight: self.hotelDetailViewModel?.valueByNight, address: self.hotelDetailViewModel?.address, images: []))
         
         self.navigationController?.pushViewController(bookingViewController, animated: true)
     }

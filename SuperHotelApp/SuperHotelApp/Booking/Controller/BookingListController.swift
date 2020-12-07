@@ -13,12 +13,13 @@ class BookingListController {
     let navigationBarTitle: String = "Reservas"
     
     
-    var arrayBookings: Booking?
+//    var arrayBookings: Booking?
+    var aBooking: [BookingElement]?
     var booking: BookingElement?
     
     
     var numberOfBookings: Int {
-        return arrayBookings?.bookings.count ?? 0
+        return aBooking?.count ?? 0
     }
     
     
@@ -34,8 +35,8 @@ class BookingListController {
         return self.booking?.periodOfStay ?? ""
     }
     
-    var bookingPeople: String {
-        return self.booking?.numberOfPeople ?? ""
+    var bookingPeople: Int {
+        return self.booking?.numberOfPeople ?? 0
     }
     
     var bookingValueByNight: String {
@@ -59,13 +60,33 @@ class BookingListController {
     }
     
     
-    func getListBooking(completion: (Bool) -> Void) {
+//    func getListBooking(completion: (Bool) -> Void) {
+//
+//        BookingWorker().getListBooking { (success, error) in
+//
+//            if error == false {
+//
+//                self.arrayBookings = success
+//                completion(true)
+//
+//            } else {
+//
+//                completion(false)
+//                print("Erro no parse do JSON")
+//
+//            }
+//
+//        }
+//
+//    }
+    
+    func getListBookingUserDefault(completion: (Bool) -> Void) {
         
-        BookingWorker().getListBooking { (success, error) in
+        BookingWorker().getListBookingUserDefault { (bookings, error) in
             
             if error == false {
                 
-                self.arrayBookings = success
+                self.aBooking = bookings
                 completion(true)
                 
             } else {
