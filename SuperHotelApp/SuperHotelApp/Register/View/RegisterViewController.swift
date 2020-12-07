@@ -88,7 +88,7 @@ class RegisterViewController: UIViewController {
                 array: &user)
             
             
-            Auth.auth().signIn(withEmail: user[0].email, password: user[0].password) { (<#AuthDataResult?#>, <#Error?#>) in
+            Auth.auth().createUser(withEmail: user[0].email, password: user[0].password) { (<#AuthDataResult?#>, <#Error?#>) in
                 <#code#>
             }
             
