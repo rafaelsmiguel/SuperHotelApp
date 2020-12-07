@@ -44,22 +44,17 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginAction(_ sender: Any) {
         
-//        if self.emailLoginTextField.text == loginArray[0].email && self.passLoginTextField.text == loginArray[0].password{
         
-//        self.clearFields()
+        
+        
+      
+            
         let storyBoard: UIStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
                         let navigationViewController = storyBoard.instantiateViewController(withIdentifier: "MainNavigationController") as! MainNavigationController
                        navigationViewController.modalPresentationStyle = .fullScreen
                         self.present(navigationViewController, animated: true, completion: nil)
                 
-     
-        
-//        print(self.loginArray.count)
-//    
-//        }else{
-//            showToast(message: "Conta Inexistente",showTop: true)
-//            
-//        }
+
     }
     
     @IBAction func miniSignAction(_ sender: Any) {

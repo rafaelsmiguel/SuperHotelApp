@@ -9,7 +9,8 @@
 import UIKit
 import Firebase
 
-class RegisterViewController: UIViewController {
+
+class RegisterViewController: BaseViewController {
     
     
     @IBOutlet weak var backWelcomeButton: UIButton!
@@ -74,32 +75,40 @@ class RegisterViewController: UIViewController {
     
     
     @IBAction func signAction(_ sender: Any) {
+        
+        
+        self.showLoading()
       
         if passTextField.text == confirmPassTextField.text{
         
-            viewModel.registerArray(
-                name: self.registerNameTextField.text ?? "",
-                from: self.fromTextField.text ?? "",
-                genre: self.genreTextField.text ?? "",
-                email: self.emailTextField.text ?? "",
-                birth: self.birthTextField.text ?? "",
-                password: self.passTextField.text ?? "",
-                confirm: self.confirmPassTextField.text ?? "",
-                array: &user)
             
             
             
+            Auth.auth().createUser(withEmail: self.emailTextField.text ?? "", password: self.passTextField.text ?? "") { (result, error) in
+                
+                if error != nil {
+                    
+                    
+                    self.hiddenLoading()
+                    self.showToast(message: "Não foi possivel realizar o cadastro,cheque sua conexão,ou tente novamente mais tarde", showTop: true)
+                }else{
+                    
+                    self.showToast(message: "Cadastro Realizado com Sucesso!", showTop: true)
+                    self.hiddenLoading()
+                }
             
-            viewModel.printRegister(array: &user)
+            }
+            
             viewModel.clearAllFields(name: self.registerNameTextField, from: self.fromTextField, genre: self.genreTextField, email: self.emailTextField, birth: self.birthTextField, password: self.passTextField, confirm: self.confirmPassTextField)
             
         }else{
             showToast(message: "Senhas não conferem",showTop: true)
-
-        
-
     }
     }
+    
+    
+    
+    
     @IBAction func toLoginFromRegisterAction(_ sender: Any) {
        
         performSegue(withIdentifier: SegueType.toLoginfromRegister.rawValue, sender:self)
