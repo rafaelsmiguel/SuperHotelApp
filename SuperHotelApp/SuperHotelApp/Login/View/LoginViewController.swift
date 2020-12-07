@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
     
     
@@ -45,17 +46,39 @@ class LoginViewController: UIViewController {
     @IBAction func loginAction(_ sender: Any) {
         
         
-        
-        
-      
+        if (self.emailLoginTextField.text != nil) && self.passLoginTextField.text != ""{
             
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
-                        let navigationViewController = storyBoard.instantiateViewController(withIdentifier: "MainNavigationController") as! MainNavigationController
-                       navigationViewController.modalPresentationStyle = .fullScreen
-                        self.present(navigationViewController, animated: true, completion: nil)
+            self.showLoading()
+            
+            Auth.auth().signIn(withEmail: self.emailLoginTextField.text ?? "", password: self.passLoginTextField.text ?? "") { (result, error) in
                 
-
+                if error != nil{
+                    
+                    self.hiddenLoading()
+                    self.showToast(message: "Conta não cadastrada", showTop: true)
+                    
+                }else{
+                    
+                    
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
+                                    let navigationViewController = storyBoard.instantiateViewController(withIdentifier: "MainNavigationController") as! MainNavigationController
+                                   navigationViewController.modalPresentationStyle = .fullScreen
+                                    self.present(navigationViewController, animated: true, completion: nil)
+                    
+                    self.hiddenLoading()
+                }
+            }
+            
+        }else{
+            
+            self.showToast(message: "Preencha todos os campos", showTop: true)
+            
+        }
+        
     }
+    
+    
+    
     
     @IBAction func miniSignAction(_ sender: Any) {
         
