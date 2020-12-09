@@ -35,6 +35,11 @@ class EditRegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let navigationBar = self.parent?.navigationItem
+        navigationBar?.title = "Cadastro"
+    }
+    
     @IBAction func saveEditProfileButton () {
         
         print("save edit profile tapped")

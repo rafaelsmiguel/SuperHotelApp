@@ -38,7 +38,7 @@
 		01C55963252D4EFF009BA5CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C55962252D4EFF009BA5CB /* Assets.xcassets */; };
 		01C55966252D4EFF009BA5CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C55964252D4EFF009BA5CB /* LaunchScreen.storyboard */; };
 		01C5597E252D5AD0009BA5CB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5597D252D5AD0009BA5CB /* WelcomeViewController.swift */; };
-		01C55983252D5AE3009BA5CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55980252D5AE3009BA5CB /* ProfileViewController.swift */; };
+		01C55983252D5AE3009BA5CB /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55980252D5AE3009BA5CB /* ProfileVC.swift */; };
 		01C55984252D5AE3009BA5CB /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55981252D5AE3009BA5CB /* RegisterViewController.swift */; };
 		01C55985252D5AE3009BA5CB /* EditRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55982252D5AE3009BA5CB /* EditRegisterViewController.swift */; };
 		01C55989252D5AEE009BA5CB /* SearchHotelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55987252D5AEE009BA5CB /* SearchHotelVC.swift */; };
@@ -105,7 +105,7 @@
 		01C55965252D4EFF009BA5CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01C55967252D4EFF009BA5CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01C5597D252D5AD0009BA5CB /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		01C55980252D5AE3009BA5CB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		01C55980252D5AE3009BA5CB /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		01C55981252D5AE3009BA5CB /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		01C55982252D5AE3009BA5CB /* EditRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRegisterViewController.swift; sourceTree = "<group>"; };
 		01C55987252D5AEE009BA5CB /* SearchHotelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHotelVC.swift; sourceTree = "<group>"; };
@@ -277,6 +277,14 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
+		0183308F257F9F60003BE3F0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				01C55980252D5AE3009BA5CB /* ProfileVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		01842FBE2539396800721888 /* MakeBooking */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +348,7 @@
 				01C5597B252D5A61009BA5CB /* Login */,
 				01C55971252D59C5009BA5CB /* Welcome */,
 				01C55970252D59A4009BA5CB /* Register */,
+				0183308F257F9F60003BE3F0 /* Profile */,
 				01C5596F252D599D009BA5CB /* Hotel */,
 				01C5596E252D5995009BA5CB /* Booking */,
 				01C55959252D4EFE009BA5CB /* AppDelegate.swift */,
@@ -506,7 +515,6 @@
 			isa = PBXGroup;
 			children = (
 				01C55982252D5AE3009BA5CB /* EditRegisterViewController.swift */,
-				01C55980252D5AE3009BA5CB /* ProfileViewController.swift */,
 				01C55981252D5AE3009BA5CB /* RegisterViewController.swift */,
 			);
 			path = View;
@@ -683,7 +691,7 @@
 				E727C9EA2538FF97007063D3 /* BookingCollectionViewCell.swift in Sources */,
 				01C559A7252D5D8B009BA5CB /* FontsName.swift in Sources */,
 				01B398C125538B9D00AFD068 /* BookingViewModel.swift in Sources */,
-				01C55983252D5AE3009BA5CB /* ProfileViewController.swift in Sources */,
+				01C55983252D5AE3009BA5CB /* ProfileVC.swift in Sources */,
 				01E7CA7A252FF82600A89D75 /* HotelDetailWorker.swift in Sources */,
 				01874E8F2575B579000B095C /* SHTextFieldCenter.swift in Sources */,
 				01559EC42577FDCD0053026B /* BaseViewController.swift in Sources */,
