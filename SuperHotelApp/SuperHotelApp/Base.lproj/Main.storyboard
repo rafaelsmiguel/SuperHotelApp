@@ -1,194 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vVs-8q-hys">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vVs-8q-hys">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Register View Controller-->
-        <scene sceneID="vV6-0u-d2j">
+        <scene sceneID="eXl-gh-MY3">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="9xs-zi-Idx" customClass="RegisterViewController" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kK8-hu-Kv8">
+                <viewController modalPresentationStyle="fullScreen" id="ru6-4b-o7C" customClass="RegisterViewController" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fCb-36-1zf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPP-yj-Olc">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQL-1U-Ctk" userLabel="backgroundView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70x-Gi-c8O">
-                                                <rect key="frame" x="20" y="79" width="156" height="44.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                                <color key="textColor" red="0.33929568529999998" green="0.8244429231" blue="0.76258462670000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Upy-VC-1yh">
-                                                <rect key="frame" x="20" y="158.5" width="374" height="384"/>
-                                                <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome Completo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Thm-cT-GXa" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="48" id="VRI-i7-Xlv"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nacionalidade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GSg-FM-mFa" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="56" width="374" height="48"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="48" id="Um6-C5-mJL"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sexo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xdr-Jj-JQZ" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="112" width="374" height="48"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="48" id="j3O-ws-Cag"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAi-dk-ImW" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="168" width="374" height="48"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data de Nascimento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q8x-Uq-M8Q" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="224" width="374" height="48"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zic-BM-CNh" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="280" width="374" height="48"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4lM-fr-APT" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="336" width="374" height="48"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                    </textField>
-                                                </subviews>
-                                            </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uB0-Oz-x18" customClass="SHButton_FilledGreen" customModule="SuperHotelApp" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="659" width="374" height="40"/>
-                                                <color key="backgroundColor" red="0.33929568529999998" green="0.8244429231" blue="0.76258462670000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="0SW-lc-uFO"/>
-                                                </constraints>
-                                                <state key="normal" title="Cadastrar">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="signAction:" destination="9xs-zi-Idx" eventType="touchUpInside" id="eic-ly-C1P"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Já é cadastrado?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQi-SC-rEv">
-                                                <rect key="frame" x="59" y="744" width="166" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="AbV-54-Lux"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="166" id="LU2-N9-J0C"/>
-                                                    <constraint firstAttribute="height" constant="21" id="ZIq-PB-CL8"/>
-                                                    <constraint firstAttribute="width" constant="166" id="zPU-Rb-kbE"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fW-bB-z8h">
-                                                <rect key="frame" x="247" y="739" width="62" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="2vH-ju-Cia"/>
-                                                    <constraint firstAttribute="width" constant="62" id="GcV-yi-TTl"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Q6I-U5-8ik"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="62" id="kIh-rb-M5O"/>
-                                                </constraints>
-                                                <state key="normal" title="Entrar">
-                                                    <color key="titleColor" red="0.17970024649999999" green="0.4367398395" blue="0.40406089810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="toLoginFromRegisterAction:" destination="9xs-zi-Idx" eventType="touchUpInside" id="kL3-IH-gsQ"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="zQi-SC-rEv" secondAttribute="bottom" constant="53" id="7cC-Gf-2bA"/>
-                                            <constraint firstAttribute="bottom" secondItem="1fW-bB-z8h" secondAttribute="bottom" constant="49" id="9w4-PO-j5A"/>
-                                            <constraint firstAttribute="trailing" secondItem="uB0-Oz-x18" secondAttribute="trailing" constant="20" id="BT9-2g-st0"/>
-                                            <constraint firstItem="Upy-VC-1yh" firstAttribute="top" secondItem="70x-Gi-c8O" secondAttribute="bottom" constant="35" id="C7B-xr-gxo"/>
-                                            <constraint firstItem="zQi-SC-rEv" firstAttribute="leading" secondItem="DQL-1U-Ctk" secondAttribute="leading" constant="59" id="Ggc-Ee-v8S"/>
-                                            <constraint firstItem="1fW-bB-z8h" firstAttribute="top" secondItem="uB0-Oz-x18" secondAttribute="bottom" constant="40" id="VGX-jJ-i3f"/>
-                                            <constraint firstItem="uB0-Oz-x18" firstAttribute="leading" secondItem="DQL-1U-Ctk" secondAttribute="leading" constant="20" id="Zzo-hO-Vu8"/>
-                                            <constraint firstItem="70x-Gi-c8O" firstAttribute="leading" secondItem="DQL-1U-Ctk" secondAttribute="leading" constant="20" id="osu-xl-rfY"/>
-                                            <constraint firstItem="zQi-SC-rEv" firstAttribute="top" secondItem="uB0-Oz-x18" secondAttribute="bottom" constant="45" id="sUb-tl-nwU"/>
-                                            <constraint firstAttribute="trailing" secondItem="Upy-VC-1yh" secondAttribute="trailing" constant="20" id="st0-N9-kLI"/>
-                                            <constraint firstItem="Upy-VC-1yh" firstAttribute="leading" secondItem="DQL-1U-Ctk" secondAttribute="leading" constant="20" id="w2r-ki-Icp"/>
-                                            <constraint firstAttribute="trailing" secondItem="1fW-bB-z8h" secondAttribute="trailing" constant="105" id="w3Z-C8-ypc"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M60-v8-Zyq">
-                                        <rect key="frame" x="20" y="0.0" width="54" height="30"/>
-                                        <state key="normal" title="&lt; Voltar">
-                                            <color key="titleColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="backWelcomeTapAction:" destination="9xs-zi-Idx" eventType="touchUpInside" id="baf-J2-skS"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.99014270833168627" green="0.9854836948455119" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRD-Jw-kfm">
+                                <rect key="frame" x="20" y="44" width="54" height="30"/>
+                                <state key="normal" title="&lt; Voltar">
+                                    <color key="titleColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backWelcomeTapAction:" destination="ru6-4b-o7C" eventType="touchUpInside" id="kt9-HM-YQW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jle-kB-gfZ">
+                                <rect key="frame" x="20" y="123" width="156" height="66"/>
                                 <constraints>
-                                    <constraint firstItem="M60-v8-Zyq" firstAttribute="leading" secondItem="D43-q2-0en" secondAttribute="leading" constant="20" id="GNn-7P-7uM"/>
-                                    <constraint firstItem="M60-v8-Zyq" firstAttribute="top" secondItem="D43-q2-0en" secondAttribute="top" id="Kze-OK-JC1"/>
-                                    <constraint firstItem="70x-Gi-c8O" firstAttribute="top" secondItem="M60-v8-Zyq" secondAttribute="bottom" constant="49" id="QAr-Dk-Z61"/>
-                                    <constraint firstItem="D43-q2-0en" firstAttribute="trailing" secondItem="DQL-1U-Ctk" secondAttribute="trailing" id="eWk-P4-2jX"/>
-                                    <constraint firstItem="D43-q2-0en" firstAttribute="bottom" secondItem="DQL-1U-Ctk" secondAttribute="bottom" id="fku-ac-6nu"/>
-                                    <constraint firstItem="DQL-1U-Ctk" firstAttribute="top" secondItem="D43-q2-0en" secondAttribute="top" id="jwg-7W-rES"/>
-                                    <constraint firstItem="DQL-1U-Ctk" firstAttribute="leading" secondItem="D43-q2-0en" secondAttribute="leading" id="msc-7o-WoD"/>
+                                    <constraint firstAttribute="height" constant="66" id="yDV-c9-rnU"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="CgX-Zm-fND"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="D43-q2-0en"/>
-                            </scrollView>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <color key="textColor" red="0.33929568529999998" green="0.8244429231" blue="0.76258462670000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3dg-f2-QKt">
+                                <rect key="frame" x="20" y="224" width="374" height="384"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome Completo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ctx-bf-NTW" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="yfY-o5-Ir7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nacionalidade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O7V-HN-qce" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="56" width="374" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="N4E-Wm-Nc1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sexo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Baw-45-Dyd" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="112" width="374" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="uXi-aH-wjH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3rS-fl-7uj" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="168" width="374" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data de Nascimento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MkT-Ir-S9u" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="224" width="374" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5dj-O1-XXp" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="280" width="374" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7Q-Ie-5Q5" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="336" width="374" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Já é cadastrado?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ID-fU-iaW">
+                                <rect key="frame" x="59" y="788" width="166" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="bGT-gP-gzk"/>
+                                    <constraint firstAttribute="height" constant="21" id="yqX-KW-859"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aC7-Dc-Vey">
+                                <rect key="frame" x="233" y="783" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="7eG-D3-5PH"/>
+                                    <constraint firstAttribute="height" constant="30" id="kFA-ze-paN"/>
+                                </constraints>
+                                <state key="normal" title="Entrar">
+                                    <color key="titleColor" red="0.17970024649999999" green="0.4367398395" blue="0.40406089810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toLoginFromRegisterAction:" destination="ru6-4b-o7C" eventType="touchUpInside" id="12d-hu-ZUz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3T4-vw-Yhk" customClass="SHButton_FilledGreen" customModule="SuperHotelApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="703" width="374" height="40"/>
+                                <color key="backgroundColor" red="0.33929568529999998" green="0.8244429231" blue="0.76258462670000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LlP-9K-FHF"/>
+                                </constraints>
+                                <state key="normal" title="Cadastrar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signAction:" destination="ru6-4b-o7C" eventType="touchUpInside" id="sTq-Qr-jlk"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="PFn-KV-KtY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="up9-Ml-fuu"/>
+                        <color key="backgroundColor" red="0.95908910039999995" green="0.96603149180000003" blue="0.96959573030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aC7-Dc-Vey" firstAttribute="leading" secondItem="8ID-fU-iaW" secondAttribute="trailing" constant="8" symbolic="YES" id="69w-Yi-AYB"/>
+                            <constraint firstItem="up9-Ml-fuu" firstAttribute="trailing" secondItem="3dg-f2-QKt" secondAttribute="trailing" constant="20" id="9Vb-tr-vQV"/>
+                            <constraint firstItem="up9-Ml-fuu" firstAttribute="bottom" secondItem="aC7-Dc-Vey" secondAttribute="bottom" constant="49" id="AAS-I3-Aex"/>
+                            <constraint firstItem="3dg-f2-QKt" firstAttribute="top" secondItem="Jle-kB-gfZ" secondAttribute="bottom" constant="35" id="GJl-gP-0Zp"/>
+                            <constraint firstItem="3dg-f2-QKt" firstAttribute="leading" secondItem="up9-Ml-fuu" secondAttribute="leading" constant="20" id="LGQ-kE-Y55"/>
+                            <constraint firstItem="up9-Ml-fuu" firstAttribute="trailing" secondItem="3T4-vw-Yhk" secondAttribute="trailing" constant="20" id="OAs-0o-k4g"/>
+                            <constraint firstItem="up9-Ml-fuu" firstAttribute="bottom" secondItem="8ID-fU-iaW" secondAttribute="bottom" constant="53" id="SpD-Dq-pZF"/>
+                            <constraint firstItem="8ID-fU-iaW" firstAttribute="leading" secondItem="up9-Ml-fuu" secondAttribute="leading" constant="59" id="Tiy-OC-HKu"/>
+                            <constraint firstItem="3T4-vw-Yhk" firstAttribute="leading" secondItem="up9-Ml-fuu" secondAttribute="leading" constant="20" id="c4h-cu-L59"/>
+                            <constraint firstItem="Jle-kB-gfZ" firstAttribute="top" secondItem="FRD-Jw-kfm" secondAttribute="bottom" constant="49" id="gkg-1F-OH6"/>
+                            <constraint firstItem="up9-Ml-fuu" firstAttribute="trailing" secondItem="aC7-Dc-Vey" secondAttribute="trailing" constant="119" id="hrl-rn-Kh2"/>
+                            <constraint firstItem="FRD-Jw-kfm" firstAttribute="top" secondItem="up9-Ml-fuu" secondAttribute="top" id="igo-ES-aw9"/>
+                            <constraint firstItem="8ID-fU-iaW" firstAttribute="top" secondItem="3T4-vw-Yhk" secondAttribute="bottom" constant="45" id="j2b-aO-25m"/>
+                            <constraint firstItem="Jle-kB-gfZ" firstAttribute="leading" secondItem="up9-Ml-fuu" secondAttribute="leading" constant="20" id="lTD-n7-Sp9"/>
+                            <constraint firstItem="FRD-Jw-kfm" firstAttribute="leading" secondItem="up9-Ml-fuu" secondAttribute="leading" constant="20" id="pym-R5-RdX"/>
+                            <constraint firstItem="aC7-Dc-Vey" firstAttribute="top" secondItem="3T4-vw-Yhk" secondAttribute="bottom" constant="40" id="wMw-V3-boT"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="alreadyLabel" destination="zQi-SC-rEv" id="pKj-vk-E1E"/>
-                        <outlet property="backWelcomeButton" destination="M60-v8-Zyq" id="PiZ-Ko-giD"/>
-                        <outlet property="bigSignLabel" destination="70x-Gi-c8O" id="cuv-QX-Vg3"/>
-                        <outlet property="birthTextField" destination="q8x-Uq-M8Q" id="04E-Y0-La5"/>
-                        <outlet property="confirmPassTextField" destination="4lM-fr-APT" id="NCT-Sm-Y4e"/>
-                        <outlet property="emailTextField" destination="cAi-dk-ImW" id="FiU-QD-eIt"/>
-                        <outlet property="fromTextField" destination="GSg-FM-mFa" id="WJr-TQ-7Mn"/>
-                        <outlet property="genreTextField" destination="Xdr-Jj-JQZ" id="CGc-JV-lxN"/>
-                        <outlet property="miniLoginButton" destination="1fW-bB-z8h" id="jV0-lt-Yal"/>
-                        <outlet property="passTextField" destination="zic-BM-CNh" id="B8y-Bu-AUr"/>
-                        <outlet property="registerNameTextField" destination="Thm-cT-GXa" id="9L5-HF-ouN"/>
-                        <outlet property="signButton" destination="uB0-Oz-x18" id="E5y-wX-ilO"/>
-                        <segue destination="vVs-8q-hys" kind="presentation" identifier="backWelcomeSegue" id="hN0-wj-73u"/>
-                        <segue destination="6MZ-9j-Ffp" kind="presentation" identifier="toLoginfromRegister" id="BUS-l5-fqx"/>
+                        <outlet property="alreadyLabel" destination="8ID-fU-iaW" id="ecC-1g-Mha"/>
+                        <outlet property="backWelcomeButton" destination="FRD-Jw-kfm" id="2YZ-dE-TpR"/>
+                        <outlet property="bigSignLabel" destination="Jle-kB-gfZ" id="cL6-Z2-TOy"/>
+                        <outlet property="birthTextField" destination="MkT-Ir-S9u" id="YmA-ff-7h3"/>
+                        <outlet property="confirmPassTextField" destination="w7Q-Ie-5Q5" id="Y5g-So-ObZ"/>
+                        <outlet property="emailTextField" destination="3rS-fl-7uj" id="rTY-Ar-TWw"/>
+                        <outlet property="fromTextField" destination="O7V-HN-qce" id="prx-bA-ncN"/>
+                        <outlet property="genreTextField" destination="Baw-45-Dyd" id="ZED-8Q-3pR"/>
+                        <outlet property="miniLoginButton" destination="aC7-Dc-Vey" id="sVu-Fz-QfB"/>
+                        <outlet property="passTextField" destination="5dj-O1-XXp" id="b3R-HC-G7S"/>
+                        <outlet property="registerNameTextField" destination="ctx-bf-NTW" id="dqf-EN-xzm"/>
+                        <outlet property="signButton" destination="3T4-vw-Yhk" id="6Zq-Xd-ChZ"/>
+                        <segue destination="vVs-8q-hys" kind="presentation" identifier="backWelcomeSegue" id="LUd-If-zoD"/>
+                        <segue destination="6MZ-9j-Ffp" kind="presentation" identifier="toLoginfromRegister" id="wJl-eP-Uf4"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hpq-E5-pDq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l8F-u7-5Tf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="216" y="698"/>
+            <point key="canvasLocation" x="237.68115942028987" y="12.723214285714285"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="N2b-TJ-ZLh">
@@ -270,8 +249,8 @@
                         <outlet property="goLoginButton" destination="29P-mQ-869" id="PdE-xW-QsL"/>
                         <outlet property="logoImage" destination="wEP-1n-8YX" id="KB7-KL-hO3"/>
                         <outlet property="signUpButton" destination="yBL-Mr-4jT" id="nEF-k6-3Xr"/>
+                        <segue destination="ru6-4b-o7C" kind="presentation" identifier="signSegue" id="zIb-72-tZV"/>
                         <segue destination="6MZ-9j-Ffp" kind="presentation" identifier="loginSegue" id="wGX-7k-NkA"/>
-                        <segue destination="9xs-zi-Idx" kind="presentation" identifier="signSegue" id="nuf-bB-3dK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5M-XO-tm9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -394,7 +373,7 @@
                         <outlet property="passLoginTextField" destination="0YO-DH-NET" id="InX-7x-ic0"/>
                         <outlet property="welcoBackButton" destination="4MF-Zn-oFQ" id="FgY-F5-iMW"/>
                         <segue destination="vVs-8q-hys" kind="presentation" identifier="backWelcoSegue" id="cDT-hV-9Ue"/>
-                        <segue destination="9xs-zi-Idx" kind="presentation" identifier="toRegisterFromLogin" id="f8Y-B9-hSx"/>
+                        <segue destination="ru6-4b-o7C" kind="presentation" identifier="toRegisterFromLogin" id="U7T-u5-HSs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6j-Qh-s3j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -403,9 +382,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wGX-7k-NkA"/>
-        <segue reference="cDT-hV-9Ue"/>
-        <segue reference="f8Y-B9-hSx"/>
+        <segue reference="wJl-eP-Uf4"/>
+        <segue reference="LUd-If-zoD"/>
+        <segue reference="U7T-u5-HSs"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
