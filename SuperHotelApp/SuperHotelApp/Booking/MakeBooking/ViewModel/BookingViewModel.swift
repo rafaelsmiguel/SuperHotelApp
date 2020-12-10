@@ -151,6 +151,7 @@ class BookingViewModel {
     func saveInfoUserDefault() {
             
             let defaults = UserDefaults.standard
+            let encoder = JSONEncoder()
             
             if let bookings = defaults.object(forKey: "reservas") as? Data {
                 let decoder = JSONDecoder()
@@ -159,12 +160,15 @@ class BookingViewModel {
                     
                     if let bookingElement = self.bookingElement {
                         aBookingElement.append(bookingElement)
+                        if let encoded = try? encoder.encode(aBookingElement) {
+                            defaults.set(encoded, forKey: "reservas")
+                        }
                     }
                 } else {
                     
                 }
             } else {
-                let encoder = JSONEncoder()
+                
                 if let bookingElement = self.bookingElement{
                     aBookingElement.append(bookingElement)
                     

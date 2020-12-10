@@ -46,8 +46,7 @@ class EditRegisterViewController: UIViewController {
     }
 
     @IBAction func cancelEditProfileButton () {
-        
-        print ("cancel edit profile tapped")
+        self.navigationController?.popViewController(animated: true)
     }
     
     func createDatePicker () {

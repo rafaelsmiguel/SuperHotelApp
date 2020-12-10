@@ -104,11 +104,21 @@ class SearchWorker {
 //        request.httpMethod = "GET"
 //        request.allHTTPHeaderFields = headers
         
-        let request = NSMutableURLRequest(url: NSURL(string: "https://hotels4.p.rapidapi.com/properties/list?destinationId=1722487&pageNumber=1&checkIn=2020-01-08&checkOut=2020-01-15&pageSize=25&adults1=1&currency=USD&locale=en_US&sortOrder=PRICE")! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
+//        let request = NSMutableURLRequest(url: NSURL(string: "https://hotels4.p.rapidapi.com/properties/list?destinationId=1722487&pageNumber=1&checkIn=2020-01-08&checkOut=2020-01-15&pageSize=25&adults1=1&currency=USD&locale=en_US&sortOrder=PRICE")! as URL,
+//                                                cachePolicy: .useProtocolCachePolicy,
+//                                            timeoutInterval: 10.0)
+//        request.httpMethod = "GET"
+//        request.allHTTPHeaderFields = headers
+        
+        let queryItems = [URLQueryItem(name: "destinationId", value: self.destinationId), URLQueryItem(name: "pageNumber", value: "1"), URLQueryItem(name: "checkIn", value: "2020-01-08"), URLQueryItem(name: "checkOut", value: "2020-01-15"), URLQueryItem(name: "pageSize", value: "25"), URLQueryItem(name: "adults1", value: "1"), URLQueryItem(name: "currency", value: "USD"), URLQueryItem(name: "locale", value: "en_US"), URLQueryItem(name: "sortOrder", value: "PRICE")]
+        var urlComps = URLComponents(string: "https://hotels4.p.rapidapi.com/properties/list")!
+        urlComps.queryItems = queryItems
+        
+        
+        let request = NSMutableURLRequest(url: urlComps.url ?? NSURL(string:"") as! URL)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
+        
         
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
