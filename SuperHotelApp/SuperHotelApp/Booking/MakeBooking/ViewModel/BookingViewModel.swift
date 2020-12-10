@@ -149,26 +149,29 @@ class BookingViewModel {
     }
     
     func saveInfoUserDefault() {
-        
-        let defaults = UserDefaults.standard
-        
-        if let bookings = defaults.object(forKey: "reservas") as? Data {
-            let decoder = JSONDecoder()
-            if let loadBooking = try? decoder.decode([BookingElement].self, from: bookings) {
-                aBookingElement = loadBooking
-                
-                if let bookingElement = self.bookingElement {
-                    aBookingElement.append(bookingElement)
+            
+            let defaults = UserDefaults.standard
+            
+            if let bookings = defaults.object(forKey: "reservas") as? Data {
+                let decoder = JSONDecoder()
+                if let loadBooking = try? decoder.decode([BookingElement].self, from: bookings) {
+                    aBookingElement = loadBooking
+                    
+                    if let bookingElement = self.bookingElement {
+                        aBookingElement.append(bookingElement)
+                    }
+                } else {
+                    
                 }
-                
-               let encoder = JSONEncoder()
-                if let encoded = try? encoder.encode(aBookingElement) {
-                    defaults.set(encoded, forKey: "reservas")
-                }
-                
             } else {
-                
+                let encoder = JSONEncoder()
+                if let bookingElement = self.bookingElement{
+                    aBookingElement.append(bookingElement)
+                    
+                    if let encoded = try? encoder.encode(aBookingElement) {
+                        defaults.set(encoded, forKey: "reservas")
+                    }
+                }
             }
         }
-    }
 }

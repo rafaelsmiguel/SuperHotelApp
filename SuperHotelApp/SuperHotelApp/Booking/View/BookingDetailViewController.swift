@@ -29,7 +29,7 @@ class BookingDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        setupBooking()
+        self.setupBooking()
         
         
     }
@@ -51,7 +51,7 @@ class BookingDetailViewController: UIViewController {
             self.amount.text = self.controller.bookingAmount
             self.address.text = self.controller.bookingAddress
                 
-            setupHotelLocation()
+            self.setupHotelLocation()
             
         }
         
@@ -64,8 +64,8 @@ class BookingDetailViewController: UIViewController {
 
         let annotation = MKPointAnnotation()
 
-        let lat: Float = controller.bookingLatitude
-        let lon: Float = controller.bookingLongitude
+        let lat: Float = 22.90278 //controller.bookingLatitude
+        let lon: Float = -43.2075 //controller.bookingLongitude
         
         annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon))
         annotation.title = controller.bookingName

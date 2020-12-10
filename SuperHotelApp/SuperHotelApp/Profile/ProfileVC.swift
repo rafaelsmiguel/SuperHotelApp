@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileVC: UIViewController {
 
     var profileArray: [Profile] = [Profile(nome: "Elder Alcantara", nacionalidade: "Brasileira", sexo: "Masculino", nascimento: "25/05/1983", email: "elder@alcantara.com", senha: "123456")]
     
     @IBOutlet weak var nomeLabel: UILabel!
     @IBOutlet weak var nacionalidadeLabel: UILabel!
-    @IBOutlet weak var sexoLabel: UILabel!
+    @IBOutlet weak var generoLabel: UILabel!
     @IBOutlet weak var nascimentoLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var senhaLabel: UILabel!
@@ -26,7 +26,7 @@ class ProfileViewController: UIViewController {
         
         nomeLabel?.text = profileArray[0].nome
         nacionalidadeLabel?.text = profileArray[0].nacionalidade
-        sexoLabel?.text = profileArray[0].sexo
+        generoLabel?.text = profileArray[0].sexo
         nascimentoLabel?.text = profileArray[0].nascimento
         emailLabel?.text = profileArray[0].email
         senhaLabel?.text = profileArray[0].senha
