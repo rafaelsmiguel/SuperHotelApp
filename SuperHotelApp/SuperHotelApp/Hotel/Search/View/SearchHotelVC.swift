@@ -17,6 +17,7 @@ class SearchHotelVC: BaseViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet var constraintMapSize: NSLayoutConstraint!
+    var annotationInfo: MKAnnotation?
     
     var destinationId: String = ""
     var searchViewModel = SearchViewModel()
@@ -141,26 +142,79 @@ class SearchHotelVC: BaseViewController {
 
 extension SearchHotelVC: MKMapViewDelegate {
     
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+//    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+//
+//        if let annotation = view.annotation {
+//
+//            for i in 0...searchViewModel.arrayCount - 1 {
+//                if let annotationTitle = annotation.title {
+//                    let selected = searchViewModel.hotelSelected(annotation: annotationTitle ?? "", index: i)
+//
+//                    if selected {
+//                        break
+//                    }
+//                }
+//            }
+//
+//            let storyboard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
+//
+//            let hotelDetailViewController = storyboard.instantiateViewController(withIdentifier: "HotelDetailVC") as! HotelDetailVC
+//            hotelDetailViewController.hotelDetailViewModel = HotelDetailViewModel(hotel: self.searchViewModel.resultHotel)
+//            self.navigationController?.pushViewController(hotelDetailViewController, animated: true)
+//        }
+//    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        guard let annotation = annotation as? Agencia else {return nil}
+        
+        let identifier = "marker"
+        let view: MKMarkerAnnotationView
+        
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x:-5, y: 5)
+            //view.rightCalloutAccessoryView = UIButton(type: .contactAdd)
+            
+            let detailLabel = UILabel()
+            detailLabel.numberOfLines = 0
+            detailLabel.font = detailLabel.font.withSize(12)
+            detailLabel.text = "teste"
+            
+            view.detailCalloutAccessoryView = detailLabel
+            
+            let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 30, height: 30)))
+            button.setBackgroundImage(UIImage(named: "image"), for: .normal)
+            view.rightCalloutAccessoryView = button
+        }
+        
+        return view
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         if let annotation = view.annotation {
+            self.annotationInfo = annotation
             
-            for i in 0...searchViewModel.arrayCount - 1 {
-                if let annotationTitle = annotation.title {
-                    let selected = searchViewModel.hotelSelected(annotation: annotationTitle ?? "", index: i)
-                    
-                    if selected {
-                        break
-                    }
-                }
-            }
-            
-            let storyboard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
-        
-            let hotelDetailViewController = storyboard.instantiateViewController(withIdentifier: "HotelDetailVC") as! HotelDetailVC
-            hotelDetailViewController.hotelDetailViewModel = HotelDetailViewModel(hotel: self.searchViewModel.resultHotel)
-            self.navigationController?.pushViewController(hotelDetailViewController, animated: true)
+            self.performSegue(withIdentifier: "HotelDetailVC", sender: annotation)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let vc:HotelDetailVC? = segue.destination as? HotelDetailVC
+//        vc?.annotationInfo = self.annotationInfo
+        
+//        if sender is MKAnnotation {
+//
+//            vc?.setup(annotation: sender as? MKAnnotation)
+//        }
+       
+        
+       
     }
 }
 
