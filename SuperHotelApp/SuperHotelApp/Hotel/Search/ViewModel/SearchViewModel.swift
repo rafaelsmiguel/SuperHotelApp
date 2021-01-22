@@ -50,6 +50,12 @@ class SearchViewModel {
         return self.listHotel[index].name ?? ""
     }
     
+    func getAddress(index: Int) -> String {
+        return self.listHotel[index].address?.streetAddress ?? ""
+    }
+    
+    
+    
     func loadLocations(city: String?) {
         
         self.currentSearch = city

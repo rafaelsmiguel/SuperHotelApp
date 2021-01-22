@@ -42,6 +42,11 @@ class HotelDetailVC: UIViewController {
         
     }
     
+    @IBAction func tapBackButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     func setupHotel() {
 
         self.mainView.isHidden = false

@@ -22,8 +22,7 @@ class BookingVC: UIViewController {
     private var pickerView: UIPickerView?
     private var datePicker: UIDatePicker!
     
-    private var dateCheckin: Date?
-    private var dateCheckout: Date?
+    private var minDateCheckout: Date?
 
     var bookingViewModel: BookingViewModel?
     
@@ -46,6 +45,10 @@ class BookingVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupNavBar()
+    }
+    
+    @IBAction func tapBackButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func setupNavBar() {
@@ -102,8 +105,6 @@ class BookingVC: UIViewController {
         
     }
     
-    //DatePicker
-    
     private func setupDatePicker() {
         
         datePicker = UIDatePicker.init(frame: CGRect(x:0,y:0, width: self.view.bounds.width, height: 200))
@@ -133,13 +134,32 @@ class BookingVC: UIViewController {
         
     }
     
+    func setupDatePickerCheckout() {
+        
+        datePicker = UIDatePicker.init(frame: CGRect(x:0,y:0, width: self.view.bounds.width, height: 200))
+        datePicker.datePickerMode = .date
+        datePicker.minimumDate = minDateCheckout
+        
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
+        
+        self.textFieldCheckout.inputView = datePicker
+    }
+    
     @objc func confirmDate() {
         if textFieldCheckin.isFirstResponder {
             self.textFieldCheckin.text = self.bookingViewModel?.formatDate(date: self.datePicker.date)
             self.bookingViewModel?.setCheckin(checkIn: self.textFieldCheckin.text ?? "")
+            self.minDateCheckout = self.datePicker.date
+            setupDatePickerCheckout()
         } else {
-            self.textFieldCheckout.text = self.bookingViewModel?.formatDate(date: self.datePicker.date)
-            self.bookingViewModel?.setCheckout(checkOut: self.textFieldCheckout.text ?? "")
+            if self.bookingViewModel?.checkIn != nil {
+                self.textFieldCheckout.text = self.bookingViewModel?.formatDate(date: self.datePicker.date)
+                self.bookingViewModel?.setCheckout(checkOut: self.textFieldCheckout.text ?? "")
+            } else {
+                self.showToast(message: "Para selecionar a data de checkout é necessário primeiramente selecionar a data do checkin")
+            }
         }
         self.view.endEditing(true)
     }

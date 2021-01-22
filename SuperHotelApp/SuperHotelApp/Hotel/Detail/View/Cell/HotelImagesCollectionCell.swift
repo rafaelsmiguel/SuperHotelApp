@@ -18,6 +18,9 @@ class HotelImagesCollectionCell: UICollectionViewCell {
     
     func setup(foto:String) {
         
+        self.contentView.layer.cornerRadius = 30.0
+        self.contentView.layer.masksToBounds = true
+        
         let urlPhoto = foto.replacingOccurrences(of: "{size}", with: "w")
         
         guard let url = URL(string: urlPhoto) else {
