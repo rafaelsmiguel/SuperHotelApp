@@ -31,13 +31,7 @@ class BookingDetailViewController: UIViewController {
         
         self.setupBooking()
         
-        
     }
-    
-    @IBAction func tappedVoltar(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     
     func setupBooking() {
         
@@ -52,6 +46,11 @@ class BookingDetailViewController: UIViewController {
             self.address.text = self.controller.bookingAddress
                 
             self.setupHotelLocation()
+            
+            self.navigationController?.navigationBar.tintColor = UIColor.init(red: 109.0/255.0, green: 222.0/255.0, blue: 211.0/255.0, alpha: 1.0)
+            
+            
+            
             
         }
         

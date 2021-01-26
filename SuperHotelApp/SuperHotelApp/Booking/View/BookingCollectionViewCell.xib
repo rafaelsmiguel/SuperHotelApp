@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,23 +18,26 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BookingCollectionViewCell" customModule="SuperHotelApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="290"/>
+            <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="290"/>
+                <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y7A-70-Gl9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="203"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y7A-70-Gl9">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="230"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="230" id="gbO-8E-gbZ"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruG-Ga-vP9">
-                        <rect key="frame" x="20" y="213" width="374" height="33"/>
+                        <rect key="frame" x="20" y="235" width="360" height="34"/>
                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="28"/>
                         <color key="textColor" red="0.33725490200000002" green="0.82352941180000006" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbQ-NT-D7H">
-                        <rect key="frame" x="20" y="251" width="374" height="17"/>
+                        <rect key="frame" x="20" y="269" width="360" height="17"/>
                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                         <color key="textColor" red="0.55294117649999996" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -44,26 +47,24 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="rbQ-NT-D7H" secondAttribute="trailing" constant="20" id="Bqd-63-wzd"/>
-                <constraint firstItem="y7A-70-Gl9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MKt-e4-1F8"/>
-                <constraint firstItem="ruG-Ga-vP9" firstAttribute="top" secondItem="y7A-70-Gl9" secondAttribute="bottom" constant="10" id="MX7-S6-fLW"/>
-                <constraint firstAttribute="trailing" secondItem="ruG-Ga-vP9" secondAttribute="trailing" constant="20" id="QH9-aD-3QQ"/>
-                <constraint firstItem="rbQ-NT-D7H" firstAttribute="top" secondItem="ruG-Ga-vP9" secondAttribute="bottom" constant="5" id="SZG-Wb-sxO"/>
-                <constraint firstAttribute="bottom" secondItem="rbQ-NT-D7H" secondAttribute="bottom" constant="22" id="UJk-qe-0DU"/>
-                <constraint firstItem="y7A-70-Gl9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wnl-tT-Vdr"/>
-                <constraint firstAttribute="trailing" secondItem="y7A-70-Gl9" secondAttribute="trailing" id="XYL-ca-baw"/>
-                <constraint firstItem="rbQ-NT-D7H" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="Znf-c4-Huw"/>
-                <constraint firstItem="rbQ-NT-D7H" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="bTR-5m-0xI"/>
-                <constraint firstItem="ruG-Ga-vP9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="dN7-U0-ZSG"/>
-                <constraint firstAttribute="bottom" secondItem="rbQ-NT-D7H" secondAttribute="bottom" constant="22" id="eQb-mN-lTG"/>
-                <constraint firstAttribute="trailing" secondItem="rbQ-NT-D7H" secondAttribute="trailing" constant="20" id="umk-yg-c16"/>
+                <constraint firstAttribute="trailing" secondItem="rbQ-NT-D7H" secondAttribute="trailing" constant="20" id="2Su-7Y-zh1"/>
+                <constraint firstAttribute="trailing" secondItem="ruG-Ga-vP9" secondAttribute="trailing" constant="20" id="8Lv-qT-QSL"/>
+                <constraint firstItem="ruG-Ga-vP9" firstAttribute="top" secondItem="y7A-70-Gl9" secondAttribute="bottom" constant="5" id="GpG-cu-WDr"/>
+                <constraint firstItem="ruG-Ga-vP9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="Yjt-vP-iG7"/>
+                <constraint firstItem="rbQ-NT-D7H" firstAttribute="top" secondItem="ruG-Ga-vP9" secondAttribute="bottom" id="bTH-iR-pFR"/>
+                <constraint firstItem="y7A-70-Gl9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hqP-Nh-xTS"/>
+                <constraint firstItem="rbQ-NT-D7H" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="lc1-sr-MNB"/>
+                <constraint firstItem="y7A-70-Gl9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="niI-iX-rTx"/>
+                <constraint firstAttribute="trailing" secondItem="y7A-70-Gl9" secondAttribute="trailing" id="rOm-Fa-Tnt"/>
+                <constraint firstAttribute="bottom" secondItem="rbQ-NT-D7H" secondAttribute="bottom" constant="14" id="yDL-jo-aBu"/>
             </constraints>
+            <size key="customSize" width="414" height="311"/>
             <connections>
                 <outlet property="hotelImageView" destination="y7A-70-Gl9" id="zTo-dC-6Qb"/>
                 <outlet property="hotelNameLabel" destination="ruG-Ga-vP9" id="Roj-Ta-Px2"/>
                 <outlet property="periodOfStayLabel" destination="rbQ-NT-D7H" id="3jr-kq-SHy"/>
             </connections>
-            <point key="canvasLocation" x="-335" y="16"/>
+            <point key="canvasLocation" x="-334.78260869565219" y="13.727678571428571"/>
         </collectionViewCell>
     </objects>
 </document>

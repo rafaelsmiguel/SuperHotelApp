@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,10 +16,10 @@
             </objects>
             <point key="canvasLocation" x="-779" y="616"/>
         </scene>
-        <!--BookingListViewController-->
+        <!--Booking-->
         <scene sceneID="0bg-5B-Mk1">
             <objects>
-                <viewControllerPlaceholder storyboardName="Booking" referencedIdentifier="BookingListViewController" id="geg-Cu-nUQ" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Booking" id="geg-Cu-nUQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Gg6-VZ-zWq"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kyn-8H-yJq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

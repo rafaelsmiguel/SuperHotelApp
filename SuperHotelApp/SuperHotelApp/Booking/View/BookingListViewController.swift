@@ -9,6 +9,8 @@ import UIKit
 
 class BookingListViewController: BaseViewController {
     
+    @IBOutlet weak var emptyStateView: UIView!
+    @IBOutlet weak var buscarHotelButton: UIView!
     @IBOutlet weak var bookingCollectionView: UICollectionView!
     
     var controller: BookingListController = BookingListController()
@@ -16,60 +18,25 @@ class BookingListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        self.checkBooking()
         
-        // Do any additional setup after loading the view.
-        
-        //        var aBooking: [BookingElement] = []
-        //        let defaults = UserDefaults.standard
-        //
-        //        if let reservas = defaults.object(forKey: "reservas") as? Data {
-        //          let decoder = JSONDecoder()
-        //          if let loadBooking = try? decoder.decode([BookingElement].self, from: reservas) {
-        //            aBooking = loadBooking
-        //          }
-        //        }
+        self.bookingCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        self.bookingCollectionView.register(UINib(nibName: "BookingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BookingCollectionViewCell")
+        self.bookingCollectionView.delegate = self
         
         self.controller = BookingListController()
         
-        //        self.controller.getListBooking(completion: { (success) in
-        //
-        //            if success {
-        //                self.bookingCollectionView.delegate = self
-        //                self.bookingCollectionView.dataSource = self
-        //                self.bookingCollectionView.register(UINib(nibName: "BookingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BookingCollectionViewCell")
-        //            } else {
-        //                print("ERRO getListBooking >> BookingListViewController")
-        //            }
-        //
-        //        })
-        
-        
     }
     
-    func checkBooking() {
+    
+    @IBAction func searchHotel(_ sender: Any) {
         
-        let defaults = UserDefaults.standard
-        if let _ = defaults.object(forKey: "reservas") as? Data {
-            
-            self.showLoading()
-            
-        } else {
-            
-            
-            
-            let noBookingAlert = UIAlertController(title: "Ops...", message: "Você não possui reserva registrada! Toque na opção BUSCAR do menu e registre sua reserva.", preferredStyle: UIAlertController.Style.alert)
-            
-            noBookingAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                self.reloadInputViews()
-            }))
-            
-            self.present(noBookingAlert, animated: true)
-            
+        if let viewControllers = self.tabBarController?.viewControllers {
+            for (index, viewController) in viewControllers.enumerated() where viewController is SearchHotelVC {
+                self.tabBarController?.selectedIndex = index
+            }
         }
+        
     }
-    
     
     
     
@@ -78,17 +45,27 @@ class BookingListViewController: BaseViewController {
         let navigationBar = self.parent?.navigationItem
         navigationBar?.title = controller.navigationBarTitle
         
-        self.bookingCollectionView.register(UINib(nibName: "BookingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BookingCollectionViewCell")
+        //chamar loading
+        self.showLoading()
+        
         
         self.controller.getListBookingUserDefault (completion: { (success) in
             
+            self.hiddenLoading()
+            
             if success {
+                
+                self.bookingCollectionView.isHidden = false
+                self.emptyStateView.isHidden = true
                 self.bookingCollectionView.delegate = self
                 self.bookingCollectionView.dataSource = self
                 self.bookingCollectionView.reloadData()
-                self.hiddenLoading()
+                
                 
             } else {
+                
+                self.bookingCollectionView.isHidden = true
+                self.emptyStateView.isHidden = false
                 print("ERRO getListBooking >> BookingListViewController")
             }
             
@@ -99,6 +76,14 @@ class BookingListViewController: BaseViewController {
     
 }
 
+
+extension BookingListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.frame.width, height: 300)
+    }
+}
 
 extension BookingListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -121,8 +106,6 @@ extension BookingListViewController: UICollectionViewDelegate, UICollectionViewD
         
         
     }
-    
-    
 }
 
 
@@ -135,7 +118,8 @@ extension BookingListViewController: actionCollectionViewCellDelegate {
         
         bookingViewController.modalPresentationStyle = .fullScreen
         bookingViewController.controller.booking = sender as? BookingElement
-        self.present(bookingViewController, animated: true, completion: nil)
+        
+        self.navigationController?.pushViewController(bookingViewController, animated: true)
         
     }
     
