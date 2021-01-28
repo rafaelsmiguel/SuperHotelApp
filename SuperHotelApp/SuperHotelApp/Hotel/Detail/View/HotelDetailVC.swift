@@ -37,6 +37,9 @@ class HotelDetailVC: UIViewController {
         
         setupHotel()
         
+        star1.image = star1.image?.withRenderingMode(.alwaysTemplate)
+        star1.tintColor = Cores.amarelo
+        
         self.collectionView.register(UINib(nibName: "HotelImagesCollectionCell", bundle: nil), forCellWithReuseIdentifier: "HotelImagesCollectionCell")
         
         

@@ -40,6 +40,10 @@ class EditRegisterViewController: UIViewController {
         navigationBar?.title = "Cadastro"
     }
     
+    @IBAction func tapBackButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func saveEditProfileButton () {
         
         print("save edit profile tapped")

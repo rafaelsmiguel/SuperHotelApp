@@ -32,6 +32,8 @@
 		01B355A02547ABA50081C972 /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B3559F2547ABA50081C972 /* SearchWorker.swift */; };
 		01B398BE25538A7700AFD068 /* BookingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B398BD25538A7700AFD068 /* BookingRequest.swift */; };
 		01B398C125538B9D00AFD068 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B398C025538B9D00AFD068 /* BookingViewModel.swift */; };
+		01C42D7B25C25CBE00856162 /* Cores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C42D7A25C25CBE00856162 /* Cores.swift */; };
+		01C42D7E25C25D3300856162 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C42D7D25C25D3300856162 /* UIColor.swift */; };
 		01C5595A252D4EFE009BA5CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C55959252D4EFE009BA5CB /* AppDelegate.swift */; };
 		01C5595C252D4EFE009BA5CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5595B252D4EFE009BA5CB /* SceneDelegate.swift */; };
 		01C55961252D4EFE009BA5CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C5595F252D4EFE009BA5CB /* Main.storyboard */; };
@@ -97,6 +99,8 @@
 		01B3559F2547ABA50081C972 /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
 		01B398BD25538A7700AFD068 /* BookingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRequest.swift; sourceTree = "<group>"; };
 		01B398C025538B9D00AFD068 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
+		01C42D7A25C25CBE00856162 /* Cores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cores.swift; sourceTree = "<group>"; };
+		01C42D7D25C25D3300856162 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		01C55956252D4EFE009BA5CB /* SuperHotelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperHotelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C55959252D4EFE009BA5CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01C5595B252D4EFE009BA5CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -427,6 +431,8 @@
 				01E7CA72252FF31E00A89D75 /* UIViewController.swift */,
 				01559EC32577FDCD0053026B /* BaseViewController.swift */,
 				01C5599A252D5C76009BA5CB /* Font */,
+				01C42D7A25C25CBE00856162 /* Cores.swift */,
+				01C42D7D25C25D3300856162 /* UIColor.swift */,
 			);
 			path = CustomLayout;
 			sourceTree = "<group>";
@@ -683,11 +689,13 @@
 				01B398BE25538A7700AFD068 /* BookingRequest.swift in Sources */,
 				E1CC7B892536D6CB000FE355 /* Profile.swift in Sources */,
 				01C5598A252D5AEE009BA5CB /* HotelDetailVC.swift in Sources */,
+				01C42D7E25C25D3300856162 /* UIColor.swift in Sources */,
 				01E7CA73252FF31E00A89D75 /* UIViewController.swift in Sources */,
 				01559EBA2577F69C0053026B /* LoadingView.swift in Sources */,
 				01C5597E252D5AD0009BA5CB /* WelcomeViewController.swift in Sources */,
 				01C559A5252D5D8B009BA5CB /* SHButton.swift in Sources */,
 				0196C227255CC24C0024E0A3 /* SearchViewModel.swift in Sources */,
+				01C42D7B25C25CBE00856162 /* Cores.swift in Sources */,
 				E727C9EA2538FF97007063D3 /* BookingCollectionViewCell.swift in Sources */,
 				01C559A7252D5D8B009BA5CB /* FontsName.swift in Sources */,
 				01B398C125538B9D00AFD068 /* BookingViewModel.swift in Sources */,

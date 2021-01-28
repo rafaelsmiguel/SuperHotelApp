@@ -17,7 +17,6 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var generoLabel: UILabel!
     @IBOutlet weak var nascimentoLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var senhaLabel: UILabel!
     
     
     
@@ -29,7 +28,6 @@ class ProfileVC: UIViewController {
         generoLabel?.text = profileArray[0].sexo
         nascimentoLabel?.text = profileArray[0].nascimento
         emailLabel?.text = profileArray[0].email
-        senhaLabel?.text = profileArray[0].senha
         
         
         
