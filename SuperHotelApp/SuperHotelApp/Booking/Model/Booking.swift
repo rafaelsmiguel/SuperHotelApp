@@ -21,6 +21,7 @@ struct BookingElement: Codable {
     let valueByNight: String?
     let amount: String?
     let address: String?
-    let latitude: String?
-    let longitude: String?
+    let latitude: Double?
+    let longitude: Double?
+    let starRating: Int?
 }

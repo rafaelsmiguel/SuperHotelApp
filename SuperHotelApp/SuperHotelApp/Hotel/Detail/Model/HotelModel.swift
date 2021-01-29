@@ -10,11 +10,12 @@ import Foundation
 struct HotelModel {
     var destinationId: String?
     var name: String?
-    var latitude: String?
-    var longitude: String?
+    var latitude: Double?
+    var longitude: Double?
     var valueByNight: Double?
     var address: String?
     var images: [String]?
+    var starRating: Int?
 }
 
 struct GetDetails: Codable {

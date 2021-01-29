@@ -34,6 +34,7 @@ class BookingVC: UIViewController {
 //        self.bookingViewModel = BookingViewModel(hotel: HotelModel(destinationId: "", name: "", latitude: "", longitude: "", valueByNight: 0.0, address: "", images: []))
         
         self.hotelLabel.text = self.bookingViewModel?.hotelName
+        self.setupStar()
         self.setupTextField()
        
         self.setupPickerView()
@@ -54,6 +55,30 @@ class BookingVC: UIViewController {
     func setupNavBar() {
         let navigationBar = self.parent?.navigationItem
         navigationBar?.title = bookingViewModel?.setupNavBar()
+    }
+    
+    func setupStar() {
+        
+        for viewStars in stackViewStar.subviews
+        {
+            viewStars.removeFromSuperview()
+        }
+        
+        stackViewStar.distribution = .fillEqually
+        stackViewStar.alignment = .center
+        stackViewStar.translatesAutoresizingMaskIntoConstraints = false
+        stackViewStar.spacing = 3
+        
+        if let stars = self.bookingViewModel?.getStars() {
+            for _ in 1...stars {
+                let star = UIImageView()
+                star.image = UIImage(systemName: "star.fill")
+                star.image?.withRenderingMode(.alwaysTemplate)
+                star.tintColor = Cores.amarelo
+                
+                stackViewStar.addArrangedSubview(star)
+            }
+        }
     }
     
     @IBAction func tapConfirmButton(_ sender: SHButton_FilledGreen) {

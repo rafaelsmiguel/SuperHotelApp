@@ -82,6 +82,10 @@ class BookingViewModel {
         return self.bookingRequest.adults1
     }
     
+    func getStars() -> Int {
+        return self.hotel?.starRating ?? 0
+    }
+    
     var checkInDate: Date {
         
         let dateString = self.bookingRequest.checkIn ?? ""
@@ -142,7 +146,7 @@ class BookingViewModel {
     
     func fillInfoBooking() {
         
-        self.bookingElement = BookingElement(hotelImage: "hotel1.jpg", hotelName: self.hotelName, periodOfStay: self.periodOfStay(), numberOfPeople: self.adults, valueByNight: self.valueByNightFormat, amount: self.amount(), address: self.address, latitude: "", longitude: "")
+        self.bookingElement = BookingElement(hotelImage: "hotel1.jpg", hotelName: self.hotelName, periodOfStay: self.periodOfStay(), numberOfPeople: self.adults, valueByNight: self.valueByNightFormat, amount: self.amount(), address: self.address, latitude: self.hotel?.latitude, longitude: self.hotel?.longitude ,starRating: self.getStars())
         
         self.saveInfoUserDefault()
         

@@ -51,12 +51,12 @@ class BookingListController {
         return self.booking?.address ?? ""
     }
    
-    var bookingLatitude: Float {
-        return Float(self.booking?.latitude ?? "") ?? 0
+    var bookingLatitude: Double {
+        return self.booking?.latitude ?? 0.0
     }
     
-    var bookingLongitude: Float {
-        return Float(self.booking?.longitude ?? "") ?? 0
+    var bookingLongitude: Double {
+        return self.booking?.longitude ?? 0.0
     }
     
     

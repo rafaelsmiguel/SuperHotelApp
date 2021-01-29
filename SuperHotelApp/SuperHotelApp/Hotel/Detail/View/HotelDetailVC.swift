@@ -37,13 +37,35 @@ class HotelDetailVC: UIViewController {
         
         setupHotel()
         
-        star1.image = star1.image?.withRenderingMode(.alwaysTemplate)
-        star1.tintColor = Cores.amarelo
-        
         self.collectionView.register(UINib(nibName: "HotelImagesCollectionCell", bundle: nil), forCellWithReuseIdentifier: "HotelImagesCollectionCell")
         
         
     }
+    
+    func setupStar() {
+        
+        for viewStars in stackViewStars.subviews
+        {
+            viewStars.removeFromSuperview()
+        }
+        
+        stackViewStars.distribution = .fillEqually
+        stackViewStars.alignment = .center
+        stackViewStars.translatesAutoresizingMaskIntoConstraints = false
+        stackViewStars.spacing = 3
+        
+        if let stars = self.hotelDetailViewModel?.getStars() {
+            for _ in 1...stars {
+                let star = UIImageView()
+                star.image = UIImage(systemName: "star.fill")
+                star.image?.withRenderingMode(.alwaysTemplate)
+                star.tintColor = Cores.amarelo
+                
+                stackViewStars.addArrangedSubview(star)
+            }
+        }
+    }
+    
     
     @IBAction func tapBackButton(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -56,9 +78,11 @@ class HotelDetailVC: UIViewController {
         self.hotelNameLabel.text = self.hotelDetailViewModel?.hotelName
         self.valueLabel.text = self.hotelDetailViewModel?.valueByNightFormat
         self.addressLabel.text = self.hotelDetailViewModel?.address
+        self.setupStar()
         
         self.setupPhotos()
         self.setupHotelLocation()
+        
     }
     
     func setupHotelLocation() {
@@ -99,7 +123,7 @@ class HotelDetailVC: UIViewController {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
         let bookingViewController = storyBoard.instantiateViewController(withIdentifier: "BookingVC") as! BookingVC
-        bookingViewController.bookingViewModel = BookingViewModel(hotel: HotelModel(destinationId: "", name: self.hotelDetailViewModel?.hotelName, latitude: "", longitude: "", valueByNight: self.hotelDetailViewModel?.valueByNight, address: self.hotelDetailViewModel?.address, images: []))
+        bookingViewController.bookingViewModel = BookingViewModel(hotel: HotelModel(destinationId: "", name: self.hotelDetailViewModel?.hotelName, latitude: self.hotelDetailViewModel?.getLatitude(), longitude: self.hotelDetailViewModel?.getLongitude(), valueByNight: self.hotelDetailViewModel?.valueByNight, address: self.hotelDetailViewModel?.address, images: [],starRating: self.hotelDetailViewModel?.getStars()))
         
         self.navigationController?.pushViewController(bookingViewController, animated: true)
     }

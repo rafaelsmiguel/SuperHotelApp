@@ -39,7 +39,6 @@ class HotelDetailViewModel {
         return hotelPhotos?.hotelImages
     }
     
-    
     func getLatitude() -> Double {
         if let lat = self.hotel?.coordinate?.lat {
             return lat
@@ -105,6 +104,10 @@ class HotelDetailViewModel {
                 completion(false)
             }
         }
+    }
+    
+    func getStars() -> Int {
+        return Int(self.hotel?.starRating?.rounded() ?? 0)
     }
     
     
