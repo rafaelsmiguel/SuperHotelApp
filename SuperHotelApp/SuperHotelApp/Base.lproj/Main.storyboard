@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vVs-8q-hys">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vVs-8q-hys">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -186,7 +186,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sua super viagem, merece um super hotel." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndg-5K-2bj">
-                                <rect key="frame" x="20" y="222" width="374" height="21"/>
+                                <rect key="frame" x="20" y="232" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -212,10 +212,9 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wEP-1n-8YX">
-                                <rect key="frame" x="147" y="82" width="120" height="120"/>
+                                <rect key="frame" x="157" y="112" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="2K9-d2-61C"/>
-                                    <constraint firstAttribute="height" constant="120" id="MUl-CI-qGf"/>
+                                    <constraint firstAttribute="height" constant="100" id="MUl-CI-qGf"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -230,15 +229,17 @@
                             <constraint firstItem="GBj-Z1-hJ0" firstAttribute="top" secondItem="cGP-bM-aXW" secondAttribute="top" id="Nt7-Lo-pz0"/>
                             <constraint firstItem="GBj-Z1-hJ0" firstAttribute="bottom" secondItem="cGP-bM-aXW" secondAttribute="bottom" id="TBl-0h-6z7"/>
                             <constraint firstItem="yBL-Mr-4jT" firstAttribute="leading" secondItem="cGP-bM-aXW" secondAttribute="leading" constant="20" id="UMG-Ts-61i"/>
+                            <constraint firstItem="wEP-1n-8YX" firstAttribute="centerX" secondItem="GBj-Z1-hJ0" secondAttribute="centerX" id="UxI-Wt-xnb"/>
                             <constraint firstItem="GBj-Z1-hJ0" firstAttribute="leading" secondItem="cGP-bM-aXW" secondAttribute="leading" id="cjo-sI-i99"/>
                             <constraint firstItem="cGP-bM-aXW" firstAttribute="bottom" secondItem="29P-mQ-869" secondAttribute="bottom" constant="40" id="ckO-ch-1Fk"/>
-                            <constraint firstItem="wEP-1n-8YX" firstAttribute="top" secondItem="cGP-bM-aXW" secondAttribute="top" constant="38" id="feb-tK-Nk7"/>
+                            <constraint firstItem="wEP-1n-8YX" firstAttribute="top" secondItem="cGP-bM-aXW" secondAttribute="top" constant="68" id="feb-tK-Nk7"/>
                             <constraint firstItem="GBj-Z1-hJ0" firstAttribute="top" secondItem="cGP-bM-aXW" secondAttribute="top" id="glx-Cy-NyF"/>
-                            <constraint firstItem="wEP-1n-8YX" firstAttribute="centerX" secondItem="cGP-bM-aXW" secondAttribute="centerX" id="iCb-Zd-CHT"/>
                             <constraint firstItem="GBj-Z1-hJ0" firstAttribute="bottom" secondItem="cGP-bM-aXW" secondAttribute="bottom" id="lY7-vc-0bw"/>
                             <constraint firstItem="29P-mQ-869" firstAttribute="top" secondItem="yBL-Mr-4jT" secondAttribute="bottom" constant="15" id="nDt-7P-bvG"/>
                             <constraint firstItem="cGP-bM-aXW" firstAttribute="trailing" secondItem="yBL-Mr-4jT" secondAttribute="trailing" constant="20" id="tVH-wP-Pk9"/>
+                            <constraint firstItem="cGP-bM-aXW" firstAttribute="trailing" secondItem="wEP-1n-8YX" secondAttribute="trailing" constant="157" id="uEs-8i-usm"/>
                             <constraint firstItem="ndg-5K-2bj" firstAttribute="top" secondItem="wEP-1n-8YX" secondAttribute="bottom" constant="20" id="uRB-Uw-9Sz"/>
+                            <constraint firstItem="wEP-1n-8YX" firstAttribute="leading" secondItem="cGP-bM-aXW" secondAttribute="leading" constant="157" id="wzS-CO-tef"/>
                             <constraint firstItem="29P-mQ-869" firstAttribute="leading" secondItem="cGP-bM-aXW" secondAttribute="leading" constant="20" id="xyP-f9-yu9"/>
                             <constraint firstItem="GBj-Z1-hJ0" firstAttribute="leading" secondItem="cGP-bM-aXW" secondAttribute="leading" id="zwd-5W-y0T"/>
                         </constraints>
@@ -381,9 +382,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wGX-7k-NkA"/>
-        <segue reference="LUd-If-zoD"/>
-        <segue reference="zIb-72-tZV"/>
+        <segue reference="wJl-eP-Uf4"/>
+        <segue reference="cDT-hV-9Ue"/>
+        <segue reference="U7T-u5-HSs"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class ProfileVC: UIViewController {
 
-    var profileArray: [Profile] = [Profile(nome: "Elder Alcantara", nacionalidade: "Brasileira", sexo: "Masculino", nascimento: "25/05/1983", email: "elder@alcantara.com", senha: "123456")]
-    
+   
     @IBOutlet weak var nomeLabel: UILabel!
     @IBOutlet weak var nacionalidadeLabel: UILabel!
     @IBOutlet weak var generoLabel: UILabel!
@@ -20,15 +21,16 @@ class ProfileVC: UIViewController {
     
     
     
+    var user:User?
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        nomeLabel?.text = profileArray[0].nome
-        nacionalidadeLabel?.text = profileArray[0].nacionalidade
-        generoLabel?.text = profileArray[0].sexo
-        nascimentoLabel?.text = profileArray[0].nascimento
-        emailLabel?.text = profileArray[0].email
-        
+
+      
+       
+        self.getLoggedUser()
         
         
         /*self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(displayP3Red: 245.0/255.0, green: 246.0/255.0, blue: 247.0/255.0, alpha: 1.0)]*/
@@ -81,5 +83,55 @@ class ProfileVC: UIViewController {
         
         present(alert, animated: true)
     }
+    
+    
+//
+//    func getUser(){
+//
+//        let user = Auth.auth().currentUser
+//
+//        if let user = user{
+//
+//            let uid = user.uid
+//            let email = user.email
+//            let photoURL = user.photoURL
+//            
+//            self.emailLabel.text = email
+//
+//        }
+//
+//    }
+    
+    
+    func getLoggedUser(){
+        
+        let defaults = UserDefaults.standard
+        
+        if let user = defaults.object(forKey: "usuarioLogado") as? Data {
+            let decoder = JSONDecoder()
+            if let loadUser = try? decoder.decode(User.self, from: user){
+                
+                self.user = loadUser
+                self.fillFields()
+                
+            }
+        }
+        
+    }
+    
 
+    
+    func fillFields(){
+        
+        
+        
+        self.nomeLabel.text = user?.name
+        self.nacionalidadeLabel.text = user?.from
+        self.generoLabel.text = user?.genre
+        self.nascimentoLabel.text = user?.birth
+        self.emailLabel.text = user?.email
+        
+    
+}
+    
 }
