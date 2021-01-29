@@ -88,3 +88,17 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+SuperHotelApp/Pods/lottie-ios/LICENSE 2
+SuperHotelApp/Pods/lottie-ios/README 2.md
+SuperHotelApp/Pods/Target Support Files/GoogleUtilities/GoogleUtilities-prefix 2.pch
+SuperHotelApp/Pods/Target Support Files/lottie-ios/lottie-ios 2.modulemap
+SuperHotelApp/Pods/Target Support Files/lottie-ios/lottie-ios-dummy 2.m
+SuperHotelApp/Pods/Target Support Files/lottie-ios/lottie-ios-Info 2.plist
+SuperHotelApp/Pods/Target Support Files/lottie-ios/lottie-ios-prefix 2.pch
+SuperHotelApp/Pods/Target Support Files/lottie-ios/lottie-ios-umbrella 2.h
+SuperHotelApp/Pods/Target Support Files/lottie-ios/lottie-ios.debug 2.xcconfig
+SuperHotelApp/Pods/Target Support Files/lottie-ios/lottie-ios.release 2.xcconfig
+SuperHotelApp/SuperHotelApp/CustomLayout/BaseViewController 2.swift
+SuperHotelApp/SuperHotelApp/CustomLayout/LoadingView/loading 2.json
+SuperHotelApp/SuperHotelApp/CustomLayout/LoadingView/LoadingView 2.swift
+SuperHotelApp/SuperHotelApp/CustomLayout/LoadingView/LoadingView 2.xib
