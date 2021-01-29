@@ -28,7 +28,7 @@ class RegisterViewController: BaseViewController {
     
     var viewModel:RegisterViewModel = RegisterViewModel()
     
-    var user:[User] = []
+    var user:User?
 
     var datePicker:UIDatePicker?
     
@@ -74,11 +74,33 @@ class RegisterViewController: BaseViewController {
     
     
     
+    func saveInfoUserDefault() {
+        
+        let defaults = UserDefaults.standard
+        let encoder = JSONEncoder()
+
+            
+            if let user = self.user {
+                
+                if let encoded = try? encoder.encode(user) {
+                    defaults.set(encoded, forKey: "usuarioLogado")
+                }
+            }
+        }
+    
+        
+
+    
+    
     @IBAction func signAction(_ sender: Any) {
         
         
         self.showLoading()
       
+        self.user = User(name: self.registerNameTextField.text ?? "", from: self.fromTextField.text ?? "", genre: self.genreTextField.text ?? "", email: self.emailTextField.text ?? "", birth: self.birthTextField.text ?? "", password: self.passTextField.text ?? "", confirm: self.confirmPassTextField.text ?? "")
+        
+       
+        
         if passTextField.text == confirmPassTextField.text{
         
             
@@ -93,8 +115,13 @@ class RegisterViewController: BaseViewController {
                     self.showToast(message: "Não foi possivel realizar o cadastro,cheque sua conexão,ou tente novamente mais tarde", showTop: true)
                 }else{
                     
-                    self.showToast(message: "Cadastro Realizado com Sucesso!", showTop: true)
+                    self.saveInfoUserDefault()
                     self.hiddenLoading()
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
+                    let navigationViewController = storyBoard.instantiateViewController(withIdentifier: "MainNavigationController") as! MainNavigationController
+                    navigationViewController.modalPresentationStyle = .fullScreen
+                    self.present(navigationViewController, animated: true, completion: nil)
+                    
                 }
             
             }
