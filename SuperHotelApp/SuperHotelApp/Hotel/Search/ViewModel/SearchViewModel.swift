@@ -73,7 +73,7 @@ class SearchViewModel {
         
         self.searchWorker.currentSearch(city: self.currentSearch ?? "")
         
-        self.searchWorker.getListSearchAPI { (response, error) in
+        self.searchWorker.getListSearchAPIAF { (response, error) in
             if error == false {
                 self.searchHotel = response as! SearchModel
                 
@@ -100,7 +100,7 @@ class SearchViewModel {
         
         self.searchWorker.destinationId = self.entitieAPI?.destinationId
         
-        self.searchWorker.getListHotel { (response, error) in
+        self.searchWorker.getListHotelAF { (response, error) in
             if error == false {
                 self.propertiesListModel = response as! PropertiesListModel
                 

@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.4.1)
   - Firebase/Auth (6.23.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.5.2)
@@ -49,11 +50,13 @@ PODS:
   - PromisesObjC (1.2.11)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - Firebase/Auth
   - lottie-ios (~> 3.1)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Firebase
     - FirebaseAuth
     - FirebaseAuthInterop
@@ -68,6 +71,7 @@ SPEC REPOS:
     - PromisesObjC
 
 SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Firebase: 585ae467b3edda6a5444e788fda6888f024d8d6f
   FirebaseAuth: 7047aec89c0b17ecd924a550c853f0c27ac6015e
   FirebaseAuthInterop: a0f37ae05833af156e72028f648d313f7e7592e9
@@ -81,6 +85,6 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
 
-PODFILE CHECKSUM: 9fd729231dd00bd38178400df3c650b79d8084fb
+PODFILE CHECKSUM: 2ac43a24a458aac90be578a86bec6bb9d3eca67b
 
 COCOAPODS: 1.9.1
