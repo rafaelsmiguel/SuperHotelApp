@@ -294,7 +294,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vab-c4-kj7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="606"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="542"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Alterar Cadastro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTA-PW-64h">
                                                 <rect key="frame" x="20" y="20" width="374" height="34"/>
@@ -306,7 +306,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZhO-u3-dss">
-                                                <rect key="frame" x="20" y="84" width="374" height="364"/>
+                                                <rect key="frame" x="20" y="84" width="374" height="300"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jnF-pW-pVz" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
@@ -317,7 +317,7 @@
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nacionalidade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZVk-zP-gUA" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nacionalidade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZVk-zP-gUA" customClass="SHTextFieldCenter" customModule="SuperHotelApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="64" width="374" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="cKa-Bb-YvL"/>
@@ -325,7 +325,7 @@
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sexo " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wfG-xV-Idv" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sexo " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wfG-xV-Idv" customClass="SHTextFieldCenter" customModule="SuperHotelApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="128" width="374" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="OYS-Mr-xP9"/>
@@ -333,7 +333,7 @@
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nascimento " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1oy-bR-NmO" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nascimento " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1oy-bR-NmO" customClass="SHTextFieldCenter" customModule="SuperHotelApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="192" width="374" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="aXz-Rs-3fl"/>
@@ -349,18 +349,10 @@
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAh-tQ-H0D" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="320" width="374" height="44"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="44" id="kNM-3i-kBY"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeN-4s-iDX" customClass="SHButton_FilledGreen" customModule="SuperHotelApp" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="478" width="374" height="44"/>
+                                                <rect key="frame" x="20" y="414" width="374" height="44"/>
                                                 <color key="backgroundColor" red="0.3411764706" green="0.82352941180000006" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="d3J-uj-Cqe"/>
@@ -373,7 +365,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tG1-VW-c2X" customClass="SHButton_FilledWhite" customModule="SuperHotelApp" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="542" width="374" height="44"/>
+                                                <rect key="frame" x="20" y="478" width="374" height="44"/>
                                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="T5m-iS-XHN"/>
@@ -444,7 +436,6 @@
                         <outlet property="nacionalidadeTextField" destination="ZVk-zP-gUA" id="tsg-oh-GTN"/>
                         <outlet property="nascimentoTextField" destination="1oy-bR-NmO" id="lq0-8b-6RA"/>
                         <outlet property="nomeTextField" destination="jnF-pW-pVz" id="azt-fS-mSb"/>
-                        <outlet property="senhaTextField" destination="DAh-tQ-H0D" id="pBY-O0-ir5"/>
                         <outlet property="sexoTextField" destination="wfG-xV-Idv" id="lEu-Rc-cU2"/>
                     </connections>
                 </viewController>

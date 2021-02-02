@@ -17,9 +17,7 @@ class SearchHotelVC: BaseViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet var constraintMapSize: NSLayoutConstraint!
-//    var annotationInfo = MKPointAnnotation()
     
-    var destinationId: String = ""
     var searchViewModel = SearchViewModel()
     
     override func viewDidLoad() {
@@ -40,7 +38,12 @@ class SearchHotelVC: BaseViewController {
     func setupTextField() {
         
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "procurar.png"), for: .normal)
+        
+        let img = UIImage(systemName: "magnifyingglass")
+        let tintedMagnify = img?.withRenderingMode(.alwaysTemplate)
+        button.setImage(tintedMagnify,for: .normal)
+        button.tintColor = .black
+    
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
         button.frame = CGRect(x: CGFloat(searchTextField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
         button.addTarget(self, action: #selector(self.refresh), for: .touchUpInside)
@@ -92,9 +95,10 @@ class SearchHotelVC: BaseViewController {
                 self.loadLocations()
             } else {
                 DispatchQueue.main.async {
-//                    self.constraintMapSize.isActive = true
-//                    self.mapView.removeAnnotations(self.mapView.annotations)
-//                    self.showToast(message: self.searchViewModel.getMessageNotFoundHotel(),showTop: true)
+                    self.constraintMapSize.isActive = true
+                    self.mapView.removeAnnotations(self.mapView.annotations)
+                    self.hiddenLoading()
+                    self.showToast(message: self.searchViewModel.getMessageNotFoundHotel(),showTop: true)
                 }
             }
         }
@@ -123,16 +127,17 @@ class SearchHotelVC: BaseViewController {
         
         fecharTeclado(searchTextField)
         
-        self.showLoading()
-        
         if searchTextField.text?.count == 0 {
             self.mapView.removeAnnotations(self.mapView.annotations)
             constraintMapSize.isActive = true
             self.showToast(message: searchViewModel.getMessageNeedWrite(),showTop: true)
             return
+        } else {
+            self.showLoading()
+            searchTerms()
         }
         
-        searchTerms()
+        
     }
     
     @IBAction func fecharTeclado(_ sender: UITextField) {

@@ -21,11 +21,8 @@ class BookingVC: UIViewController {
     
     private var pickerView: UIPickerView?
     private var datePicker: UIDatePicker!
-    
     private var minDateCheckout: Date?
-
     var bookingViewModel: BookingViewModel?
-    
     var adults = [Int]()
     
     override func viewDidLoad() {

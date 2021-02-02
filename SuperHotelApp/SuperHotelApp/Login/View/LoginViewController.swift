@@ -14,7 +14,7 @@ class LoginViewController: BaseViewController {
     
     
     let controller:LoginController = LoginController()
-    var loginArray:[User] = [User(name: "", from: "", genre: "", email: "", birth: "", password: "", confirm: "")]
+//    var user: User = User(name: "Teste", from: "Brasileiro", genre: "Masculino", email: "", birth: "02/05/1991", password: "", confirm: "")
     
     @IBOutlet weak var welcoBackButton: UIButton!
     @IBOutlet weak var bigLoginLabel: UILabel!
@@ -45,22 +45,23 @@ class LoginViewController: BaseViewController {
     
     @IBAction func loginAction(_ sender: Any) {
         
-       
-        
-        
         if (self.emailLoginTextField.text != nil) && self.passLoginTextField.text != ""{
-
+            
             self.showLoading()
-
+            
             Auth.auth().signIn(withEmail: self.emailLoginTextField.text ?? "", password: self.passLoginTextField.text ?? "") { (result, error) in
-
+                
                 if error != nil{
-
+                    
                     self.hiddenLoading()
                     self.showToast(message: "Conta não cadastrada", showTop: true)
-
+                    
                 }else{
                     
+//                    self.user.email = self.emailLoginTextField.text ?? ""
+//                    self.user.password = self.emailLoginTextField.text ?? ""
+//
+//                    self.saveInfoUserDefault()
                     
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
                     let navigationViewController = storyBoard.instantiateViewController(withIdentifier: "MainNavigationController") as! MainNavigationController
@@ -80,6 +81,16 @@ class LoginViewController: BaseViewController {
     }
     
     
+//    func saveInfoUserDefault() {
+//
+//        let defaults = UserDefaults.standard
+//        let encoder = JSONEncoder()
+//
+//        if let encoded = try? encoder.encode(user) {
+//            defaults.set(encoded, forKey: "usuarioLogado")
+//        }
+//
+//    }
     
     
     @IBAction func miniSignAction(_ sender: Any) {

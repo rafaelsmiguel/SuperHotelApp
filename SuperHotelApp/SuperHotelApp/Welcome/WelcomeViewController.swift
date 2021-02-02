@@ -22,10 +22,11 @@ class WelcomeViewController: UIViewController {
         self.backgroundImage.image = UIImage(named: "projetowelco")
         
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
 
     
     @IBAction func goSignUpAction(_ sender: Any) {
