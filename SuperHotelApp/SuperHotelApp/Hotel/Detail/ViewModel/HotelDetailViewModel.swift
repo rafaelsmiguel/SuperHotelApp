@@ -64,27 +64,6 @@ class HotelDetailViewModel {
         return "Detalhes"
     }
     
-    func getHotelDetailAPI(completion: @escaping (Bool) -> Void) {
-        
-        //            self.hotelDetailWorker.currentSearch(city: self.currentSearch ?? "")
-        
-        self.hotelDetailWorker.getHotelDetailAPI { (response, error) in
-            if error == false {
-                
-                self.getDetails = response!
-                
-                if self.getDetails?.result == "OK" {
-                    completion(true)
-                } else {
-                    completion(false)
-                }
-            } else {
-                print("deu erro")
-                completion(false)
-            }
-        }
-    }
-    
     func getHotelPhotos(completion: @escaping (Bool) -> Void) {
         
         self.hotelDetailWorker.hotelId = self.hotel?.id ?? 0
@@ -108,10 +87,5 @@ class HotelDetailViewModel {
     
     func getStars() -> Int {
         return Int(self.hotel?.starRating?.rounded() ?? 0)
-    }
-    
-    
-    
-    
-    
+    } 
 }
