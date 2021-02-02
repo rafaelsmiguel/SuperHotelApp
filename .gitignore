@@ -328,3 +328,47 @@ SuperHotelApp/SuperHotelApp/CustomLayout/BaseViewController 2.swift
 SuperHotelApp/SuperHotelApp/CustomLayout/LoadingView/loading 2.json
 SuperHotelApp/SuperHotelApp/CustomLayout/LoadingView/LoadingView 2.swift
 SuperHotelApp/SuperHotelApp/CustomLayout/LoadingView/LoadingView 2.xib
+SuperHotelApp/Pods/Alamofire/LICENSE
+SuperHotelApp/Pods/Alamofire/README.md
+SuperHotelApp/Pods/Alamofire/Source/AFError.swift
+SuperHotelApp/Pods/Alamofire/Source/Alamofire.swift
+SuperHotelApp/Pods/Alamofire/Source/AlamofireExtended.swift
+SuperHotelApp/Pods/Alamofire/Source/AuthenticationInterceptor.swift
+SuperHotelApp/Pods/Alamofire/Source/CachedResponseHandler.swift
+SuperHotelApp/Pods/Alamofire/Source/Combine.swift
+SuperHotelApp/Pods/Alamofire/Source/DispatchQueue+Alamofire.swift
+SuperHotelApp/Pods/Alamofire/Source/EventMonitor.swift
+SuperHotelApp/Pods/Alamofire/Source/HTTPHeaders.swift
+SuperHotelApp/Pods/Alamofire/Source/HTTPMethod.swift
+SuperHotelApp/Pods/Alamofire/Source/MultipartFormData.swift
+SuperHotelApp/Pods/Alamofire/Source/MultipartUpload.swift
+SuperHotelApp/Pods/Alamofire/Source/NetworkReachabilityManager.swift
+SuperHotelApp/Pods/Alamofire/Source/Notifications.swift
+SuperHotelApp/Pods/Alamofire/Source/OperationQueue+Alamofire.swift
+SuperHotelApp/Pods/Alamofire/Source/ParameterEncoder.swift
+SuperHotelApp/Pods/Alamofire/Source/ParameterEncoding.swift
+SuperHotelApp/Pods/Alamofire/Source/Protected.swift
+SuperHotelApp/Pods/Alamofire/Source/RedirectHandler.swift
+SuperHotelApp/Pods/Alamofire/Source/Request.swift
+SuperHotelApp/Pods/Alamofire/Source/RequestInterceptor.swift
+SuperHotelApp/Pods/Alamofire/Source/RequestTaskMap.swift
+SuperHotelApp/Pods/Alamofire/Source/Response.swift
+SuperHotelApp/Pods/Alamofire/Source/ResponseSerialization.swift
+SuperHotelApp/Pods/Alamofire/Source/Result+Alamofire.swift
+SuperHotelApp/Pods/Alamofire/Source/RetryPolicy.swift
+SuperHotelApp/Pods/Alamofire/Source/ServerTrustEvaluation.swift
+SuperHotelApp/Pods/Alamofire/Source/Session.swift
+SuperHotelApp/Pods/Alamofire/Source/SessionDelegate.swift
+SuperHotelApp/Pods/Alamofire/Source/StringEncoding+Alamofire.swift
+SuperHotelApp/Pods/Alamofire/Source/URLConvertible+URLRequestConvertible.swift
+SuperHotelApp/Pods/Alamofire/Source/URLEncodedFormEncoder.swift
+SuperHotelApp/Pods/Alamofire/Source/URLRequest+Alamofire.swift
+SuperHotelApp/Pods/Alamofire/Source/URLSessionConfiguration+Alamofire.swift
+SuperHotelApp/Pods/Alamofire/Source/Validation.swift
+SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire-dummy.m
+SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire-Info.plist
+SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire-prefix.pch
+SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h
+SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire.debug.xcconfig
+SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire.modulemap
+SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire.release.xcconfig
