@@ -17,22 +17,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LK5-Q6-Dle">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="411" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJB-vW-Ry8">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="847"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="411" height="847"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NM1-Et-eLo">
-                                                <rect key="frame" x="20" y="0.0" width="54" height="30"/>
-                                                <state key="normal" title="&lt; Voltar">
+                                                <rect key="frame" x="20" y="0.0" width="51" height="30"/>
+                                                <state key="normal" title="Voltar">
                                                     <color key="titleColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="backWelcomeTapAction:" destination="Twg-Hd-p4U" eventType="touchUpInside" id="LTK-8d-mMc"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyw-Sw-IHb">
-                                                <rect key="frame" x="20" y="96" width="159" height="66"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyw-Sw-IHb">
+                                                <rect key="frame" x="20" y="96" width="156" height="66"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="66" id="vi7-2B-c9u"/>
                                                 </constraints>
@@ -41,10 +41,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ODH-gt-ZrP">
-                                                <rect key="frame" x="20" y="232" width="374" height="384"/>
+                                                <rect key="frame" x="20" y="232" width="371" height="384"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome Completo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiy-OW-IOb" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="371" height="48"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="bog-z8-1Ov"/>
@@ -53,7 +53,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nacionalidade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q9C-bc-X6B" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="56" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="56" width="371" height="48"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="Y9N-Y7-xO6"/>
@@ -62,7 +62,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Genero" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RQx-Uw-6wi" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="112" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="112" width="371" height="48"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="QDZ-lX-XQp"/>
@@ -71,7 +71,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L57-84-w1r" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="168" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="168" width="371" height="48"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="L8I-y7-EAf"/>
@@ -80,7 +80,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date de Nascimento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iuw-fF-xes" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="224" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="224" width="371" height="48"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="y6p-Ly-QE8"/>
@@ -89,7 +89,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VVK-FZ-4jp" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="280" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="280" width="371" height="48"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="b4W-Q3-AOf"/>
@@ -98,7 +98,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fjk-gB-3oh" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="336" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="336" width="371" height="48"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="Vll-TU-XH7"/>
@@ -109,7 +109,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcU-FT-mmx" customClass="SHButton_FilledGreen" customModule="SuperHotelApp" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="688" width="374" height="40"/>
+                                                <rect key="frame" x="20" y="688" width="371" height="40"/>
                                                 <color key="backgroundColor" red="0.33929568529999998" green="0.8244429231" blue="0.76258462670000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="3jh-p3-RaN"/>
@@ -122,7 +122,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Já é cadastrado?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmE-nF-6bt">
-                                                <rect key="frame" x="59" y="773" width="166" height="21"/>
+                                                <rect key="frame" x="49" y="773" width="166" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="F4B-O7-1ok"/>
                                                     <constraint firstAttribute="width" constant="166" id="jdK-9o-cc5"/>
@@ -132,7 +132,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hK-9A-Fgx">
-                                                <rect key="frame" x="233" y="768" width="62" height="30"/>
+                                                <rect key="frame" x="255" y="768" width="62" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="2dW-dZ-wnI"/>
                                                     <constraint firstAttribute="width" constant="62" id="OY7-lj-CBb"/>
@@ -160,12 +160,13 @@
                                             <constraint firstItem="KmE-nF-6bt" firstAttribute="top" secondItem="DcU-FT-mmx" secondAttribute="bottom" constant="45" id="Rzl-Ei-VRJ"/>
                                             <constraint firstItem="9hK-9A-Fgx" firstAttribute="top" secondItem="DcU-FT-mmx" secondAttribute="bottom" constant="40" id="d1c-5A-XoN"/>
                                             <constraint firstItem="DcU-FT-mmx" firstAttribute="leading" secondItem="xJB-vW-Ry8" secondAttribute="leading" constant="20" id="fG9-rN-YJP"/>
+                                            <constraint firstItem="9hK-9A-Fgx" firstAttribute="leading" secondItem="KmE-nF-6bt" secondAttribute="trailing" constant="40" id="fIl-SG-Aj3"/>
                                             <constraint firstItem="NM1-Et-eLo" firstAttribute="top" secondItem="xJB-vW-Ry8" secondAttribute="top" id="gCh-H2-83J"/>
                                             <constraint firstAttribute="bottom" secondItem="KmE-nF-6bt" secondAttribute="bottom" constant="53" id="hog-Dy-YVr"/>
                                             <constraint firstItem="Tyw-Sw-IHb" firstAttribute="top" secondItem="NM1-Et-eLo" secondAttribute="bottom" constant="66" id="jFC-qa-Mei"/>
                                             <constraint firstItem="ODH-gt-ZrP" firstAttribute="top" secondItem="Tyw-Sw-IHb" secondAttribute="bottom" constant="70" id="kLR-7Y-b9H"/>
                                             <constraint firstItem="NM1-Et-eLo" firstAttribute="leading" secondItem="xJB-vW-Ry8" secondAttribute="leading" constant="20" id="qoK-dL-TcQ"/>
-                                            <constraint firstItem="KmE-nF-6bt" firstAttribute="leading" secondItem="xJB-vW-Ry8" secondAttribute="leading" constant="59" id="rKF-C4-UgV"/>
+                                            <constraint firstItem="KmE-nF-6bt" firstAttribute="leading" secondItem="xJB-vW-Ry8" secondAttribute="leading" constant="49" id="rKF-C4-UgV"/>
                                         </constraints>
                                     </view>
                                 </subviews>
