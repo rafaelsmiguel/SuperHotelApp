@@ -32,6 +32,11 @@ class RegisterViewController: BaseViewController {
 
     var datePicker:UIDatePicker?
     
+    let genrePickerView = UIPickerView()
+    
+    var generos:[String] = ["Masculino","Feminino","Não Informar"]
+    
+    
     override func viewDidLoad() {
         
         self.registerNameTextField.delegate = self
@@ -42,13 +47,32 @@ class RegisterViewController: BaseViewController {
         self.passTextField.delegate = self
         self.confirmPassTextField.delegate = self
         
+//        date picker
+
         datePicker = UIDatePicker()
         datePicker?.preferredDatePickerStyle = .wheels
         datePicker?.datePickerMode = .date
         birthTextField.inputView = datePicker
         datePicker?.addTarget(self, action: #selector(RegisterViewController.dateChanged(datePicker:)), for: .valueChanged)
         
+//        genre picker view
         
+        self.genrePickerView.delegate = self
+        self.genrePickerView.dataSource = self
+        self.genreTextField.inputView = genrePickerView
+        
+        let toolBar: UIToolbar = UIToolbar.init(frame: CGRect(x:0, y:0,width: self.view.bounds.width, height: 44))
+        
+        let spaceButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        
+        let confirmButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.getGenre))
+        
+        let cancelButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(self.cancelGenre))
+        
+        toolBar.setItems([cancelButton, spaceButton, confirmButton], animated: true)
+        
+        
+        self.genreTextField.inputAccessoryView = toolBar
         
         
         super.viewDidLoad()
@@ -89,7 +113,19 @@ class RegisterViewController: BaseViewController {
         }
     
     
+  @objc func getGenre(){
+        
+        self.emailTextField.becomeFirstResponder()
+        
+    }
     
+    
+    @objc func cancelGenre(){
+        
+        self.genreTextField.text = nil
+        self.genreTextField.resignFirstResponder()
+        
+    }
         
 
     
@@ -153,14 +189,15 @@ extension RegisterViewController: UITextFieldDelegate{
         case registerNameTextField:
             self.fromTextField.becomeFirstResponder()
         case fromTextField:
+            self.genreTextField.becomeFirstResponder()
+        case genreTextField:
             self.emailTextField.becomeFirstResponder()
         case emailTextField:
             self.birthTextField.becomeFirstResponder()
         case birthTextField:
             self.passTextField.becomeFirstResponder()
         case passTextField:
-            self.passTextField.resignFirstResponder()
-            self.confirmPassTextField.placeholder = "Confirme sua senha!!"
+            self.confirmPassTextField.becomeFirstResponder()
         case confirmPassTextField:
             self.confirmPassTextField.resignFirstResponder()
             
@@ -175,3 +212,33 @@ extension RegisterViewController: UITextFieldDelegate{
     
 }
 
+
+
+
+extension RegisterViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return self.generos.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return self.generos[row]
+        
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        self.genreTextField.text = self.generos[row]
+    }
+    
+}
