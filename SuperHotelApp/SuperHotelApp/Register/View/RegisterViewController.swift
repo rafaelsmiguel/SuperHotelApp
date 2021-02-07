@@ -62,13 +62,9 @@ class RegisterViewController: BaseViewController {
         self.genreTextField.inputView = genrePickerView
         
         let toolBar: UIToolbar = UIToolbar.init(frame: CGRect(x:0, y:0,width: self.view.bounds.width, height: 44))
-        
         let spaceButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        
         let confirmButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.getGenre))
-        
         let cancelButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(self.cancelGenre))
-        
         toolBar.setItems([cancelButton, spaceButton, confirmButton], animated: true)
         
         
