@@ -59,27 +59,6 @@ class BookingListController {
         return self.booking?.longitude ?? 0.0
     }
     
-    
-//    func getListBooking(completion: (Bool) -> Void) {
-//
-//        BookingWorker().getListBooking { (success, error) in
-//
-//            if error == false {
-//
-//                self.arrayBookings = success
-//                completion(true)
-//
-//            } else {
-//
-//                completion(false)
-//                print("Erro no parse do JSON")
-//
-//            }
-//
-//        }
-//
-//    }
-    
     func getListBookingUserDefault(completion: (Bool) -> Void) {
         
         BookingWorker().getListBookingUserDefault { (bookings, error) in
