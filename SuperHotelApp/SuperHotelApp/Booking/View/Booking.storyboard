@@ -76,7 +76,10 @@ Busque o hotel desejado e efetue sua reserva!</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epn-2L-a71" customClass="SHButton_FilledGreen" customModule="SuperHotelApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="699" width="374" height="30"/>
+                                        <rect key="frame" x="20" y="681" width="374" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="AR8-5E-hLF"/>
+                                        </constraints>
                                         <state key="normal" title="Buscar Hotel"/>
                                         <connections>
                                             <action selector="searchHotel:" destination="jxq-xT-6fP" eventType="touchUpInside" id="u1v-jW-4hx"/>
@@ -155,41 +158,13 @@ Busque o hotel desejado e efetue sua reserva!</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dOQ-i3-97L">
-                                                <rect key="frame" x="20" y="254" width="125" height="21"/>
+                                                <rect key="frame" x="20" y="254" width="21" height="21"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Raster" translatesAutoresizingMaskIntoConstraints="NO" id="TgG-nm-1fO" userLabel="1estrela">
                                                         <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="CsS-Sl-zCr"/>
                                                             <constraint firstAttribute="width" constant="21" id="kGr-IX-1JY"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Raster" translatesAutoresizingMaskIntoConstraints="NO" id="n5d-n6-omj" userLabel="2estrela">
-                                                        <rect key="frame" x="26" y="0.0" width="21" height="21"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="21" id="3YS-He-1u5"/>
-                                                            <constraint firstAttribute="width" constant="21" id="HVf-Pi-NJy"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Raster" translatesAutoresizingMaskIntoConstraints="NO" id="lWx-mQ-zgY" userLabel="3estrela">
-                                                        <rect key="frame" x="52" y="0.0" width="21" height="21"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="21" id="0Z7-OJ-xlf"/>
-                                                            <constraint firstAttribute="width" constant="21" id="L1j-y5-uIP"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Raster" translatesAutoresizingMaskIntoConstraints="NO" id="nGF-Xj-hSz" userLabel="4estrela">
-                                                        <rect key="frame" x="78" y="0.0" width="21" height="21"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="21" id="e8J-ka-xX0"/>
-                                                            <constraint firstAttribute="height" constant="21" id="q9V-RF-LjE"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Raster" highlightedImage="sta" translatesAutoresizingMaskIntoConstraints="NO" id="J6Z-Ih-Hjh" userLabel="5estrela">
-                                                        <rect key="frame" x="104" y="0.0" width="21" height="21"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="21" id="US1-mB-vgZ"/>
-                                                            <constraint firstAttribute="height" constant="21" id="zlF-R9-Mji"/>
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
@@ -326,6 +301,7 @@ Busque o hotel desejado e efetue sua reserva!</string>
                         <outlet property="mapView" destination="vrY-Ac-7gr" id="h2e-Pv-c11"/>
                         <outlet property="numberOfPeople" destination="1ia-nB-Q0I" id="lWN-eg-x5h"/>
                         <outlet property="periodOfStayLabel" destination="2JY-By-8Fn" id="P9Z-e6-7K6"/>
+                        <outlet property="stackViewStar" destination="dOQ-i3-97L" id="iM0-Oz-drR"/>
                         <outlet property="valueByNight" destination="RDi-vW-e41" id="uNk-s5-cfh"/>
                     </connections>
                 </viewController>
@@ -338,7 +314,6 @@ Busque o hotel desejado e efetue sua reserva!</string>
         <image name="Raster" width="448" height="512"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="calendar.badge.exclamationmark" catalog="system" width="128" height="108"/>
-        <image name="sta" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
