@@ -140,16 +140,24 @@ class BookingVC: UIViewController {
         self.textFieldCheckin.inputView = datePicker
         self.textFieldCheckout.inputView = datePicker
         
-        let toolBar: UIToolbar = UIToolbar.init(frame: CGRect(x:0, y:0,width: self.view.bounds.width, height: 44))
+//        let toolBar: UIToolbar = UIToolbar.init(frame: CGRect(x:0, y:0,width: self.view.bounds.width, height: 44))
         
-        let spaceButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor.black
+        toolBar.backgroundColor = UIColor.gray
+        toolBar.sizeToFit()
         
-        let confirmButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.confirmDate))
+        let spaceButton: UIBarButtonItem = UIBarButtonItem( barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+                                                            
+        let confirmButton: UIBarButtonItem = UIBarButtonItem(title: "Confirmar", style: .plain, target: self, action: #selector(self.confirmDate))
         
-        let cancelButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(self.cancelDate))
+        let cancelButton: UIBarButtonItem = UIBarButtonItem(title: "Cancelar", style: .plain, target: self, action: #selector(self.cancelDate))
         
         toolBar.setItems([cancelButton, spaceButton, confirmButton], animated: true)
         
+        toolBar.isUserInteractionEnabled = true
         
         self.textFieldCheckin.inputAccessoryView = toolBar
         self.textFieldCheckout.inputAccessoryView = toolBar

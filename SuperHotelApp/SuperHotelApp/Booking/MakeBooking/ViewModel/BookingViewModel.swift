@@ -146,7 +146,7 @@ class BookingViewModel {
     
     func fillInfoBooking() {
         
-        self.bookingElement = BookingElement(hotelImage: "hotel1.jpg", hotelName: self.hotelName, periodOfStay: self.periodOfStay(), numberOfPeople: self.adults, valueByNight: self.valueByNightFormat, amount: self.amount(), address: self.address, latitude: self.hotel?.latitude, longitude: self.hotel?.longitude ,starRating: self.getStars())
+        self.bookingElement = BookingElement(hotelImage: self.hotel?.images?[0] ?? "", hotelName: self.hotelName, periodOfStay: self.periodOfStay(), numberOfPeople: self.adults, valueByNight: self.valueByNightFormat, amount: self.amount(), address: self.address, latitude: self.hotel?.latitude, longitude: self.hotel?.longitude ,starRating: self.getStars())
         
         self.saveInfoUserDefault()
         

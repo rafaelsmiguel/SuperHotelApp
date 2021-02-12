@@ -13,7 +13,7 @@ class HotelDetailViewModel {
     var hotelDetailWorker = HotelDetailWorker()
     var getDetails: GetDetails?
     var hotelPhotos: HotelPhotos?
-    
+    var mainPhotoURL: [String]?
     
     init(hotel: Results?) {
         self.hotel = hotel
@@ -74,6 +74,7 @@ class HotelDetailViewModel {
                 self.hotelPhotos = response!
                 
                 if self.hotelPhotos != nil {
+                    self.getMainPhoto()
                     completion(true)
                 } else {
                     completion(false)
@@ -81,6 +82,20 @@ class HotelDetailViewModel {
             } else {
                 print("deu erro")
                 completion(false)
+            }
+        }
+    }
+    
+    func getMainPhoto() {
+        
+        if let hotelPhotos = self.hotelPhotos {
+            if let hotelImages = hotelPhotos.hotelImages {
+                if hotelImages.count > 0 {
+                    if let url = hotelImages[0].baseUrl?.replacingOccurrences(of: "{size}", with: "y") {
+                        self.mainPhotoURL = [String]()
+                        self.mainPhotoURL?.append(url)
+                    }
+                }
             }
         }
     }

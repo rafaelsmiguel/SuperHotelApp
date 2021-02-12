@@ -123,7 +123,7 @@ class HotelDetailVC: UIViewController {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Hotel", bundle: nil)
         let bookingViewController = storyBoard.instantiateViewController(withIdentifier: "BookingVC") as! BookingVC
-        bookingViewController.bookingViewModel = BookingViewModel(hotel: HotelModel(destinationId: "", name: self.hotelDetailViewModel?.hotelName, latitude: self.hotelDetailViewModel?.getLatitude(), longitude: self.hotelDetailViewModel?.getLongitude(), valueByNight: self.hotelDetailViewModel?.valueByNight, address: self.hotelDetailViewModel?.address, images: [],starRating: self.hotelDetailViewModel?.getStars()))
+        bookingViewController.bookingViewModel = BookingViewModel(hotel: HotelModel(destinationId: "", name: self.hotelDetailViewModel?.hotelName, latitude: self.hotelDetailViewModel?.getLatitude(), longitude: self.hotelDetailViewModel?.getLongitude(), valueByNight: self.hotelDetailViewModel?.valueByNight, address: self.hotelDetailViewModel?.address, images: self.hotelDetailViewModel?.mainPhotoURL ?? [],starRating: self.hotelDetailViewModel?.getStars()))
         
         self.navigationController?.pushViewController(bookingViewController, animated: true)
     }
