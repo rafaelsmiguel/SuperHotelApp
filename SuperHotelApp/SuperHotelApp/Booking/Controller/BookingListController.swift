@@ -23,9 +23,15 @@ class BookingListController {
     }
     
     
-    var bookingImage: UIImage {
-        return UIImage(named: self.booking?.hotelImage ?? "") ?? UIImage()
+//    var bookingImage: UIImage {
+//        return UIImage(named: self.booking?.hotelImage ?? "") ?? UIImage()
+//        print(self.booking?.hotelImage)
+//    }
+    
+    var bookingImage: String {
+        return self.booking?.hotelImage ?? ""
     }
+    
     
     var bookingName: String {
         return self.booking?.hotelName ?? ""
@@ -77,6 +83,23 @@ class BookingListController {
             
         }
         
+    }
+    
+    
+    func fetchImage(from urlString: String, completionHandler: @escaping (_ data: Data?) -> ()) {
+        let session = URLSession.shared
+        let url = URL(string: self.bookingImage)
+            
+        let dataTask = session.dataTask(with: url!) { (data, response, error) in
+            if error != nil {
+                print("Error fetching the image!")
+                completionHandler(nil)
+            } else {
+                completionHandler(data)
+            }
+        }
+            
+        dataTask.resume()
     }
     
     

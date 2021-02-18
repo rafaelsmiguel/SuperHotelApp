@@ -30,15 +30,29 @@ class BookingDetailViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
+        self.setupNavigationBar()
         self.setupBooking()
         
     }
+    
+    
+    func setupNavigationBar(){
+        
+        self.navigationItem.title = "Detalhe Reserva"
+        self.navigationController?.navigationBar.tintColor = Cores.verde
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    
+    
     
     func setupBooking() {
         
         if self.controller.booking != nil {
             
-            self.hotelImageView.image = controller.bookingImage
+            //self.hotelImageView.image = self.controller.bookingImage
             self.hotelNameLabel.text = self.controller.bookingName
             self.periodOfStayLabel.text = self.controller.bookingPeriod
             self.numberOfPeople.text = "\(self.controller.bookingPeople)"
@@ -47,17 +61,10 @@ class BookingDetailViewController: UIViewController {
             self.address.text = self.controller.bookingAddress
             
             self.setupStar()
-            
             self.setupHotelLocation()
-            
-            self.navigationController?.navigationBar.tintColor = UIColor.init(red: 109.0/255.0, green: 222.0/255.0, blue: 211.0/255.0, alpha: 1.0)
-            
-            
-            
-            
+            setImage (from: self.controller.bookingImage)
+
         }
-        
-        
         
     }
     
@@ -104,6 +111,35 @@ class BookingDetailViewController: UIViewController {
         
         mapView.setRegion(region, animated: true)
         
+    }
+    
+    
+    
+    func setImageToImageView() {
+        self.controller.fetchImage(from: self.controller.bookingImage) { (imageData) in
+            if let data = imageData {
+                DispatchQueue.main.async {
+                    self.hotelImageView.image = UIImage(data: data)
+                }
+            } else {
+                    // show as an alert if you want to
+                print("Error loading image");
+            }
+        }
+    }
+    
+    func setImage(from url: String) {
+        guard let imageURL = URL(string: url) else { return }
+
+            // just not to cause a deadlock in UI!
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+
+            let image = UIImage(data: imageData)
+            DispatchQueue.main.async {
+                self.hotelImageView.image = image
+            }
+        }
     }
     
     

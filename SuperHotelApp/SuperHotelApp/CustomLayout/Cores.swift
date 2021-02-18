@@ -7,7 +7,8 @@
 
 import UIKit
 
-struct Cores
-{
+struct Cores {
+    
     static let amarelo = UIColor(hex:"#F9B95C")
+    static let verde = UIColor(hex:"#57D2C2")
 }

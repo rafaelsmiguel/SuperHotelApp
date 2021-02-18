@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,17 +17,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BookingCollectionViewCell" customModule="SuperHotelApp" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4QK-gz-s5X" customClass="BookingCollectionViewCell" customModule="SuperHotelApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="H7b-xv-we6">
                 <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
-                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y7A-70-Gl9">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="y7A-70-Gl9">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="230"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="230" id="gbO-8E-gbZ"/>
+                            <constraint firstAttribute="height" constant="230" id="UcM-Vp-U5W"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruG-Ga-vP9">
@@ -43,28 +43,25 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-            </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="y7A-70-Gl9" secondAttribute="trailing" id="Nvz-Xu-EhR"/>
+                    <constraint firstItem="y7A-70-Gl9" firstAttribute="leading" secondItem="H7b-xv-we6" secondAttribute="leading" id="Yod-Wn-cUk"/>
+                    <constraint firstItem="ruG-Ga-vP9" firstAttribute="leading" secondItem="H7b-xv-we6" secondAttribute="leading" constant="20" id="d9L-Zb-td8"/>
+                    <constraint firstItem="rbQ-NT-D7H" firstAttribute="leading" secondItem="H7b-xv-we6" secondAttribute="leading" constant="20" id="h2F-8c-GZx"/>
+                    <constraint firstAttribute="trailing" secondItem="ruG-Ga-vP9" secondAttribute="trailing" constant="20" id="icl-TF-e7V"/>
+                    <constraint firstItem="rbQ-NT-D7H" firstAttribute="top" secondItem="ruG-Ga-vP9" secondAttribute="bottom" id="kWm-ZS-pJe"/>
+                    <constraint firstAttribute="trailing" secondItem="rbQ-NT-D7H" secondAttribute="trailing" constant="20" id="s8d-q0-NhA"/>
+                    <constraint firstItem="ruG-Ga-vP9" firstAttribute="top" secondItem="y7A-70-Gl9" secondAttribute="bottom" constant="5" id="tC2-Hp-pB9"/>
+                    <constraint firstItem="y7A-70-Gl9" firstAttribute="top" secondItem="H7b-xv-we6" secondAttribute="top" id="yRd-ZQ-cD2"/>
+                </constraints>
+            </collectionViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="rbQ-NT-D7H" secondAttribute="trailing" constant="20" id="2Su-7Y-zh1"/>
-                <constraint firstAttribute="trailing" secondItem="ruG-Ga-vP9" secondAttribute="trailing" constant="20" id="8Lv-qT-QSL"/>
-                <constraint firstItem="ruG-Ga-vP9" firstAttribute="top" secondItem="y7A-70-Gl9" secondAttribute="bottom" constant="5" id="GpG-cu-WDr"/>
-                <constraint firstItem="ruG-Ga-vP9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="Yjt-vP-iG7"/>
-                <constraint firstItem="rbQ-NT-D7H" firstAttribute="top" secondItem="ruG-Ga-vP9" secondAttribute="bottom" id="bTH-iR-pFR"/>
-                <constraint firstItem="y7A-70-Gl9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hqP-Nh-xTS"/>
-                <constraint firstItem="rbQ-NT-D7H" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="lc1-sr-MNB"/>
-                <constraint firstItem="y7A-70-Gl9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="niI-iX-rTx"/>
-                <constraint firstAttribute="trailing" secondItem="y7A-70-Gl9" secondAttribute="trailing" id="rOm-Fa-Tnt"/>
-                <constraint firstAttribute="bottom" secondItem="rbQ-NT-D7H" secondAttribute="bottom" constant="14" id="yDL-jo-aBu"/>
-            </constraints>
-            <size key="customSize" width="414" height="311"/>
             <connections>
-                <outlet property="hotelImageView" destination="y7A-70-Gl9" id="zTo-dC-6Qb"/>
-                <outlet property="hotelNameLabel" destination="ruG-Ga-vP9" id="Roj-Ta-Px2"/>
-                <outlet property="periodOfStayLabel" destination="rbQ-NT-D7H" id="3jr-kq-SHy"/>
+                <outlet property="hotelImageView" destination="y7A-70-Gl9" id="Jks-Dg-IV4"/>
+                <outlet property="hotelNameLabel" destination="ruG-Ga-vP9" id="BW0-sU-aLM"/>
+                <outlet property="periodOfStayLabel" destination="rbQ-NT-D7H" id="JuU-76-NLh"/>
             </connections>
-            <point key="canvasLocation" x="-334.78260869565219" y="13.727678571428571"/>
+            <point key="canvasLocation" x="-330" y="0.0"/>
         </collectionViewCell>
     </objects>
 </document>
