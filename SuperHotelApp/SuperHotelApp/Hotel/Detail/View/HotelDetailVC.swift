@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class HotelDetailVC: UIViewController {
+class HotelDetailVC: BaseViewController {
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var hotelNameLabel: UILabel!
@@ -33,13 +33,12 @@ class HotelDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.showLoading()
         mainView.isHidden = true
         
         setupHotel()
         
         self.collectionView.register(UINib(nibName: "HotelImagesCollectionCell", bundle: nil), forCellWithReuseIdentifier: "HotelImagesCollectionCell")
-        
-        
     }
     
     func setupStar() {
@@ -74,7 +73,6 @@ class HotelDetailVC: UIViewController {
     
     func setupHotel() {
 
-        self.mainView.isHidden = false
         self.hotelNameLabel.text = self.hotelDetailViewModel?.hotelName
         self.valueLabel.text = self.hotelDetailViewModel?.valueByNightFormat
         self.addressLabel.text = self.hotelDetailViewModel?.address
@@ -108,9 +106,14 @@ class HotelDetailVC: UIViewController {
                 DispatchQueue.main.async {
                     self.collectionView.delegate = self
                     self.collectionView.dataSource = self
+                    
+                    self.mainView.isHidden = false
+                    self.hiddenLoading()
                 }
             } else {
                 DispatchQueue.main.async {
+                    self.mainView.isHidden = false
+                    self.hiddenLoading()
                     self.showToast(message: "Não foi possível carregar as imagens do hotel.",showTop: true)
                 }
                 

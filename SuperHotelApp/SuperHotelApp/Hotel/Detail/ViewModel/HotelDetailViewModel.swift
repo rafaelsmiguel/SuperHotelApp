@@ -91,7 +91,7 @@ class HotelDetailViewModel {
         if let hotelPhotos = self.hotelPhotos {
             if let hotelImages = hotelPhotos.hotelImages {
                 if hotelImages.count > 0 {
-                    if let url = hotelImages[0].baseUrl?.replacingOccurrences(of: "{size}", with: "y") {
+                    if let url = hotelImages[0].baseUrl?.replacingOccurrences(of: "{size}", with: "b") {
                         self.mainPhotoURL = [String]()
                         self.mainPhotoURL?.append(url)
                     }
