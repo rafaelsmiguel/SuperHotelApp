@@ -372,3 +372,67 @@ SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h
 SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire.debug.xcconfig
 SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire.modulemap
 SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire.release.xcconfig
+SuperHotelApp/Pods/Target Support Files/Kingfisher/Kingfisher-dummy.m
+SuperHotelApp/Pods/Target Support Files/Kingfisher/Kingfisher-Info.plist
+SuperHotelApp/Pods/Target Support Files/Kingfisher/Kingfisher-prefix.pch
+SuperHotelApp/Pods/Target Support Files/Kingfisher/Kingfisher-umbrella.h
+SuperHotelApp/Pods/Target Support Files/Kingfisher/Kingfisher.debug.xcconfig
+SuperHotelApp/Pods/Target Support Files/Kingfisher/Kingfisher.modulemap
+SuperHotelApp/Pods/Target Support Files/Kingfisher/Kingfisher.release.xcconfig
+SuperHotelApp/Pods/Kingfisher/LICENSE
+SuperHotelApp/Pods/Kingfisher/README.md
+SuperHotelApp/Pods/Kingfisher/Sources/Cache/CacheSerializer.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Cache/DiskStorage.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Cache/FormatIndicatedCacheSerializer.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Cache/ImageCache.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Cache/MemoryStorage.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Cache/Storage.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Extensions/ImageView+Kingfisher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Extensions/NSButton+Kingfisher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Extensions/NSTextAttachment+Kingfisher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Extensions/TVMonogramView+Kingfisher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Extensions/UIButton+Kingfisher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Extensions/WKInterfaceImage+Kingfisher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/KF.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/KFOptionsSetter.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/Kingfisher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/KingfisherError.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/KingfisherManager.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/KingfisherOptionsInfo.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/ImageSource/AVAssetImageDataProvider.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/ImageSource/ImageDataProvider.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/ImageSource/Resource.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/ImageSource/Source.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/Filter.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/GIFAnimatedImage.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/Image.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/ImageDrawing.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/ImageFormat.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/ImageProcessor.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/ImageProgressive.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/ImageTransition.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/Placeholder.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/AuthenticationChallengeResponsable.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/ImageDataProcessor.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/ImageDownloader.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/ImageDownloaderDelegate.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/ImageModifier.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/ImagePrefetcher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/RedirectHandler.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/RequestModifier.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/RetryStrategy.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/SessionDataTask.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/SessionDelegate.swift
+SuperHotelApp/Pods/Kingfisher/Sources/SwiftUI/ImageBinder.swift
+SuperHotelApp/Pods/Kingfisher/Sources/SwiftUI/KFImage.swift
+SuperHotelApp/Pods/Kingfisher/Sources/SwiftUI/KFImageOptions.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/Box.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/CallbackQueue.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/Delegate.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/ExtensionHelpers.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/Result.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/Runtime.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/SizeExtensions.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/String+MD5.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Views/AnimatedImageView.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Views/Indicator.swift
