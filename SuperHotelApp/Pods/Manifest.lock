@@ -41,6 +41,7 @@ PODS:
   - GoogleUtilities/Reachability (6.7.2):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.4.0)
+  - Kingfisher (6.1.1)
   - lottie-ios (3.1.9)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
@@ -52,6 +53,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Firebase/Auth
+  - Kingfisher (~> 6.0)
   - lottie-ios (~> 3.1)
 
 SPEC REPOS:
@@ -66,6 +68,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
+    - Kingfisher
     - lottie-ios
     - nanopb
     - PromisesObjC
@@ -81,10 +84,11 @@ SPEC CHECKSUMS:
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
+  Kingfisher: 676d63307fbef6ed5d5ed400bff36983480d7500
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
 
-PODFILE CHECKSUM: 2ac43a24a458aac90be578a86bec6bb9d3eca67b
+PODFILE CHECKSUM: bed88bd437762278a862b2e8e45f2fb72b6ea73e
 
 COCOAPODS: 1.9.1

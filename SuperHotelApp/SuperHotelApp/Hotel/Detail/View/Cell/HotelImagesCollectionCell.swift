@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HotelImagesCollectionCell: UICollectionViewCell {
     
@@ -13,12 +14,16 @@ class HotelImagesCollectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.imgHotel.kf.cancelDownloadTask()
+        self.imgHotel.image = nil
     }
     
     func setup(foto:String) {
-        
-        self.imgHotel.image = nil
         
         self.contentView.layer.cornerRadius = 30.0
         self.contentView.layer.masksToBounds = true
@@ -29,15 +34,9 @@ class HotelImagesCollectionCell: UICollectionViewCell {
             return
         }
         
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.imgHotel.image = image
-                    }
-                }
-            }
-        }
+        imgHotel.kf.indicatorType = .activity
+        imgHotel.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+        
     }
     
 }
