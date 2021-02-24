@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-#import <FirebaseAuth/FirebaseAuthVersion.h>
+#import <Foundation/Foundation.h>
 
-// Convert the macro to a string
-#define STR(x) STR_EXPAND(x)
-#define STR_EXPAND(x) #x
+#import "GoogleUtilities/Logger/Public/GoogleUtilities/GULLogger.h"
 
-const double FirebaseAuthVersionNum = FIRAuth_MINOR_VERSION;
+extern NSString *const kGULNetworkErrorDomain;
 
-const char *const FirebaseAuthVersionStr = (const char *const)STR(FIRAuth_VERSION);
+/// The logger service for GULNetwork.
+extern GULLoggerService kGULLoggerNetwork;
