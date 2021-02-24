@@ -14,7 +14,7 @@ class LoginViewController: BaseViewController {
     
     
     let controller:LoginController = LoginController()
-//    var user: User = User(name: "Teste", from: "Brasileiro", genre: "Masculino", email: "", birth: "02/05/1991", password: "", confirm: "")
+    var user: User = User(name: "Teste", from: "Brasileiro", genre: "Masculino", email: "", birth: "02/05/1991", password: "", confirm: "")
     
     @IBOutlet weak var welcoBackButton: UIButton!
     @IBOutlet weak var bigLoginLabel: UILabel!
@@ -58,10 +58,10 @@ class LoginViewController: BaseViewController {
                     
                 }else{
                     
-//                    self.user.email = self.emailLoginTextField.text ?? ""
-//                    self.user.password = self.emailLoginTextField.text ?? ""
-//
-//                    self.saveInfoUserDefault()
+                    self.user.email = self.emailLoginTextField.text ?? ""
+                    self.user.password = self.emailLoginTextField.text ?? ""
+
+                    self.saveInfoUserDefault()
                     
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
                     let navigationViewController = storyBoard.instantiateViewController(withIdentifier: "MainNavigationController") as! MainNavigationController
@@ -81,16 +81,16 @@ class LoginViewController: BaseViewController {
     }
     
     
-//    func saveInfoUserDefault() {
-//
-//        let defaults = UserDefaults.standard
-//        let encoder = JSONEncoder()
-//
-//        if let encoded = try? encoder.encode(user) {
-//            defaults.set(encoded, forKey: "usuarioLogado")
-//        }
-//
-//    }
+    func saveInfoUserDefault() {
+
+        let defaults = UserDefaults.standard
+        let encoder = JSONEncoder()
+
+        if let encoded = try? encoder.encode(user) {
+            defaults.set(encoded, forKey: "usuarioLogado")
+        }
+
+    }
     
     
     @IBAction func miniSignAction(_ sender: Any) {

@@ -49,11 +49,13 @@ class RegisterViewController: BaseViewController {
         
 //        date picker
 
-        datePicker = UIDatePicker()
-        datePicker?.preferredDatePickerStyle = .wheels
-        datePicker?.datePickerMode = .date
-        birthTextField.inputView = datePicker
-        datePicker?.addTarget(self, action: #selector(RegisterViewController.dateChanged(datePicker:)), for: .valueChanged)
+//        datePicker = UIDatePicker()
+//        datePicker?.preferredDatePickerStyle = .wheels
+//        datePicker?.datePickerMode = .date
+//        birthTextField.inputView = datePicker
+//        datePicker?.addTarget(self, action: #selector(RegisterViewController.dateChanged(datePicker:)), for: .valueChanged)
+        
+        self.setupDatePicker()
         
 //        genre picker view
         
@@ -66,10 +68,15 @@ class RegisterViewController: BaseViewController {
         let confirmButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.getGenre))
         let cancelButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(self.cancelGenre))
         toolBar.setItems([cancelButton, spaceButton, confirmButton], animated: true)
+        toolBar.tintColor = UIColor.black
+        
+        
+        
+        
         
         
         self.genreTextField.inputAccessoryView = toolBar
-        
+       
         
         super.viewDidLoad()
     }
@@ -175,6 +182,68 @@ class RegisterViewController: BaseViewController {
         performSegue(withIdentifier: SegueType.toLoginfromRegister.rawValue, sender:self)
         
     }
+    
+    
+    private func setupDatePicker() {
+        
+        datePicker = UIDatePicker.init(frame: CGRect(x:0,y:0, width: self.view.bounds.width, height: 200))
+        datePicker?.datePickerMode = .date
+//        datePicker.addTarget(self, action: #selector(self.dateChanged), for: .allEvents)
+        
+        if #available(iOS 13.4, *) {
+            datePicker?.preferredDatePickerStyle = .wheels
+        }
+
+       
+        self.birthTextField.inputView = datePicker
+        
+//        let toolBar: UIToolbar = UIToolbar.init(frame: CGRect(x:0, y:0,width: self.view.bounds.width, height: 44))
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor.black
+        toolBar.backgroundColor = UIColor.gray
+        toolBar.sizeToFit()
+        
+        let spaceButton: UIBarButtonItem = UIBarButtonItem( barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+                                                            
+        let confirmButton: UIBarButtonItem = UIBarButtonItem(title: "Confirmar", style: .plain, target: self, action: #selector(self.confirmDate))
+        
+        let cancelButton: UIBarButtonItem = UIBarButtonItem(title: "Cancelar", style: .plain, target: self, action: #selector(self.cancelDate))
+        
+        toolBar.setItems([cancelButton, spaceButton, confirmButton], animated: true)
+        
+        
+        self.birthTextField.inputAccessoryView = toolBar
+        
+        
+    }
+    
+    
+ @objc   func confirmDate(){
+        
+    self.birthTextField.text = self.formatDate(date: self.datePicker?.date ?? Date())
+        self.passTextField.becomeFirstResponder()
+    
+        
+    }
+    
+  @objc  func cancelDate(){
+        self.birthTextField.resignFirstResponder()
+        
+    }
+    
+    func formatDate(date: Date) -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        
+        return dateFormatter.string(from: date)
+    }
+    
+    
 }
     
 extension RegisterViewController: UITextFieldDelegate{
