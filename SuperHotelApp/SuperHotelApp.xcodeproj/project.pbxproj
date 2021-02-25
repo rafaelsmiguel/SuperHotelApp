@@ -60,9 +60,8 @@
 		01F1CB7625C85D6200F857B9 /* EditRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F1CB7525C85D6200F857B9 /* EditRegisterViewModel.swift */; };
 		01F1CB9525C8E82E00F857B9 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F1CB9425C8E82E00F857B9 /* Mocks.swift */; };
 		28C43FFA3E6BF56F304C5AA6 /* Pods_SuperHotelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30586FCF9BBC0825885869FE /* Pods_SuperHotelApp.framework */; };
-		54359715254674E200981521 /* booking.json in Resources */ = {isa = PBXBuildFile; fileRef = 54359717254674E200981521 /* booking.json */; };
-		549B9C002545B3D4002E5D83 /* BookingListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549B9BFF2545B3D4002E5D83 /* BookingListController.swift */; };
 		54A0E79825465DFE009577EE /* BookingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0E79725465DFE009577EE /* BookingWorker.swift */; };
+		54AA244525E7400F00BEA87C /* BookingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AA244425E7400F00BEA87C /* BookingListViewModel.swift */; };
 		E1CC7B892536D6CB000FE355 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC7B882536D6CB000FE355 /* Profile.swift */; };
 		E7021356255DE95300CEBFE6 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7021355255DE95300CEBFE6 /* RegisterViewModel.swift */; };
 		E7162536253664CD000F62D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7162535253664CD000F62D1 /* User.swift */; };
@@ -131,9 +130,8 @@
 		01F1CB7525C85D6200F857B9 /* EditRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRegisterViewModel.swift; sourceTree = "<group>"; };
 		01F1CB9425C8E82E00F857B9 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		30586FCF9BBC0825885869FE /* Pods_SuperHotelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperHotelApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		54359716254674E200981521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/booking.json; sourceTree = "<group>"; };
-		549B9BFF2545B3D4002E5D83 /* BookingListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingListController.swift; sourceTree = "<group>"; };
 		54A0E79725465DFE009577EE /* BookingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingWorker.swift; sourceTree = "<group>"; };
+		54AA244425E7400F00BEA87C /* BookingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingListViewModel.swift; sourceTree = "<group>"; };
 		7374C0657435D7FC35D81F5B /* Pods-SuperHotelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHotelApp.release.xcconfig"; path = "Target Support Files/Pods-SuperHotelApp/Pods-SuperHotelApp.release.xcconfig"; sourceTree = "<group>"; };
 		95366AE2885257E183148EC0 /* Pods-SuperHotelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHotelApp.debug.xcconfig"; path = "Target Support Files/Pods-SuperHotelApp/Pods-SuperHotelApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E1CC7B882536D6CB000FE355 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -377,11 +375,10 @@
 		01C5596E252D5995009BA5CB /* Booking */ = {
 			isa = PBXGroup;
 			children = (
-				543597112546726400981521 /* Mock */,
 				E727C9E52538FF3C007063D3 /* Model */,
 				549B9BFD2545B13E002E5D83 /* View */,
-				549B9BFE2545B3A0002E5D83 /* Controller */,
-				54A0E79325464BBF009577EE /* Network */,
+				549B9BFE2545B3A0002E5D83 /* ViewModel */,
+				54A0E79325464BBF009577EE /* Worker */,
 				01842FBE2539396800721888 /* MakeBooking */,
 			);
 			path = Booking;
@@ -476,14 +473,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		543597112546726400981521 /* Mock */ = {
-			isa = PBXGroup;
-			children = (
-				54359717254674E200981521 /* booking.json */,
-			);
-			path = Mock;
-			sourceTree = "<group>";
-		};
 		549B9BFD2545B13E002E5D83 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,20 +485,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		549B9BFE2545B3A0002E5D83 /* Controller */ = {
+		549B9BFE2545B3A0002E5D83 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				549B9BFF2545B3D4002E5D83 /* BookingListController.swift */,
+				54AA244425E7400F00BEA87C /* BookingListViewModel.swift */,
 			);
-			path = Controller;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		54A0E79325464BBF009577EE /* Network */ = {
+		54A0E79325464BBF009577EE /* Worker */ = {
 			isa = PBXGroup;
 			children = (
 				54A0E79725465DFE009577EE /* BookingWorker.swift */,
 			);
-			path = Network;
+			path = Worker;
 			sourceTree = "<group>";
 		};
 		D14F7C7A7AA0D528A954B1EB /* Pods */ = {
@@ -639,7 +628,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C55966252D4EFF009BA5CB /* LaunchScreen.storyboard in Resources */,
-				54359715254674E200981521 /* booking.json in Resources */,
 				E7370B42256EBA7300549FD7 /* GoogleService-Info.plist in Resources */,
 				014E53012552048500D26CD7 /* HotelImagesCollectionCell.xib in Resources */,
 				01559EC12577F9D90053026B /* loading.json in Resources */,
@@ -729,6 +717,7 @@
 				01E7CA77252FF74600A89D75 /* HotelModel.swift in Sources */,
 				01C55989252D5AEE009BA5CB /* SearchHotelVC.swift in Sources */,
 				016857C82531208700867498 /* Helper.swift in Sources */,
+				54AA244525E7400F00BEA87C /* BookingListViewModel.swift in Sources */,
 				01D23EAC256AFC2000FF4D12 /* PropertiesListModel.swift in Sources */,
 				E7ED757425361B300071697D /* LoginController.swift in Sources */,
 				01F1CB9525C8E82E00F857B9 /* Mocks.swift in Sources */,
@@ -738,7 +727,6 @@
 				0196C224255CC1ED0024E0A3 /* SearchModel.swift in Sources */,
 				01F1CB7625C85D6200F857B9 /* EditRegisterViewModel.swift in Sources */,
 				01842FBC25392D8E00721888 /* HotelDetailViewModel.swift in Sources */,
-				549B9C002545B3D4002E5D83 /* BookingListController.swift in Sources */,
 				01B188C625391378008FA5F9 /* Booking.swift in Sources */,
 				01B3559C2547A7680081C972 /* hotels.json in Sources */,
 				01C5595C252D4EFE009BA5CB /* SceneDelegate.swift in Sources */,
@@ -774,14 +762,6 @@
 				01C55965252D4EFF009BA5CB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		54359717254674E200981521 /* booking.json */ = {
-			isa = PBXVariantGroup;
-			children = (
-				54359716254674E200981521 /* Base */,
-			);
-			name = booking.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

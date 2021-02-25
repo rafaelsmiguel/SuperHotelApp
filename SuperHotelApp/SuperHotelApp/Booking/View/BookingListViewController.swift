@@ -13,7 +13,7 @@ class BookingListViewController: BaseViewController {
     @IBOutlet weak var buscarHotelButton: UIView!
     @IBOutlet weak var bookingCollectionView: UICollectionView!
     
-    var controller: BookingListController = BookingListController()
+    var viewModel: BookingListViewModel = BookingListViewModel()
     
     
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class BookingListViewController: BaseViewController {
         self.bookingCollectionView.register(UINib(nibName: "BookingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BookingCollectionViewCell")
         self.bookingCollectionView.delegate = self
         
-        self.controller = BookingListController()
+        self.viewModel = BookingListViewModel()
         
     }
     
@@ -43,13 +43,13 @@ class BookingListViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let navigationBar = self.parent?.navigationItem
-        navigationBar?.title = controller.navigationBarTitle
+        navigationBar?.title = self.viewModel.navigationBarTitle
         
         //chamar loading
         self.showLoading()
         
         
-        self.controller.getListBookingUserDefault (completion: { (success) in
+        self.viewModel.getListBookingUserDefault (completion: { (success) in
             
             self.hiddenLoading()
             
@@ -66,7 +66,7 @@ class BookingListViewController: BaseViewController {
                 
                 self.bookingCollectionView.isHidden = true
                 self.emptyStateView.isHidden = false
-                print("ERRO getListBooking >> BookingListViewController")
+                
             }
             
         })
@@ -89,7 +89,7 @@ extension BookingListViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.controller.numberOfBookings
+        return self.viewModel.numberOfBookings
         
     }
     
@@ -98,7 +98,7 @@ extension BookingListViewController: UICollectionViewDelegate, UICollectionViewD
         let cell: BookingCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "BookingCollectionViewCell", for: indexPath) as? BookingCollectionViewCell
         
         cell?.delegate = self
-        cell?.controller.booking = self.controller.aBooking?[indexPath.row]
+        cell?.viewModel.booking = self.viewModel.aBooking?[indexPath.row]
         cell?.setupCell()
         
         
@@ -117,7 +117,7 @@ extension BookingListViewController: actionCollectionViewCellDelegate {
         let bookingViewController = storyBoard.instantiateViewController(withIdentifier: "BookingDetailViewController") as! BookingDetailViewController
         
         bookingViewController.modalPresentationStyle = .fullScreen
-        bookingViewController.controller.booking = sender as? BookingElement
+        bookingViewController.viewModel.booking = sender as? BookingElement
         
         self.navigationController?.pushViewController(bookingViewController, animated: true)
         

@@ -19,7 +19,7 @@ class BookingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var hotelNameLabel: UILabel!
     @IBOutlet weak var periodOfStayLabel: UILabel!
     
-    var controller: BookingListController = BookingListController()
+    var viewModel: BookingListViewModel = BookingListViewModel()
     var delegate: actionCollectionViewCellDelegate?
     
     
@@ -39,7 +39,7 @@ class BookingCollectionViewCell: UICollectionViewCell {
     
     @objc func didTapped(sender: UITapGestureRecognizer){
         
-        delegate?.tappedBooking(sender: controller.booking)
+        delegate?.tappedBooking(sender: viewModel.booking)
         
     }
     
@@ -47,16 +47,15 @@ class BookingCollectionViewCell: UICollectionViewCell {
     
     func setupCell(){
         
-        //self.hotelImageView.image = controller.bookingImage
-        setImage (from: self.controller.bookingImage)
-        self.hotelNameLabel.text = controller.bookingName
-        self.periodOfStayLabel.text = controller.bookingPeriod
+        setImage (from: self.viewModel.bookingImage)
+        self.hotelNameLabel.text = viewModel.bookingName
+        self.periodOfStayLabel.text = viewModel.bookingPeriod
         
     }
     
     
     func setImageToImageView() {
-        self.controller.fetchImage(from: self.controller.bookingImage) { (imageData) in
+        self.viewModel.fetchImage(from: self.viewModel.bookingImage) { (imageData) in
             if let data = imageData {
                 DispatchQueue.main.async {
                     self.hotelImageView.image = UIImage(data: data)

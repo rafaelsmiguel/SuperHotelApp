@@ -20,8 +20,8 @@ class BookingDetailViewController: UIViewController {
     @IBOutlet weak var amount: UILabel!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var mapView: MKMapView!
-    
-    var controller: BookingListController = BookingListController()
+        
+    var viewModel: BookingListViewModel = BookingListViewModel()
     
     
     
@@ -50,19 +50,18 @@ class BookingDetailViewController: UIViewController {
     
     func setupBooking() {
         
-        if self.controller.booking != nil {
+        if self.viewModel.booking != nil {
             
-            //self.hotelImageView.image = self.controller.bookingImage
-            self.hotelNameLabel.text = self.controller.bookingName
-            self.periodOfStayLabel.text = self.controller.bookingPeriod
-            self.numberOfPeople.text = "\(self.controller.bookingPeople)"
-            self.valueByNight.text = self.controller.bookingValueByNight
-            self.amount.text = self.controller.bookingAmount
-            self.address.text = self.controller.bookingAddress
+            self.hotelNameLabel.text = self.viewModel.bookingName
+            self.periodOfStayLabel.text = self.viewModel.bookingPeriod
+            self.numberOfPeople.text = "\(self.viewModel.bookingPeople)"
+            self.valueByNight.text = self.viewModel.bookingValueByNight
+            self.amount.text = self.viewModel.bookingAmount
+            self.address.text = self.viewModel.bookingAddress
             
             self.setupStar()
             self.setupHotelLocation()
-            setImage (from: self.controller.bookingImage)
+            setImage (from: self.viewModel.bookingImage)
 
         }
         
@@ -81,7 +80,7 @@ class BookingDetailViewController: UIViewController {
         stackViewStar.translatesAutoresizingMaskIntoConstraints = false
         stackViewStar.spacing = 3
         
-        if let stars = self.controller.booking?.starRating {
+        if let stars = self.viewModel.booking?.starRating {
             for _ in 1...stars {
                 let star = UIImageView()
                 star.image = UIImage(systemName: "star.fill")
@@ -99,12 +98,12 @@ class BookingDetailViewController: UIViewController {
         
         let annotation = MKPointAnnotation()
         
-        let lat: Double = self.controller.bookingLatitude
-        let lon: Double = self.controller.bookingLongitude
+        let lat: Double = self.viewModel.bookingLatitude
+        let lon: Double = self.viewModel.bookingLongitude
         
         
         annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon))
-        annotation.title = controller.bookingName
+        annotation.title = self.viewModel.bookingName
         mapView.addAnnotation(annotation)
         
         let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 700, longitudinalMeters: 700)
@@ -116,7 +115,7 @@ class BookingDetailViewController: UIViewController {
     
     
     func setImageToImageView() {
-        self.controller.fetchImage(from: self.controller.bookingImage) { (imageData) in
+        self.viewModel.fetchImage(from: self.viewModel.bookingImage) { (imageData) in
             if let data = imageData {
                 DispatchQueue.main.async {
                     self.hotelImageView.image = UIImage(data: data)

@@ -1,19 +1,19 @@
 //
-//  BookingListController.swift
+//  BookingListViewModel.swift
 //  SuperHotelApp
 //
-//  Created by Elder Alcantara on 25/10/20.
+//  Created by Elder Alcantara on 24/02/21.
 //
 
 import Foundation
 import UIKit
 
-class BookingListController {
+class BookingListViewModel {
     
     let navigationBarTitle: String = "Reservas"
+    let worker: BookingWorker = BookingWorker()
     
     
-//    var arrayBookings: Booking?
     var aBooking: [BookingElement]?
     var booking: BookingElement?
     
@@ -22,11 +22,6 @@ class BookingListController {
         return aBooking?.count ?? 0
     }
     
-    
-//    var bookingImage: UIImage {
-//        return UIImage(named: self.booking?.hotelImage ?? "") ?? UIImage()
-//        print(self.booking?.hotelImage)
-//    }
     
     var bookingImage: String {
         return self.booking?.hotelImage ?? ""
@@ -67,7 +62,7 @@ class BookingListController {
     
     func getListBookingUserDefault(completion: (Bool) -> Void) {
         
-        BookingWorker().getListBookingUserDefault { (bookings, error) in
+        self.worker.getListBookingUserDefault { (bookings, error) in
             
             if error == false {
                 
@@ -77,7 +72,7 @@ class BookingListController {
             } else {
                 
                 completion(false)
-                print("Erro no parse do JSON")
+                print(">>> getListBookingUserDefault is empty!")
                 
             }
             
