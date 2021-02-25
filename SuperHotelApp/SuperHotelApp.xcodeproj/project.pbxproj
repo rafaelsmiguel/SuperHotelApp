@@ -68,7 +68,6 @@
 		E727C9EA2538FF97007063D3 /* BookingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727C9E92538FF97007063D3 /* BookingCollectionViewCell.swift */; };
 		E727C9ED2538FFA8007063D3 /* BookingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E727C9EC2538FFA8007063D3 /* BookingCollectionViewCell.xib */; };
 		E7370B42256EBA7300549FD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7370B41256EBA7300549FD7 /* GoogleService-Info.plist */; };
-		E7A893B5252E2BAA002C31F2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A893B4252E2BAA002C31F2 /* Login.storyboard */; };
 		E7A893B8252E3312002C31F2 /* SegueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A893B7252E3312002C31F2 /* SegueType.swift */; };
 		E7ED757425361B300071697D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED757325361B300071697D /* LoginController.swift */; };
 /* End PBXBuildFile section */
@@ -140,7 +139,6 @@
 		E727C9E92538FF97007063D3 /* BookingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingCollectionViewCell.swift; sourceTree = "<group>"; };
 		E727C9EC2538FFA8007063D3 /* BookingCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingCollectionViewCell.xib; sourceTree = "<group>"; };
 		E7370B41256EBA7300549FD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E7A893B4252E2BAA002C31F2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E7A893B7252E3312002C31F2 /* SegueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueType.swift; sourceTree = "<group>"; };
 		E7ED757325361B300071697D /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -364,7 +362,6 @@
 				01C55962252D4EFF009BA5CB /* Assets.xcassets */,
 				01C55964252D4EFF009BA5CB /* LaunchScreen.storyboard */,
 				01C55967252D4EFF009BA5CB /* Info.plist */,
-				E7A893B4252E2BAA002C31F2 /* Login.storyboard */,
 				012FC86F252E96A400995FDF /* Hotel.storyboard */,
 				0160E69E2536AB55005B55E3 /* Profile.storyboard */,
 				E7370B41256EBA7300549FD7 /* GoogleService-Info.plist */,
@@ -417,7 +414,6 @@
 			children = (
 				E7E8D44B25647222004FC14A /* View */,
 				E7E8D44A25647219004FC14A /* ViewModel */,
-				E7E8D44925647212004FC14A /* Model */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -545,13 +541,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E7E8D44925647212004FC14A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		E7E8D44A25647219004FC14A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -633,7 +622,6 @@
 				01559EC12577F9D90053026B /* loading.json in Resources */,
 				01773C8B25478F2500ED467A /* Tabbar.storyboard in Resources */,
 				0160E69F2536AB55005B55E3 /* Profile.storyboard in Resources */,
-				E7A893B5252E2BAA002C31F2 /* Login.storyboard in Resources */,
 				0122CD44255DF66C00BE7A0D /* Lato-Regular.ttf in Resources */,
 				0122CD43255DF66C00BE7A0D /* Lato-Bold.ttf in Resources */,
 				01559EBE2577F6AB0053026B /* LoadingView.xib in Resources */,

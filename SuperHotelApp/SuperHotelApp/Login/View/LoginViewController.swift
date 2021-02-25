@@ -11,10 +11,8 @@ import Firebase
 
 class LoginViewController: BaseViewController {
     
-    
-    
     let controller:LoginController = LoginController()
-    var user: User = User(name: "Teste", from: "Brasileiro", genre: "Masculino", email: "", birth: "02/05/1991", password: "", confirm: "")
+    var user: User = User(name: "Luciano", from: "Brasileiro", genre: "Masculino", email: "", birth: "02/05/1991", password: "", confirm: "")
     
     @IBOutlet weak var welcoBackButton: UIButton!
     @IBOutlet weak var bigLoginLabel: UILabel!
@@ -24,18 +22,11 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var alreadyNotLabel: UILabel!
     @IBOutlet weak var miniSignButton: UIButton!
     
-  
-
     override func viewDidLoad() {
-        
-        
+        super.viewDidLoad()
         self.emailLoginTextField.delegate = self
         self.passLoginTextField.delegate = self
         self.isEnable(bool: false)
-        
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func welcoBackAction(_ sender: Any) {
@@ -60,7 +51,7 @@ class LoginViewController: BaseViewController {
                     
                     self.user.email = self.emailLoginTextField.text ?? ""
                     self.user.password = self.emailLoginTextField.text ?? ""
-
+                    
                     self.saveInfoUserDefault()
                     
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
@@ -73,23 +64,20 @@ class LoginViewController: BaseViewController {
             }
             
         }else{
-            
             self.showToast(message: "Preencha todos os campos", showTop: true)
-            
         }
-        
     }
     
     
     func saveInfoUserDefault() {
-
+        
         let defaults = UserDefaults.standard
         let encoder = JSONEncoder()
-
+        
         if let encoded = try? encoder.encode(user) {
             defaults.set(encoded, forKey: "usuarioLogado")
         }
-
+        
     }
     
     
@@ -99,9 +87,6 @@ class LoginViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
-        
     }
     
     
@@ -121,9 +106,9 @@ class LoginViewController: BaseViewController {
             self.loginButton.isEnabled = false
             
         }
-    
-    // MARK: - Navigation
-}
+        
+        // MARK: - Navigation
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate{
@@ -140,8 +125,8 @@ extension LoginViewController: UITextFieldDelegate{
         }
         return true
     }
-    }
-    
-    
-    
+}
+
+
+
 

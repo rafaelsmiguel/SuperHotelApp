@@ -38,6 +38,7 @@ class RegisterViewController: BaseViewController {
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         self.registerNameTextField.delegate = self
         self.fromTextField.delegate = self
@@ -70,23 +71,12 @@ class RegisterViewController: BaseViewController {
         toolBar.setItems([cancelButton, spaceButton, confirmButton], animated: true)
         toolBar.tintColor = UIColor.black
         
-        
-        
-        
-        
-        
         self.genreTextField.inputAccessoryView = toolBar
-       
-        
-        super.viewDidLoad()
     }
     
     
     @IBAction func backWelcomeTapAction(_ sender: Any) {
-        
-        
         performSegue(withIdentifier: SegueType.backWelcomeSegue.rawValue, sender:self)
-        
     }
     
     
