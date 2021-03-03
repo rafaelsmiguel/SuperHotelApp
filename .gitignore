@@ -88,3 +88,125 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+SuperHotelApp/Pods/Alamofire/LICENSE
+SuperHotelApp/Pods/Alamofire/README.md
+SuperHotelApp/Pods/Alamofire/Source/AFError.swift
+SuperHotelApp/Pods/Alamofire/Source/Alamofire.swift
+SuperHotelApp/Pods/Alamofire/Source/AlamofireExtended.swift
+SuperHotelApp/Pods/Alamofire/Source/AuthenticationInterceptor.swift
+SuperHotelApp/Pods/Alamofire/Source/CachedResponseHandler.swift
+SuperHotelApp/Pods/Alamofire/Source/Combine.swift
+SuperHotelApp/Pods/Alamofire/Source/DispatchQueue+Alamofire.swift
+SuperHotelApp/Pods/Alamofire/Source/EventMonitor.swift
+SuperHotelApp/Pods/Alamofire/Source/HTTPHeaders.swift
+SuperHotelApp/Pods/Alamofire/Source/HTTPMethod.swift
+SuperHotelApp/Pods/Alamofire/Source/MultipartFormData.swift
+SuperHotelApp/Pods/Alamofire/Source/MultipartUpload.swift
+SuperHotelApp/Pods/Alamofire/Source/NetworkReachabilityManager.swift
+SuperHotelApp/Pods/Alamofire/Source/Notifications.swift
+SuperHotelApp/Pods/Alamofire/Source/OperationQueue+Alamofire.swift
+SuperHotelApp/Pods/Alamofire/Source/ParameterEncoder.swift
+SuperHotelApp/Pods/Alamofire/Source/ParameterEncoding.swift
+SuperHotelApp/Pods/Alamofire/Source/Protected.swift
+SuperHotelApp/Pods/Alamofire/Source/RedirectHandler.swift
+SuperHotelApp/Pods/Alamofire/Source/Request.swift
+SuperHotelApp/Pods/Alamofire/Source/RequestInterceptor.swift
+SuperHotelApp/Pods/Alamofire/Source/RequestTaskMap.swift
+SuperHotelApp/Pods/Alamofire/Source/Response.swift
+SuperHotelApp/Pods/Alamofire/Source/ResponseSerialization.swift
+SuperHotelApp/Pods/Alamofire/Source/Result+Alamofire.swift
+SuperHotelApp/Pods/Alamofire/Source/RetryPolicy.swift
+SuperHotelApp/Pods/Alamofire/Source/ServerTrustEvaluation.swift
+SuperHotelApp/Pods/Alamofire/Source/Session.swift
+SuperHotelApp/Pods/Alamofire/Source/SessionDelegate.swift
+SuperHotelApp/Pods/Alamofire/Source/StringEncoding+Alamofire.swift
+SuperHotelApp/Pods/Alamofire/Source/URLConvertible+URLRequestConvertible.swift
+SuperHotelApp/Pods/Alamofire/Source/URLEncodedFormEncoder.swift
+SuperHotelApp/Pods/Alamofire/Source/URLRequest+Alamofire.swift
+SuperHotelApp/Pods/Alamofire/Source/URLSessionConfiguration+Alamofire.swift
+SuperHotelApp/Pods/Alamofire/Source/Validation.swift
+SuperHotelApp/Pods/Kingfisher/LICENSE
+SuperHotelApp/Pods/Kingfisher/README.md
+SuperHotelApp/Pods/Kingfisher/Sources/Cache/CacheSerializer.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Cache/DiskStorage.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Cache/FormatIndicatedCacheSerializer.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Cache/ImageCache.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Cache/MemoryStorage.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Cache/Storage.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Extensions/ImageView+Kingfisher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Extensions/NSButton+Kingfisher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Extensions/NSTextAttachment+Kingfisher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Extensions/TVMonogramView+Kingfisher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Extensions/UIButton+Kingfisher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Extensions/WKInterfaceImage+Kingfisher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/KF.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/KFOptionsSetter.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/Kingfisher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/KingfisherError.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/KingfisherManager.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/KingfisherOptionsInfo.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/ImageSource/AVAssetImageDataProvider.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/ImageSource/ImageDataProvider.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/ImageSource/Resource.swift
+SuperHotelApp/Pods/Kingfisher/Sources/General/ImageSource/Source.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/Filter.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/GIFAnimatedImage.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/Image.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/ImageDrawing.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/ImageFormat.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/ImageProcessor.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/ImageProgressive.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/ImageTransition.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Image/Placeholder.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/AuthenticationChallengeResponsable.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/ImageDataProcessor.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/ImageDownloader.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/ImageDownloaderDelegate.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/ImageModifier.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/ImagePrefetcher.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/RedirectHandler.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/RequestModifier.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/RetryStrategy.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/SessionDataTask.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Networking/SessionDelegate.swift
+SuperHotelApp/Pods/Kingfisher/Sources/SwiftUI/ImageBinder.swift
+SuperHotelApp/Pods/Kingfisher/Sources/SwiftUI/KFImage.swift
+SuperHotelApp/Pods/Kingfisher/Sources/SwiftUI/KFImageOptions.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/Box.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/CallbackQueue.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/Delegate.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/ExtensionHelpers.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/Result.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/Runtime.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/SizeExtensions.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Utility/String+MD5.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Views/AnimatedImageView.swift
+SuperHotelApp/Pods/Kingfisher/Sources/Views/Indicator.swift
+SuperHotelApp/Pods/lottie-ios/LICENSE 2
+SuperHotelApp/Pods/lottie-ios/README 2.md
+SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire-dummy.m
+SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire-Info.plist
+SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire-prefix.pch
+SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h
+SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire.debug.xcconfig
+SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire.modulemap
+SuperHotelApp/Pods/Target Support Files/Alamofire/Alamofire.release.xcconfig
+SuperHotelApp/Pods/Target Support Files/GoogleUtilities/GoogleUtilities-prefix 2.pch
+SuperHotelApp/Pods/Target Support Files/Kingfisher/Kingfisher-dummy.m
+SuperHotelApp/Pods/Target Support Files/Kingfisher/Kingfisher-Info.plist
+SuperHotelApp/Pods/Target Support Files/Kingfisher/Kingfisher-prefix.pch
+SuperHotelApp/Pods/Target Support Files/Kingfisher/Kingfisher-umbrella.h
+SuperHotelApp/Pods/Target Support Files/Kingfisher/Kingfisher.debug.xcconfig
+SuperHotelApp/Pods/Target Support Files/Kingfisher/Kingfisher.modulemap
+SuperHotelApp/Pods/Target Support Files/Kingfisher/Kingfisher.release.xcconfig
+SuperHotelApp/Pods/Target Support Files/lottie-ios/lottie-ios 2.modulemap
+SuperHotelApp/Pods/Target Support Files/lottie-ios/lottie-ios-dummy 2.m
+SuperHotelApp/Pods/Target Support Files/lottie-ios/lottie-ios-Info 2.plist
+SuperHotelApp/Pods/Target Support Files/lottie-ios/lottie-ios-prefix 2.pch
+SuperHotelApp/Pods/Target Support Files/lottie-ios/lottie-ios-umbrella 2.h
+SuperHotelApp/Pods/Target Support Files/lottie-ios/lottie-ios.debug 2.xcconfig
+SuperHotelApp/Pods/Target Support Files/lottie-ios/lottie-ios.release 2.xcconfig
+SuperHotelApp/SuperHotelApp/CustomLayout/BaseViewController 2.swift
+SuperHotelApp/SuperHotelApp/CustomLayout/LoadingView/loading 2.json
+SuperHotelApp/SuperHotelApp/CustomLayout/LoadingView/LoadingView 2.swift
+SuperHotelApp/SuperHotelApp/CustomLayout/LoadingView/LoadingView 2.xib
