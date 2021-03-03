@@ -27,7 +27,6 @@
 		0196C224255CC1ED0024E0A3 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196C223255CC1ED0024E0A3 /* SearchModel.swift */; };
 		0196C227255CC24C0024E0A3 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196C226255CC24C0024E0A3 /* SearchViewModel.swift */; };
 		01B188C625391378008FA5F9 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B188C525391378008FA5F9 /* Booking.swift */; };
-		01B3559C2547A7680081C972 /* hotels.json in Sources */ = {isa = PBXBuildFile; fileRef = 01B3559B2547A7680081C972 /* hotels.json */; };
 		01B355A02547ABA50081C972 /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B3559F2547ABA50081C972 /* SearchWorker.swift */; };
 		01B398BE25538A7700AFD068 /* BookingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B398BD25538A7700AFD068 /* BookingRequest.swift */; };
 		01B398C125538B9D00AFD068 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B398C025538B9D00AFD068 /* BookingViewModel.swift */; };
@@ -94,7 +93,6 @@
 		0196C223255CC1ED0024E0A3 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		0196C226255CC24C0024E0A3 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		01B188C525391378008FA5F9 /* Booking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
-		01B3559B2547A7680081C972 /* hotels.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hotels.json; sourceTree = "<group>"; };
 		01B3559F2547ABA50081C972 /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
 		01B398BD25538A7700AFD068 /* BookingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRequest.swift; sourceTree = "<group>"; };
 		01B398C025538B9D00AFD068 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 				010873DE255B85750089B7B0 /* Model */,
 				010873DD255B856E0089B7B0 /* View */,
 				010873DC255B855A0089B7B0 /* ViewModel */,
-				01B3559B2547A7680081C972 /* hotels.json */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -716,7 +713,6 @@
 				01F1CB7625C85D6200F857B9 /* EditRegisterViewModel.swift in Sources */,
 				01842FBC25392D8E00721888 /* HotelDetailViewModel.swift in Sources */,
 				01B188C625391378008FA5F9 /* Booking.swift in Sources */,
-				01B3559C2547A7680081C972 /* hotels.json in Sources */,
 				01C5595C252D4EFE009BA5CB /* SceneDelegate.swift in Sources */,
 				E7021356255DE95300CEBFE6 /* RegisterViewModel.swift in Sources */,
 				01C559A6252D5D8B009BA5CB /* SHTextField.swift in Sources */,
