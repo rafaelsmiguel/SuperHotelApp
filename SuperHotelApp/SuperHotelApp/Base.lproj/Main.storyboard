@@ -1,24 +1,461 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vVs-8q-hys">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Register View Controller-->
+        <scene sceneID="dGd-FL-hQp">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="RegisterViewController" id="gJR-VB-ZSi" customClass="RegisterViewController" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gaA-GS-1CW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Co9-lQ-Aft">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Rw-Jg-Upb">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEX-z4-RWJ">
+                                                <rect key="frame" x="10" y="20" width="59.5" height="22"/>
+                                                <color key="tintColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Voltar" image="chevron.backward" catalog="system">
+                                                    <color key="titleColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="backWelcomeTapAction:" destination="gJR-VB-ZSi" eventType="touchUpInside" id="QXc-Z3-Rrs"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56K-eR-ZX8">
+                                                <rect key="frame" x="20" y="72" width="374" height="66"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="66" id="EWl-Xp-yAZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="28"/>
+                                                <color key="textColor" red="0.3411764706" green="0.82352941180000006" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="G5H-5a-ifZ">
+                                                <rect key="frame" x="20" y="168" width="374" height="396"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome Completo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9Q-Qh-BXE" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="9Te-7d-MeF"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nacionalidade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O1b-Gj-7h7" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="58" width="374" height="48"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="vhQ-e5-ys7"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Genero" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxr-lH-cM1" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="116" width="374" height="48"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="HbD-95-Zzc"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bAP-y4-F6t" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="174" width="374" height="48"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="Xbx-1A-c8e"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date de Nascimento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5oZ-9f-kLd" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="232" width="374" height="48"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="14t-Be-46E"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tvi-r9-e5o" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="290" width="374" height="48"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="E9z-8A-r06"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Fa-b6-nVi" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="348" width="374" height="48"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="e4b-kB-QDn"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePf-sK-Ik5" customClass="SHButton_FilledGreen" customModule="SuperHotelApp" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="594" width="374" height="44"/>
+                                                <color key="backgroundColor" red="0.3692988753" green="0.84543985129999999" blue="0.78776746990000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="BTI-E6-eVh"/>
+                                                </constraints>
+                                                <state key="normal" title="Cadastrar">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="signAction:" destination="gJR-VB-ZSi" eventType="touchUpInside" id="NAW-Mb-FyC"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3ko-aK-Ar9" userLabel="stackViewCadastro">
+                                                <rect key="frame" x="160.5" y="668" width="93.5" height="56"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Já é cadastrado?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNG-jg-lKI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="V5r-NP-JV1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                                                        <color key="textColor" red="0.55294117649999996" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMH-bX-Txb">
+                                                        <rect key="frame" x="28.5" y="26" width="36" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="8hW-kY-wAa"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="13"/>
+                                                        <state key="normal" title="Entrar">
+                                                            <color key="titleColor" red="0.078431372550000003" green="0.08235294118" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="toLoginFromRegisterAction:" destination="gJR-VB-ZSi" eventType="touchUpInside" id="VUb-EV-AO8"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="56K-eR-ZX8" firstAttribute="top" secondItem="tEX-z4-RWJ" secondAttribute="bottom" constant="30" id="2NP-ie-9a2"/>
+                                            <constraint firstItem="3ko-aK-Ar9" firstAttribute="top" secondItem="ePf-sK-Ik5" secondAttribute="bottom" constant="30" id="AbA-hF-1eh"/>
+                                            <constraint firstItem="tEX-z4-RWJ" firstAttribute="leading" secondItem="4Rw-Jg-Upb" secondAttribute="leading" constant="10" id="Blh-0Y-dE1"/>
+                                            <constraint firstItem="56K-eR-ZX8" firstAttribute="leading" secondItem="4Rw-Jg-Upb" secondAttribute="leading" constant="20" id="C3D-6j-N5I"/>
+                                            <constraint firstItem="3ko-aK-Ar9" firstAttribute="centerX" secondItem="4Rw-Jg-Upb" secondAttribute="centerX" id="COz-Ew-WGS"/>
+                                            <constraint firstAttribute="trailing" secondItem="ePf-sK-Ik5" secondAttribute="trailing" constant="20" id="DiJ-bd-eVD"/>
+                                            <constraint firstItem="ePf-sK-Ik5" firstAttribute="top" secondItem="G5H-5a-ifZ" secondAttribute="bottom" constant="30" id="Kzd-7j-TuJ"/>
+                                            <constraint firstItem="tEX-z4-RWJ" firstAttribute="top" secondItem="4Rw-Jg-Upb" secondAttribute="top" constant="20" id="LfL-e4-zOW"/>
+                                            <constraint firstAttribute="bottom" secondItem="3ko-aK-Ar9" secondAttribute="bottom" constant="94" id="Ogz-4w-2Te"/>
+                                            <constraint firstAttribute="trailing" secondItem="G5H-5a-ifZ" secondAttribute="trailing" constant="20" id="QF8-P0-pAU"/>
+                                            <constraint firstAttribute="trailing" secondItem="56K-eR-ZX8" secondAttribute="trailing" constant="20" id="cbJ-gB-bVl"/>
+                                            <constraint firstItem="G5H-5a-ifZ" firstAttribute="top" secondItem="56K-eR-ZX8" secondAttribute="bottom" constant="30" id="lY7-Xw-pe3"/>
+                                            <constraint firstItem="ePf-sK-Ik5" firstAttribute="leading" secondItem="4Rw-Jg-Upb" secondAttribute="leading" constant="20" id="mCf-Np-QQR"/>
+                                            <constraint firstItem="G5H-5a-ifZ" firstAttribute="leading" secondItem="4Rw-Jg-Upb" secondAttribute="leading" constant="20" id="yWp-mU-JPj"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4Rw-Jg-Upb" secondAttribute="trailing" id="2IC-zc-NyT"/>
+                                    <constraint firstItem="4Rw-Jg-Upb" firstAttribute="height" secondItem="Co9-lQ-Aft" secondAttribute="height" priority="250" id="8to-Y6-M0d"/>
+                                    <constraint firstItem="4Rw-Jg-Upb" firstAttribute="leading" secondItem="Co9-lQ-Aft" secondAttribute="leading" id="P34-6F-XYC"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Rw-Jg-Upb" secondAttribute="bottom" id="ZjO-0D-P53"/>
+                                    <constraint firstItem="4Rw-Jg-Upb" firstAttribute="top" secondItem="Co9-lQ-Aft" secondAttribute="top" id="bwj-JE-9Ng"/>
+                                    <constraint firstItem="4Rw-Jg-Upb" firstAttribute="width" secondItem="Co9-lQ-Aft" secondAttribute="width" id="nmm-d5-Axg"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oCP-VR-D4g"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Co9-lQ-Aft" firstAttribute="trailing" secondItem="oCP-VR-D4g" secondAttribute="trailing" id="0Ly-to-AHL"/>
+                            <constraint firstItem="Co9-lQ-Aft" firstAttribute="top" secondItem="oCP-VR-D4g" secondAttribute="top" id="DQB-cf-yRB"/>
+                            <constraint firstItem="Co9-lQ-Aft" firstAttribute="bottom" secondItem="oCP-VR-D4g" secondAttribute="bottom" id="eW6-4S-WQD"/>
+                            <constraint firstItem="Co9-lQ-Aft" firstAttribute="leading" secondItem="oCP-VR-D4g" secondAttribute="leading" id="rOT-MB-slh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="birthTextField" destination="5oZ-9f-kLd" id="Jh0-Be-Vaq"/>
+                        <outlet property="confirmPassTextField" destination="5Fa-b6-nVi" id="YNq-N5-a91"/>
+                        <outlet property="emailTextField" destination="bAP-y4-F6t" id="9h8-6n-mTi"/>
+                        <outlet property="fromTextField" destination="O1b-Gj-7h7" id="1j4-tT-0gd"/>
+                        <outlet property="genreTextField" destination="oxr-lH-cM1" id="cvB-nq-Jvc"/>
+                        <outlet property="passTextField" destination="Tvi-r9-e5o" id="gbQ-3t-06b"/>
+                        <outlet property="registerNameTextField" destination="a9Q-Qh-BXE" id="Zt1-jz-NaF"/>
+                        <segue destination="vVs-8q-hys" kind="presentation" identifier="backWelcomeSegue" id="V5f-K2-NFJ"/>
+                        <segue destination="iyb-Cz-6sg" kind="presentation" identifier="toLoginfromRegister" modalPresentationStyle="fullScreen" id="YVV-9z-Aya"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6i-hV-9xf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="834.78260869565224" y="-1363.3928571428571"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="N2b-TJ-ZLh">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeViewController" modalPresentationStyle="fullScreen" id="vVs-8q-hys" customClass="WelcomeViewController" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wQd-By-Zul">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="projetowelco" translatesAutoresizingMaskIntoConstraints="NO" id="GBj-Z1-hJ0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo3" translatesAutoresizingMaskIntoConstraints="NO" id="nUr-9o-hID">
+                                <rect key="frame" x="167" y="104" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Bsc-xv-IZq"/>
+                                    <constraint firstAttribute="height" constant="80" id="Exj-5O-sib"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sua super viagem, merece um super hotel." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndg-5K-2bj">
+                                <rect key="frame" x="20" y="255" width="374" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                <color key="textColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBL-Mr-4jT" customClass="SHButton_FilledGreen" customModule="SuperHotelApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="719" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="o4H-Wc-0vn"/>
+                                </constraints>
+                                <state key="normal" title="Cadastrar"/>
+                                <connections>
+                                    <action selector="goSignUpAction:" destination="vVs-8q-hys" eventType="touchUpInside" id="VlL-B8-93s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29P-mQ-869" customClass="SHButton_FilledWhite" customModule="SuperHotelApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="778" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nEl-qI-Whs"/>
+                                </constraints>
+                                <state key="normal" title="Entrar"/>
+                                <connections>
+                                    <action selector="goLoginButton:" destination="vVs-8q-hys" eventType="touchUpInside" id="Smr-Yh-jCf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super Hotel" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0S-Ev-gN5" userLabel="Super Hotel">
+                                <rect key="frame" x="107" y="204" width="200.5" height="46"/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="38"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cGP-bM-aXW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="K0S-Ev-gN5" firstAttribute="top" secondItem="nUr-9o-hID" secondAttribute="bottom" constant="20" id="6HI-Yq-dSb"/>
+                            <constraint firstItem="nUr-9o-hID" firstAttribute="top" secondItem="cGP-bM-aXW" secondAttribute="top" constant="60" id="6gK-dE-j0G"/>
+                            <constraint firstItem="29P-mQ-869" firstAttribute="top" secondItem="yBL-Mr-4jT" secondAttribute="bottom" constant="15" id="9iN-WE-3dW"/>
+                            <constraint firstItem="K0S-Ev-gN5" firstAttribute="centerX" secondItem="wQd-By-Zul" secondAttribute="centerX" id="CIC-DM-1NK"/>
+                            <constraint firstItem="cGP-bM-aXW" firstAttribute="trailing" secondItem="29P-mQ-869" secondAttribute="trailing" constant="20" id="DV4-NU-G5Z"/>
+                            <constraint firstItem="GBj-Z1-hJ0" firstAttribute="leading" secondItem="cGP-bM-aXW" secondAttribute="leading" id="Lcc-x7-NPa"/>
+                            <constraint firstItem="cGP-bM-aXW" firstAttribute="trailing" secondItem="yBL-Mr-4jT" secondAttribute="trailing" constant="20" id="Ml2-kG-vRA"/>
+                            <constraint firstItem="ndg-5K-2bj" firstAttribute="leading" secondItem="cGP-bM-aXW" secondAttribute="leading" constant="20" id="ZVy-NV-Lt0"/>
+                            <constraint firstItem="cGP-bM-aXW" firstAttribute="trailing" secondItem="ndg-5K-2bj" secondAttribute="trailing" constant="20" id="aQc-C7-Cyc"/>
+                            <constraint firstItem="ndg-5K-2bj" firstAttribute="top" secondItem="K0S-Ev-gN5" secondAttribute="bottom" constant="5" id="bwP-VC-av6"/>
+                            <constraint firstItem="yBL-Mr-4jT" firstAttribute="leading" secondItem="cGP-bM-aXW" secondAttribute="leading" constant="20" id="c3F-RX-gX3"/>
+                            <constraint firstItem="GBj-Z1-hJ0" firstAttribute="trailing" secondItem="cGP-bM-aXW" secondAttribute="trailing" id="dXp-1A-NDj"/>
+                            <constraint firstItem="29P-mQ-869" firstAttribute="leading" secondItem="cGP-bM-aXW" secondAttribute="leading" constant="20" id="dkq-na-K5c"/>
+                            <constraint firstItem="GBj-Z1-hJ0" firstAttribute="bottom" secondItem="cGP-bM-aXW" secondAttribute="bottom" id="fIM-y9-7yc"/>
+                            <constraint firstItem="cGP-bM-aXW" firstAttribute="bottom" secondItem="29P-mQ-869" secondAttribute="bottom" constant="40" id="jBN-fJ-8E3"/>
+                            <constraint firstItem="GBj-Z1-hJ0" firstAttribute="top" secondItem="cGP-bM-aXW" secondAttribute="top" id="oro-AY-VeR"/>
+                            <constraint firstItem="nUr-9o-hID" firstAttribute="centerX" secondItem="wQd-By-Zul" secondAttribute="centerX" id="toc-Go-PZC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="goLoginButton" destination="29P-mQ-869" id="PdE-xW-QsL"/>
+                        <outlet property="signUpButton" destination="yBL-Mr-4jT" id="nEF-k6-3Xr"/>
+                        <segue destination="iyb-Cz-6sg" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="Jbx-7Y-S87"/>
+                        <segue destination="gJR-VB-ZSi" kind="presentation" identifier="signSegue" modalPresentationStyle="fullScreen" id="qfl-41-AGf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q5M-XO-tm9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2112" y="125"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="htG-dA-j9i">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="iyb-Cz-6sg" customClass="LoginViewController" customModule="SuperHotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V15-Q1-VPK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgG-tN-RXB">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QgU-kf-HbP">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdP-Ug-79i">
+                                                <rect key="frame" x="10" y="20" width="59.5" height="22"/>
+                                                <color key="tintColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Voltar" image="chevron.backward" catalog="system">
+                                                    <color key="titleColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="welcoBackAction:" destination="iyb-Cz-6sg" eventType="touchUpInside" id="1KN-eS-8WC"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4L-XC-xfC">
+                                                <rect key="frame" x="20" y="72" width="374" height="66"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="66" id="vle-Ci-Zhj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="28"/>
+                                                <color key="textColor" red="0.3411764705882353" green="0.82352941176470584" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nMG-hP-Hzc">
+                                                <rect key="frame" x="20" y="368" width="374" height="116"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKV-zp-Dxn" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="Kia-VL-HRm"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qUN-tS-G3E" customClass="SHTextField" customModule="SuperHotelApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="68" width="374" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="ekz-T9-6xg"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4fh-L7-Ro6" userLabel="stackViewCadastro">
+                                                <rect key="frame" x="148.5" y="746" width="117.5" height="56"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não tem uma conta?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYH-AL-euJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="iWn-bm-eaD"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                                                        <color key="textColor" red="0.55294117647058827" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cA0-dP-eXG">
+                                                        <rect key="frame" x="30.5" y="26" width="56" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="za5-Ov-gy7"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="13"/>
+                                                        <state key="normal" title="Cadastrar">
+                                                            <color key="titleColor" red="0.078431372549019607" green="0.082352941176470587" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="miniSignAction:" destination="iyb-Cz-6sg" eventType="touchUpInside" id="cbJ-k5-6jz"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKd-sf-JGf" customClass="SHButton_FilledGreen" customModule="SuperHotelApp" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="672" width="374" height="44"/>
+                                                <color key="backgroundColor" red="0.3692988753" green="0.84543985129999999" blue="0.78776746990000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="MTM-Vw-5qf"/>
+                                                </constraints>
+                                                <state key="normal" title="Entrar">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="loginAction:" destination="iyb-Cz-6sg" eventType="touchUpInside" id="bff-JB-Xbu"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="nMG-hP-Hzc" secondAttribute="trailing" constant="20" id="1Q5-lG-G6S"/>
+                                            <constraint firstAttribute="bottom" secondItem="4fh-L7-Ro6" secondAttribute="bottom" constant="50" id="8b7-gA-5oP"/>
+                                            <constraint firstItem="Y4L-XC-xfC" firstAttribute="top" secondItem="gdP-Ug-79i" secondAttribute="bottom" constant="30" id="CGm-Nj-thR"/>
+                                            <constraint firstItem="sKd-sf-JGf" firstAttribute="leading" secondItem="QgU-kf-HbP" secondAttribute="leading" constant="20" id="DBg-DG-oy4"/>
+                                            <constraint firstItem="Y4L-XC-xfC" firstAttribute="leading" secondItem="QgU-kf-HbP" secondAttribute="leading" constant="20" id="F9u-yb-PFn"/>
+                                            <constraint firstItem="4fh-L7-Ro6" firstAttribute="centerX" secondItem="QgU-kf-HbP" secondAttribute="centerX" id="FNc-fW-PAI"/>
+                                            <constraint firstAttribute="trailing" secondItem="sKd-sf-JGf" secondAttribute="trailing" constant="20" id="H8d-fz-iac"/>
+                                            <constraint firstItem="gdP-Ug-79i" firstAttribute="leading" secondItem="QgU-kf-HbP" secondAttribute="leading" constant="10" id="Ldl-wR-KYb"/>
+                                            <constraint firstAttribute="trailing" secondItem="Y4L-XC-xfC" secondAttribute="trailing" constant="20" id="SwO-eG-EMM"/>
+                                            <constraint firstItem="nMG-hP-Hzc" firstAttribute="leading" secondItem="QgU-kf-HbP" secondAttribute="leading" constant="20" id="YJe-SQ-Rj7"/>
+                                            <constraint firstItem="nMG-hP-Hzc" firstAttribute="centerY" secondItem="QgU-kf-HbP" secondAttribute="centerY" id="aKe-h4-T2h"/>
+                                            <constraint firstItem="gdP-Ug-79i" firstAttribute="top" secondItem="QgU-kf-HbP" secondAttribute="top" constant="20" id="qCw-xH-AfC"/>
+                                            <constraint firstItem="4fh-L7-Ro6" firstAttribute="top" secondItem="sKd-sf-JGf" secondAttribute="bottom" constant="30" id="s7B-xf-Aqg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="QgU-kf-HbP" secondAttribute="trailing" id="1e0-H6-Vie"/>
+                                    <constraint firstAttribute="bottom" secondItem="QgU-kf-HbP" secondAttribute="bottom" id="D7B-9A-Jpw"/>
+                                    <constraint firstItem="QgU-kf-HbP" firstAttribute="leading" secondItem="lgG-tN-RXB" secondAttribute="leading" id="LpN-RI-oYH"/>
+                                    <constraint firstItem="QgU-kf-HbP" firstAttribute="height" secondItem="lgG-tN-RXB" secondAttribute="height" priority="250" id="OOB-Qz-HhE"/>
+                                    <constraint firstItem="QgU-kf-HbP" firstAttribute="top" secondItem="lgG-tN-RXB" secondAttribute="top" id="bKe-rE-Qk5"/>
+                                    <constraint firstItem="QgU-kf-HbP" firstAttribute="width" secondItem="lgG-tN-RXB" secondAttribute="width" id="jvy-8e-6vr"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qhg-o5-FJX"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lgG-tN-RXB" firstAttribute="leading" secondItem="Qhg-o5-FJX" secondAttribute="leading" id="O6M-lZ-N0t"/>
+                            <constraint firstItem="lgG-tN-RXB" firstAttribute="trailing" secondItem="Qhg-o5-FJX" secondAttribute="trailing" id="Pad-5s-9sL"/>
+                            <constraint firstAttribute="bottom" secondItem="lgG-tN-RXB" secondAttribute="bottom" id="Xuo-Bg-wb5"/>
+                            <constraint firstItem="lgG-tN-RXB" firstAttribute="top" secondItem="Qhg-o5-FJX" secondAttribute="top" id="we9-QC-WuD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailLoginTextField" destination="RKV-zp-Dxn" id="bsi-zb-nQm"/>
+                        <outlet property="loginButton" destination="sKd-sf-JGf" id="Ih5-5N-ltd"/>
+                        <outlet property="passLoginTextField" destination="qUN-tS-G3E" id="OEi-Zc-xhQ"/>
+                        <segue destination="vVs-8q-hys" kind="presentation" identifier="backWelcoSegue" id="1Il-y8-mvd"/>
+                        <segue destination="gJR-VB-ZSi" kind="presentation" identifier="toRegisterFromLogin" modalPresentationStyle="fullScreen" id="eSP-pg-vuj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AOW-mH-89O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="287" y="380"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jbx-7Y-S87"/>
+        <segue reference="1Il-y8-mvd"/>
+        <segue reference="qfl-41-AGf"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Logo3" width="300" height="300"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="projetowelco" width="600" height="1000"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

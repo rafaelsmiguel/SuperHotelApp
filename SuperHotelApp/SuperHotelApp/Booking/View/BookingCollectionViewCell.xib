@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4QK-gz-s5X" customClass="BookingCollectionViewCell" customModule="SuperHotelApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="H7b-xv-we6">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="y7A-70-Gl9">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="230"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="230" id="UcM-Vp-U5W"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruG-Ga-vP9">
+                        <rect key="frame" x="20" y="235" width="360" height="34"/>
+                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="28"/>
+                        <color key="textColor" red="0.33725490200000002" green="0.82352941180000006" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbQ-NT-D7H">
+                        <rect key="frame" x="20" y="269" width="360" height="17"/>
+                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                        <color key="textColor" red="0.55294117649999996" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="y7A-70-Gl9" secondAttribute="trailing" id="Nvz-Xu-EhR"/>
+                    <constraint firstItem="y7A-70-Gl9" firstAttribute="leading" secondItem="H7b-xv-we6" secondAttribute="leading" id="Yod-Wn-cUk"/>
+                    <constraint firstItem="ruG-Ga-vP9" firstAttribute="leading" secondItem="H7b-xv-we6" secondAttribute="leading" constant="20" id="d9L-Zb-td8"/>
+                    <constraint firstItem="rbQ-NT-D7H" firstAttribute="leading" secondItem="H7b-xv-we6" secondAttribute="leading" constant="20" id="h2F-8c-GZx"/>
+                    <constraint firstAttribute="trailing" secondItem="ruG-Ga-vP9" secondAttribute="trailing" constant="20" id="icl-TF-e7V"/>
+                    <constraint firstItem="rbQ-NT-D7H" firstAttribute="top" secondItem="ruG-Ga-vP9" secondAttribute="bottom" id="kWm-ZS-pJe"/>
+                    <constraint firstAttribute="trailing" secondItem="rbQ-NT-D7H" secondAttribute="trailing" constant="20" id="s8d-q0-NhA"/>
+                    <constraint firstItem="ruG-Ga-vP9" firstAttribute="top" secondItem="y7A-70-Gl9" secondAttribute="bottom" constant="5" id="tC2-Hp-pB9"/>
+                    <constraint firstItem="y7A-70-Gl9" firstAttribute="top" secondItem="H7b-xv-we6" secondAttribute="top" id="yRd-ZQ-cD2"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="hotelImageView" destination="y7A-70-Gl9" id="Jks-Dg-IV4"/>
+                <outlet property="hotelNameLabel" destination="ruG-Ga-vP9" id="BW0-sU-aLM"/>
+                <outlet property="periodOfStayLabel" destination="rbQ-NT-D7H" id="JuU-76-NLh"/>
+            </connections>
+            <point key="canvasLocation" x="-330" y="0.0"/>
+        </collectionViewCell>
+    </objects>
+</document>
